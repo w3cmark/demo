@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>添加点击波纹</title>
+</head>
+<body>
+<div class="main">
+	<h1>请点击页面</h1>
+    <a href="http://www.w3cmark.com" target="_blank">前端笔记网</a>
+</div>
+<script language="javascript">
+(function(){
+    /*
+    transition支持
+    IE10+
+    FF28+
+    安卓4.4+ （4.4以下加前缀）
+    ios7.0+（7.0以下加前缀）
+    opera20+
+    */
+    /**样式兼容**/
+    function prefixStyle (style) {
+        if ( vendor === '' ) return style;
+        style = style.charAt(0).toUpperCase() + style.substr(1);
+        //console.log(style)
+        return vendor + style;
+    };
+    var dummyStyle = document.createElement('div').style,
+        vendor = (function () {
+            var vendors = 't,webkitT,MozT,msT,OT'.split(','),
+                t,
+                i = 0,
+                l = vendors.length;
+            for ( ; i < l; i++ ) {
+                t = vendors[i] + 'ransform';
+                if ( t in dummyStyle ) {
+                    //alert(vendors[i])
+                    return vendors[i].substr(0, vendors[i].length - 1);
+                }
+            }
+            return false;
+        })(),
+        cssVendor = vendor ? '-' + vendor.toLowerCase() + '-' : '',//本demo没用到，可以给添加cssText备用
+        transition = prefixStyle('transition');//
+
+    /**事件兼容**/
+    var hasTouch = 'ontouchstart' in window,
+        startEvent = hasTouch ? 'touchstart' : 'mousedown',
+        moveEvent = hasTouch ? 'touchmove' : 'mousemove',
+        endEvent = hasTouch ? 'touchend' : 'mouseup',
+        cancelEvent = hasTouch ? 'touchcancel' : 'mouseup';
+
+    transitionEndEvent = (function () {
+        if ( vendor === false ) return false;
+        var transitionEnd = {
+                ''          : 'transitionend',
+                'webkit'    : 'webkitTransitionEnd',
+                'Moz'       : 'transitionend',
+                'O'         : 'oTransitionEnd',
+                'ms'        : 'MSTransitionEnd'
+            };
+        return transitionEnd[vendor];
+    })();
+    //alert(transitionEndEvent)
+    var point = document.createElement('div'),
+        canclick = true,
+        ahref = '';
+    point.style.cssText = 'width:10px;height:10px;border-radius:100px;border:1px solid #f60;position: absolute;left:0;top:0;opacity:0;';
+    document.body.appendChild(point);
+    window.addEventListener(startEvent, mDown,true);
+    point.addEventListener(transitionEndEvent, tEnd,false);
+
+    function mDown(e){
+        e = e || window.event;
+        e.preventDefault();
+        if(!canclick) {return;}
+        //alert(e.target);
+
+        /*console.log(e.target.tagName);
+        if(e.target.tagName === 'A'){
+            ahref = e.target.href;
+            console.log(ahref);
+        }*/
+        canclick = false;
+        var evt = hasTouch ? e.touches[0] : e;
+            point.style.left = evt.pageX-15 +'px';
+            point.style.top = evt.pageY-15 +'px';
+            point.style.width = point.style.height = '10px';
+            point.style.transition = '';
+        setTimeout(function(){
+            point.style.transition  = 'all 400ms ease-in';
+            point.style.opacity = '1';
+            point.style.width = point.style.height = '30px';
+        }, 50)
+    }
+    function tEnd(){
+        point.style.opacity = '0';
+        point.style.width = point.style.height = '40px';
+        point.style.transition = 'all 300ms ease-out';
+        canclick = true;
+    }
+})()
+</script>
+</body>
+</html>

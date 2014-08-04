@@ -1,0 +1,133 @@
+<!doctype HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title> 摇一摇,马上抽奖~ </title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="lijun_gz none" />
+<link rel="stylesheet" type="text/css" href="gzh.css">
+</head>
+
+<body>
+<div class="g-doc" style="background:#2e2e2e" id="tipsDoc">
+	<div class="m-cjtit">摇一摇,马上抽奖~</div>
+	<div class="m-cjbg">
+		<img src="http://www1.pclady.com.cn/wap/g20140703/zt/wxgz/img/cjbg.png"/>
+	</div>
+	<div class="m-clickBtn">您的浏览器不支持摇一摇功能，请点击抽奖！</div>
+	<div class="m-cjsum">
+		<p class="m-cjsum-tit">活动规则</p>
+		<p>1、每位网友每天五次机会，重复中奖只计算一次；<br/>
+		2、本次活动仅限手机微信网友参加，通过电脑pc端参加的网友，中奖无效；<br/>
+		3、网友中奖后需填写真实有效个人信息，若未预留信息，则视为自动弃奖；<br/>
+		4、关注PCLADY任意公众号都可参与此抽奖活动。</p>
+		<p class="m-cjsum-tit">分享有奖</p>
+		<p>具体操作：分享此活动到微信朋友圈，将截图+个人信息（姓名、电话、地址）发送至活动页面中的任意一个公众号，即有机会获得精美护肤品一份。</p>
+	</div>
+</div>
+
+<!-- 下坠 -->
+<div class="g-doc lw-doc" id="liwuDown">
+</div>
+
+<script type="text/javascript">
+var h = document.documentElement.clientHeight,
+	w = document.documentElement.clientWidth,
+	imgwidth = '100%',
+	dTime = h/250,
+	imgDoc = document.getElementById('liwuDown'),
+	tipsDoc = document.getElementById('tipsDoc'),
+	shake = true,
+	sInt,
+	oAudio = document.getElementById('Jaudio');
+
+function randomImg(){
+	var num1 = Math.random(),
+		num2 = Math.random(),
+		num = Math.floor(num1*10 + num2*10),
+		imgurl,
+		imgw = [45,29,48,32,55,36,37,43,29,42,47,43];
+		if(num > 12){
+			return;
+		}
+	imgurl = 'http://www1.pclady.com.cn/wap/g20140703/zt/wxgz/img/lw' + num + '_' + imgw[num-1] + '.png';
+	imgwidth = imgw[num-1];
+	return imgurl;
+}
+
+function dragDown(obj){
+	setTimeout(function(){
+		obj.style.top = h + 'px';
+	}, 10);
+}
+
+function createImg(){
+	var imgurl = randomImg();
+	if(!imgurl){
+		imgurl = 'http://www1.pclady.com.cn/wap/g20140703/zt/wxgz/img/lw1_45.png'
+		imgwidth = 45;
+	}
+
+	if(!imgDoc){return;}
+	var ele = document.createElement('img');
+	ele.src = imgurl;
+	ele.width = imgwidth;
+	ele.style.webkitTransition = 'all '+ dTime +'s ease-out';
+	ele.style.top = '-50px';
+	ele.style.left = Math.random() * (w-35) +'px';
+	imgDoc.appendChild(ele);
+	dragDown(ele);
+}
+
+function showLw(){
+	shake = false;
+	tipsDoc.style.display = 'none';
+	imgDoc.style.height = h +'px';
+	imgDoc.style.display = 'block';
+	sInt = setInterval(function () {
+		createImg();
+	},150);
+	setTimeout(function(){
+		window.clearInterval(sInt);
+		//window.location.href = 'mzj.html'
+		console.log('恭喜您中奖了！')
+	}, 4000);
+}
+
+if (window.DeviceMotionEvent) {
+	window.addEventListener("devicemotion", detectShake);
+}else{
+	var cjbg = document.querySelector('.m-clickBtn');
+	cjbg.style.display = 'block';
+	cjbg.addEventListener('click', showLw);
+}
+var SHAKE_THRESHOLD = 2500,
+	last_update = 0,x,y,z,last_x,last_y,last_z;
+function detectShake(evt) {
+	var accl = evt.acceleration,
+    	acceleration = event.accelerationIncludingGravity,
+		curTime = new Date().getTime(),
+		diffTime = curTime - last_update;// 固定时间段
+	if (diffTime > 100) {
+		last_update = curTime;
+		x = acceleration.x;　　　　
+		y = acceleration.y;　　　　
+		z = acceleration.z;
+		var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+		if (speed > SHAKE_THRESHOLD && shake) {
+			//alert(speed)
+			setTimeout(function(){
+				showLw()
+			}, 500);
+		}
+		last_x = x;
+		last_y = y;
+		last_z = z;
+	}
+}
+
+</script>
+</body>
+</html>

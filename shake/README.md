@@ -9,8 +9,10 @@ demo
 ![截图2](img/demo2.jpg)
 
 ###Demo核心代码
+
+####手机摇晃检测
+
 ```
-//手机摇晃检测
 var SHAKE_THRESHOLD = 2500,
 	last_update = 0,x,y,z,last_x,last_y,last_z;
 function detectShake(evt) {
@@ -35,8 +37,11 @@ function detectShake(evt) {
 		last_z = z;
 	}
 }
+```
 
-/*产生随机图片地址*/
+###产生随机图片地址
+
+```
 function randomImg(){
 	var num1 = Math.random(),
 		num2 = Math.random(),
@@ -50,8 +55,11 @@ function randomImg(){
 	imgwidth = imgw[num-1];
 	return imgurl;
 }
+```
 
-/*把产生的随机图片放入到页面*/
+###把产生的随机图片放入到页面
+
+```
 function createImg(){
 	var imgurl = randomImg();
 	if(!imgurl){

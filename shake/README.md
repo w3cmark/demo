@@ -6,7 +6,6 @@ demo
 
 ###Demo截图
 ![截图1](img/demo1.jpg)
-
 ![截图2](img/demo2.jpg)
 
 ###Demo核心代码

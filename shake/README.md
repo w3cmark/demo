@@ -6,6 +6,7 @@ demo
 
 ###Demo截图
 ![截图1](img/demo1.jpg)
+
 ![截图2](img/demo2.jpg)
 
 [Demo在线效果](http://www.w3cmark.com/work/wxhd/cj.html)

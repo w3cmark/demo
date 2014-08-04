@@ -11,6 +11,17 @@ demo
 ###Demo核心代码
 
 ####手机摇晃检测
+```
+if (window.DeviceMotionEvent) {
+	window.addEventListener("devicemotion", detectShake);
+}else{//浏览器不支持DeviceMotionEvent
+	var cjbg = document.querySelector('.m-clickBtn');
+	cjbg.style.display = 'block';
+	cjbg.addEventListener('click', showLw);
+}
+```
+
+####手机摇晃计算
 
 ```
 var SHAKE_THRESHOLD = 2500,
@@ -22,9 +33,9 @@ function detectShake(evt) {
 		diffTime = curTime - last_update;// 固定时间段
 	if (diffTime > 100) {
 		last_update = curTime;
-		x = acceleration.x;　　　　
-		y = acceleration.y;　　　　
-		z = acceleration.z;
+		x = acceleration.x;//东方轴(X)为地平面
+		y = acceleration.y;//北方轴(Y)为地平面　　
+		z = acceleration.z;//上方轴(Z)垂直于地平面并与地平面正对
 		var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;//自定义的摇晃幅度
 		if (speed > SHAKE_THRESHOLD && shake) {
 			//alert(speed)
@@ -39,7 +50,7 @@ function detectShake(evt) {
 }
 ```
 
-###产生随机图片地址
+####产生随机图片地址
 
 ```
 function randomImg(){
@@ -57,7 +68,7 @@ function randomImg(){
 }
 ```
 
-###把产生的随机图片放入到页面
+####把产生的随机图片放入到页面
 
 ```
 function createImg(){
@@ -89,4 +100,6 @@ function dragDown(obj){
 
 ###Demo在线效果
 [Demo在线效果](http://www.w3cmark.com/work/wxhd/cj.html)
+
+参考 ``https://github.com/alexgibson/shake.js/blob/master/shake.js``
 

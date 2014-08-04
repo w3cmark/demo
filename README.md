@@ -2,7 +2,7 @@ demo
 ====
 
 前端demo
-# 我的第一个GitHub项目
+# 平时做的一些demo
 
 这是项目 [Demo](https://github.com/w3cmark/demo.git) ，
 欢迎访问。

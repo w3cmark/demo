@@ -32,6 +32,7 @@ window.mySwipe = swipe(document.getElementById('slider'), {
 });
 ```
 这个翻页功能是在原版swipe.js基础上做的扩展，新增了本次使用到的垂直翻页 ``vertical`` 以及回调函数。
+
 原版官网 http://swipejs.com/
 
 ####其他动画
@@ -54,7 +55,8 @@ setInterv:function(){
 	}, 2000)
 }
 ```
-+ messboxShow
+
++ messboxShow()
 ```
 //点击菜单下拉相应的内容
 messboxShow:function(){

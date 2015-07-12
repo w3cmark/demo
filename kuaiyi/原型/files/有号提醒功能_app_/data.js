@@ -1,0 +1,108 @@
+﻿$axure.loadCurrentPage({
+  "url":"有号提醒功能_app_.html",
+  "generationDate":new Date(1434526576014.86),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"5c4e337fedd24efdb779dfe3bbf39589",
+    "type":"Axure:Page",
+    "name":"有号提醒功能(APP)",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Applied Font",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"75ce1e57774747c08786e76f28d40f53",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":134,
+              "y":120},
+            "size":{
+              "width":14,
+              "height":16}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"5805ae14bbed4d6a95f1d16a7dc8c963",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":134,
+                  "y":120},
+                "size":{
+                  "width":14,
+                  "height":16}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"b9d71195f60b4523844eedd6332aa10c",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":140,
+              "y":90},
+            "size":{
+              "width":338,
+              "height":28}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"0dd89221b50d43f692222bb57d089a12",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":140,
+                  "y":90},
+                "size":{
+                  "width":338,
+                  "height":28}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "75ce1e57774747c08786e76f28d40f53":{
+      "scriptId":"u0"},
+    "5805ae14bbed4d6a95f1d16a7dc8c963":{
+      "scriptId":"u1"},
+    "b9d71195f60b4523844eedd6332aa10c":{
+      "scriptId":"u2"},
+    "0dd89221b50d43f692222bb57d089a12":{
+      "scriptId":"u3"}}});

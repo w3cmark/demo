@@ -1,0 +1,467 @@
+﻿$axure.loadCurrentPage({
+  "url":"人工服务_反馈.html",
+  "generationDate":new Date(1434526603079.4),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"668d303d13b847dfb306743a1f524a18",
+    "type":"Axure:Page",
+    "name":"人工服务/反馈",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Applied Font",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"8017047dea8348359de32394121d8f6c",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":400,
+              "y":100},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"b6d3323468ea4abdb46787af3dc28158",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":400,
+                  "y":100},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"4047eabbaf3446b886786f28bed05736",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":162,
+              "y":280},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"6f0c45a995a54d90a80e3ee8e7b62cc0",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":162,
+                  "y":280},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"e96fa203d8a747ee94604ee9c33fb768",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":400,
+              "y":280},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"7c6adeaff44b4ba1a5863978ca180e91",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":400,
+                  "y":280},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"4d9ef51acc21489fb6e412c2d2635118",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":660,
+              "y":280},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"d3f6ab496a5047118993bf2a8ef3dfb5",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":660,
+                  "y":280},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"649c1f48f19f4e6eada67ea701f112ca",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":450,
+              "y":160}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"3ce86b2c2cce4feb81afc4870f8a0678",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":450,
+                  "y":160}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"735a3ea7523747be8faa6bdd2f55cf19",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":450,
+              "y":160}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"04c1028d632649008955f34b2296aaf4",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":450,
+                  "y":160}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"c1ff8b98357347088923ac0eed68cca4",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":450,
+              "y":160}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"c2e011fb1497493484240d1e1b821367",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":450,
+                  "y":160}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"9115739e36f142d2ad8e891e3f21e055",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":50,
+              "y":400},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"5cb554189eee48ae8f7e55b37de60619",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":50,
+                  "y":400},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"400f54ce8a0947229b4942fee609245e",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":162,
+              "y":400},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"b9cd724cd9e842b781e3c80db870e774",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":162,
+                  "y":400},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"df4f93a254ac4c1e96f7f53fe91ac988",
+          "label":"",
+          "type":"flowShape",
+          "styleType":"flowShape",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":272,
+              "y":400},
+            "size":{
+              "width":100,
+              "height":60}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"65652fa932ef4d6c94ebc50e055b0356",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":272,
+                  "y":400},
+                "size":{
+                  "width":100,
+                  "height":60}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/快医/u0.png"}},
+{
+          "id":"d51fcc5a89144130a0d5582479693594",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":212,
+              "y":340}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"029665e750db4b07bb161ed007d2492b",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":212,
+                  "y":340}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"9bafde9ac4e24949b6a7c1e7767cc7a2",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":212,
+              "y":340}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"10b4a5fac8894b5bbe26faf24000aa9e",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":212,
+                  "y":340}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"3ab2c31aae9d4f0594caf59a507d0986",
+          "label":"",
+          "type":"connector",
+          "styleType":"connector",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":212,
+              "y":340}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"3fc98383f09047098cb42de257275099",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":212,
+                  "y":340}},
+              "adaptiveStyles":{
+}}]}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "8017047dea8348359de32394121d8f6c":{
+      "scriptId":"u0"},
+    "b6d3323468ea4abdb46787af3dc28158":{
+      "scriptId":"u1"},
+    "4047eabbaf3446b886786f28bed05736":{
+      "scriptId":"u2"},
+    "6f0c45a995a54d90a80e3ee8e7b62cc0":{
+      "scriptId":"u3"},
+    "e96fa203d8a747ee94604ee9c33fb768":{
+      "scriptId":"u4"},
+    "7c6adeaff44b4ba1a5863978ca180e91":{
+      "scriptId":"u5"},
+    "4d9ef51acc21489fb6e412c2d2635118":{
+      "scriptId":"u6"},
+    "d3f6ab496a5047118993bf2a8ef3dfb5":{
+      "scriptId":"u7"},
+    "649c1f48f19f4e6eada67ea701f112ca":{
+      "scriptId":"u8"},
+    "3ce86b2c2cce4feb81afc4870f8a0678":{
+      "scriptId":"u9"},
+    "735a3ea7523747be8faa6bdd2f55cf19":{
+      "scriptId":"u10"},
+    "04c1028d632649008955f34b2296aaf4":{
+      "scriptId":"u11"},
+    "c1ff8b98357347088923ac0eed68cca4":{
+      "scriptId":"u12"},
+    "c2e011fb1497493484240d1e1b821367":{
+      "scriptId":"u13"},
+    "9115739e36f142d2ad8e891e3f21e055":{
+      "scriptId":"u14"},
+    "5cb554189eee48ae8f7e55b37de60619":{
+      "scriptId":"u15"},
+    "400f54ce8a0947229b4942fee609245e":{
+      "scriptId":"u16"},
+    "b9cd724cd9e842b781e3c80db870e774":{
+      "scriptId":"u17"},
+    "df4f93a254ac4c1e96f7f53fe91ac988":{
+      "scriptId":"u18"},
+    "65652fa932ef4d6c94ebc50e055b0356":{
+      "scriptId":"u19"},
+    "d51fcc5a89144130a0d5582479693594":{
+      "scriptId":"u20"},
+    "029665e750db4b07bb161ed007d2492b":{
+      "scriptId":"u21"},
+    "9bafde9ac4e24949b6a7c1e7767cc7a2":{
+      "scriptId":"u22"},
+    "10b4a5fac8894b5bbe26faf24000aa9e":{
+      "scriptId":"u23"},
+    "3ab2c31aae9d4f0594caf59a507d0986":{
+      "scriptId":"u24"},
+    "3fc98383f09047098cb42de257275099":{
+      "scriptId":"u25"}}});

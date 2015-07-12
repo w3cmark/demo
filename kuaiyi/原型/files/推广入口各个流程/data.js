@@ -1,0 +1,145 @@
+﻿$axure.loadCurrentPage({
+  "url":"推广入口各个流程.html",
+  "generationDate":new Date(1434526601360.3),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"80caf9da55b64945a9adf2f57ff2d578",
+    "type":"Axure:Page",
+    "name":"推广入口各个流程",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Applied Font",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"2fa5cdce122b43dea0877cac6647dd9e",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":171,
+              "y":192},
+            "size":{
+              "width":49,
+              "height":28}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"a8e0d9373c9f4a149a4bce93e4b92fb9",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":171,
+                  "y":192},
+                "size":{
+                  "width":49,
+                  "height":28}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"b7c0e005ed054a688b087cdea7ff9d25",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":171,
+              "y":272},
+            "size":{
+              "width":49,
+              "height":28}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"c38a67ce01ec44f58567fe54b87f3b52",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":171,
+                  "y":272},
+                "size":{
+                  "width":49,
+                  "height":28}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}},
+{
+          "id":"f3c7b3bb389049f8a6e0340dd9737d32",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":171,
+              "y":100},
+            "size":{
+              "width":49,
+              "height":28}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"8d98d3a934a643efa3b08990a8119807",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":171,
+                  "y":100},
+                "size":{
+                  "width":49,
+                  "height":28}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "2fa5cdce122b43dea0877cac6647dd9e":{
+      "scriptId":"u0"},
+    "a8e0d9373c9f4a149a4bce93e4b92fb9":{
+      "scriptId":"u1"},
+    "b7c0e005ed054a688b087cdea7ff9d25":{
+      "scriptId":"u2"},
+    "c38a67ce01ec44f58567fe54b87f3b52":{
+      "scriptId":"u3"},
+    "f3c7b3bb389049f8a6e0340dd9737d32":{
+      "scriptId":"u4"},
+    "8d98d3a934a643efa3b08990a8119807":{
+      "scriptId":"u5"}}});

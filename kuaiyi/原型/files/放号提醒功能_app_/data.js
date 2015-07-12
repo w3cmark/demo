@@ -1,0 +1,71 @@
+﻿$axure.loadCurrentPage({
+  "url":"放号提醒功能_app_.html",
+  "generationDate":new Date(1434526576000.85),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"c3f2a007f4354afba5bbb11ebd9cb15c",
+    "type":"Axure:Page",
+    "name":"放号提醒功能(APP)",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Applied Font",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"ccdcbee7a25841ef8f79c8394b551062",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"h2",
+          "visible":true,
+          "style":{
+            "location":{
+              "x":140,
+              "y":90},
+            "size":{
+              "width":338,
+              "height":28}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"8845be3e24354bc8ba6d5e8e76f05e2c",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "location":{
+                  "x":140,
+                  "y":90},
+                "size":{
+                  "width":338,
+                  "height":28}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"resources/images/transparent.gif"}}]}},
+  "masters":{
+},
+  "objectPaths":{
+    "ccdcbee7a25841ef8f79c8394b551062":{
+      "scriptId":"u0"},
+    "8845be3e24354bc8ba6d5e8e76f05e2c":{
+      "scriptId":"u1"}}});

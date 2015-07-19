@@ -27,7 +27,7 @@ var Index = function(){
 	        if(elm.val() == ""){
 	            elm.val(elm.data("placeholder"));
 	            elm.css({
-	                color: '#bbb'
+	                color: '#aaa'
 	            })
 	            if(elm.attr('name') == 'password'){
 	                elm.attr('type','text');

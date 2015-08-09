@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>标题</title>
+<title>首页静态页面</title>
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="" />
@@ -16,482 +16,49 @@
 <![endif]-->
 
 <!-- 顶部 -->
-<div class="navibar">
-  <div class="navibar-wap clearfix">
-    <a href="" target="_blank" title="名医汇">名医汇</a> | 
-    <a href="" target="_blank" title="医院库">医院库</a> | 
-    <a href="" target="_blank" title="科室专家">科室专家</a> | 
-    <a href="" target="_blank" title="疾病库">疾病库</a> | 
-    <a href="" target="_blank" title="名医排行榜">名医排行榜</a> | 
-    <a href="" target="_blank" title="预约挂号">预约挂号</a> | 
-    <a href="" target="_blank" title="网上咨询">网上咨询</a> | 
-    <a href="" target="_blank" title="专家观点">专家观点</a> | 
-    <a href="" target="_blank" title="重病导诊">重病导诊</a>
+<link rel="import" href="inline/top.html?__inline">
 
-    <a class="nav">
-      <span></span> 导航
-    </a>
-  </div>
-</div>
-<!-- 头部 -->
-<div class="header clearfix">
-  <h1 class="logo">
-    <a href="http://www.mingyihui.net" title="名医汇" target="_self">
-      <span>已帮助 <b>68,98,36</b> 人挂号成功</span>
-    </a>
-  </h1>
-
-  <div class="header-nav">
-    <a href="" target="_blank" title="" class="cur">首页</a>
-    <a href="" target="_blank" title="">我的医生</a>
-    <a href="" target="_blank" title="">我的订单</a>
-    <a href="" target="_blank" title="">挂号渠道</a>
-    <span>13450356123</span>
-  </div>
-</div>
 <!-- banner -->
 <div class="banner">
-  <div class="banner-wrap clearfix">
-    <div class="banner-left fl">
-      <h2>快速预约挂号</h2>
-      <p class="p1">快医已经开通北京、上海、广州等全国 39 个城市、 3205 家医院预约挂号服务</p>
-      <p class="p2">您如果知道医生的名字，也可以通过搜医生的功能进行预约挂号。</p>
+  <div class="banner-wrap banner-wrap-simple">
 
-      <div class="ks-input clearfix" style="float:left">
-        <div class="ks-label">
-        <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字">
+    <!-- <p class="p2">* 仅支持医生搜索</p> -->
+    <div class="location clearfix">
+      <div class="location-icon fl"></div>
+      <div class="select-mod fl">
+        <span class="select-icon"></span>
+        <div class="m-select-cur" id="Jselect">广州</div>
+        <div class="m-select-option" id="Joption">
+            <span class="option">广州</span>
+            <span class="option">上海</span>
+            <span class="option">北京</span>
+            <span class="option">天津</span>
+            <span class="option">重庆</span>
         </div>
-        <input type="button" class="ks-submit" value="" id="btnSearch">
-        <a href="#" target="_blank">高级搜索</a>
       </div>
-
-    </div>
-
-    <div class="banner-right fr">
-      <div class="location clearfix">
-        <div class="location-icon fl"></div>
-        <div class="select-mod fl">
-          <span class="select-icon"></span>
-          <div class="m-select-cur" id="Jselect">广州</div>
-          <div class="m-select-option" id="Joption">
-              <span class="option">广州</span>
-              <span class="option">上海</span>
-              <span class="option">北京</span>
-              <span class="option">天津</span>
-              <span class="option">重庆</span>
-          </div>
-        </div>
-        <div class="hot fl">
-          热门： <a href="">北京</a>  <a href="">上海</a>  <a href="">广州</a>  <a href="">天津</a>  
-        </div>
-      </div>     
-
-      <form id="" action="#" method="post">
-        <table>
-          <tbody>
-          <tr class="row1">
-            <th class="tTit">选择医院</th>
-            <td class="iCol">
-              <select name="keshi1">
-                <option value="0">内科</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
-            </td>
-          </tr>
-          <tr class="row1">
-            <th class="tTit">选择科室</th>
-            <td class="iCol">
-              <select name="keshi1">
-                <option value="0">内科</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
-            </td>
-          </tr>
-          <tr class="row1">
-            <th class="tTit">选择医生</th>
-            <td class="iCol">
-              <select name="doctor">
-                <option value="0">周建芳</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
-            </td>
-          </tr>
-
-          <tr class="row8">
-            <th class="tTit"></th>
-            <td class="iCol">         
-              <input class="inpBtn" type="submit" id="submitButton" value="查询号源"></td>
-          </tr>
-        </tbody></table>
-        </form>
-
+      <div class="hot fr">
         <a href="" class="question"><em></em>遇到问题？</a>
-    </div>
-
-  </div>
-</div>
-<!-- main -->
-<div class="main clearfix">
-  <div class="main-left fl">
-    <div class="th">医生信息</div>
-    <div class="tb">
-
-      <div class="box">
-        <span class="s1">刘文省 <i  class="i1">主任医师</i> <em>有</em></span>
-        <span class="s2">擅   长：小儿哮喘和急慢性咳嗽病证的诊治。</span>
-        <span class="s3">
-          好评数：<i class="i1">231</i>个 
-          <i class="i2"><em></em></i>
-        </span>
-      </div>
-
-      <div class="box">
-        <span class="s1">刘文省 <i>副主任医师</i> <em class="none">满</em></span>
-        <span class="s2">擅   长：小儿哮喘和急慢性咳嗽病证的诊治。</span>
-        <span class="s3">
-          好评数：<i class="i1">231</i>个 
-          <i class="i2"><em></em></i>
-        </span>
-      </div>
-
-      <div class="box">
-        <span class="s1">刘文省 <i>副主任医师</i> <em class="none">满</em></span>
-        <span class="s2">擅   长：小儿哮喘和急慢性咳嗽病证的诊治。</span>
-        <span class="s3">
-          好评数：<i class="i1">231</i>个 
-          <i class="i2"><em></em></i>
-        </span>
-      </div>
-
-      <div class="box">
-        <span class="s1">刘文省 <i>副主任医师</i> <em class="none">满</em></span>
-        <span class="s2">擅   长：小儿哮喘和急慢性咳嗽病证的诊治。</span>
-        <span class="s3">
-          好评数：<i class="i1">231</i>个 
-          <i class="i2"><em></em></i>
-        </span>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="main-right fr">
-    <div class="th">
-      医生号源
-      <div class="mark">
-        <form id="" action="#" method="post">
-          <input type="radio" name="time" value="全部" checked="" id="all">
-          <label for="all" class="mr10">全部</label>
-
-          <input type="radio" name="time" value="明天" checked="" id="tomorrow">
-          <label for="tomorrow" class="mr10">明天</label>
-
-          <input type="radio" name="time" value="最近7天" checked="" id="seven">
-          <label for="seven" class="mr10">最近7天</label>
-          <span></span>
-          <a class="refresh" href="javascript:;"><em></em>刷新</a>
-          <input type="checkbox" class="checkbox" id="auto" name="auto" value="0">
-          <label for="auto">自动</label>
-        </form>
       </div>
     </div>
-    <div class="tb" id="Jbooklist">
-      <ul class="clearfix">
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn btnA">已约满</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li class="last">
-          <a href="javascript:;">
-            <span class="s1">有号</span>
-            <span class="s2"></span>
-            查看全部
-          </a>
-        </li>
-      </ul>
 
-      <ul class="clearfix">
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn btnA">已约满</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li class="last">
-          <a href="javascript:;">
-            <span class="s1 none">已满</span>
-            <span class="s2"></span>
-            查看全部
-          </a>
-        </li>
-      </ul>
-
-      <ul class="clearfix">
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn btnA">已约满</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li class="last">
-          <a href="javascript:;">
-            <span class="s1 none">已满</span>
-            <span class="s2"></span>
-            查看全部
-          </a>
-        </li>
-      </ul>
-
-      <ul class="clearfix">
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn btnA">已约满</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-        <li>
-          <span class="s1">06月18日/周一</span>
-          <span class="s2">挂号费：<em>8元</em></span>
-          <a href="javascript:;" class="btn">立即预约</a>
-          <div class="info">
-            <p>门诊类型：专家门诊</p>
-            <p>出诊时间：2015年6月8日</p>
-            <p>上午 所属科室：中医科</p>
-            <span></span>
-          </div>
-        </li>
-      </ul>
-
+    <div class="ks-input clearfix">
+      <div class="ks-label">
+      <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字">
+      </div>
+      <input type="button" class="ks-submit" value="" id="btnSearch">
     </div>
+    <p class="p2">* 仅支持医生搜索</p>
+    <p class="p2">* 快医已经开通北京、上海、广州等全国39个城市、3205家医院、3250位医生预约挂号服务 </p>
+
   </div>
 </div>
 
-<div class="main">
-  <div class="rule">
-    <h2>挂号网预约规则：</h2>
-    <p>1.预约周期：<span>提前1-7天内</span>。放号时间是每天凌晨 12：00。 </p>
-    <p>2. 每位专家限约一个号，当天16：00以后停止预约次日号。 </p>
-    <br/>
-    <h2>就医160网预约规则：</h2>
-    <p>1. 填写完预约相关信息后请仔细核对，如信息错误，将无法取到预约号。 </p>
-    <p>2.为保证您准时就诊，请于就诊当日按所预约时间段提前30</p>
-    <p>3. 填写完预约相关信息后请仔细核对，如信息错误，将无法取到预约号。 </p>
-    <p>4.为保证您准时就诊，请于就诊当日按所预约时间段提前30</p>
-  </div>
-  
-</div>
 
-<!-- 常预约 -->
-<div class="often">
-  <div class="th">常预约的医生</div>
-  <div class="tb">
-    <a href="">刘广省</a>
-    <a href="">马建华</a>
-    <a href="">潘湘斌</a>
-    <a href="">蒋子栋</a>
-  </div>
-</div>
+<!-- 底部 -->
+<link rel="import" href="inline/footer.html?__inline">
 
-<!-- 底部banner -->
-<a href="http://www.mingyihui.net/about.html" target="_blank" class="foot-banner" title="名医汇">
-“让预约挂号轻松一点”
-<span></span>
-<em></em>
-</a>
-
-<div class="footer">
-  任何关于疾病的建议都不能替代执业医师的面对面诊断。所有门诊时间仅供参考，最终以医院当日公布为准。网友、医生言论仅代表其个人观点，不代表本站同意其说法<br>
-  请谨慎参阅，网站信息均由编辑手工录入，仅供患者参考，本站不承担由此引起的法律责任。如有任何疑问，欢迎致电咨询。<br>
-   本公司常年法律顾问：北京市盈科(广州)律师事务所<br>
-    <a href="http://www.mingyihui.net/about.html" title="关于名医汇">关于名医汇</a>
-    <a href="http://www.mingyihui.net/shenming.html" title="网站声明">网站声明</a>
-    <a href="http://www.mingyihui.net/zhaopin.html" title="招聘启事">招聘启事</a>
-    <a href="http://www.mingyihui.net/partner.html" title="联系我们">联系我们</a>
-    <a href="javascript:showSuggestbox();" target="_self" title="反馈建议">反馈建议</a>
-  
-  <br><a href="http://www.miibeian.gov.cn/" target="_blank">备案粤ICP备12040220号-2</a><br>互联网药品信息服务资格证书　证书编号：（粤）-经营性-2015-0002<br>CopyRight2010-2015广州诚益信息科技有限公司版权所有<br>  
-</div>
-
-<script type="text/javascript" src="http://www.mingyihui.net/templates/default/js/jquery-1.5.2.min.js"></script>
+<!-- <script type="text/javascript" src="http://www.mingyihui.net/templates/default/js/jquery-1.5.2.min.js"></script> -->
+<script type="text/javascript" src="data/jquery-1.11.1.min.js"></script>
 <script charset="gb2312" type="text/javascript" src="data/index.js"></script>
 </body>
 </html>

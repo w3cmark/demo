@@ -3,6 +3,7 @@ var Index = function(){
 		fixPlaceholder();
 		//调用
 		selectMod('#Jselect','#Joption',true);
+		fixHeader();
 	},
 	fixPlaceholder = function(){//兼容输入框placeholder
 	    $('input[placeholder], textarea[placeholder]').focus(function(){
@@ -95,6 +96,33 @@ var Index = function(){
 	            selectHide($option);
 	        })
 	    })
+	},
+	fixHeader = function(){//头部fixed
+		var $heder = $('#Jheader'),
+			$heder_icon = $('#Jheader .header-icon'),
+			$win = $(window),
+			wtop = $win.scrollTop();
+		if(!$heder.hasClass('header-fix')){
+			return;
+		}
+		fixed(wtop);
+		$win.bind('scroll',function(){
+			wtop = $win.scrollTop();
+			fixed(wtop);
+		})
+		function fixed(wtop){
+			if(wtop > 50){
+				$heder_icon.show();
+				$heder.css({
+					top: 0
+				})
+			}else{
+				$heder_icon.hide();
+				$heder.css({
+					top: 50
+				})
+			}
+		}
 	};
 	return{
 		init: init,

@@ -1,7 +1,12 @@
 ﻿@import "_reset.less";
 @import "_animation.less";
+@import "_ri_li.less";
+
 body{
 	position: relative;
+}
+.hide{
+	display: none;
 }
 /*顶部*/
 .navibar{
@@ -12,6 +17,7 @@ body{
 	color: #e5e5e5;
 	max-width: 1918px;
 	min-width: 1200px;
+	margin:0 auto;
 	_width:~'expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%"))';
 	font-family:"Microsoft Yahei";
 	background:url(../img/icon01.png) repeat-x;
@@ -107,6 +113,7 @@ body{
 	float: right;
 	font-size: 18px;	
 	font-family:"Microsoft Yahei";
+	position: relative;
 	a{
 		display: inline-block;
 		color: #333;
@@ -115,19 +122,71 @@ body{
 		padding: 0 15px;
 		text-align: center;
 		margin-top: 15px;
-		&:hover,.cur{
+		&:hover,&.cur{
 			color: #52b553;
 			text-decoration: none;
 			border-bottom: 3px solid #52b553;
 		}
+		&.qudao{
+			position: relative;
+			em{
+				position: absolute;
+				top:-15px;
+				right:0;
+				display:block;
+				width:28px;
+				height:28px;
+				text-align: center;
+				line-height: 28px;
+				color:#fff;
+				font-size:12px;
+				font-family: "Arial";
+				background: url(../img/_icon18.png?__sprite) no-repeat;
+			}
+		}
 	}
-	span{
+	.tel{
 		height: 90px;
 		line-height: 90px;
 		display: inline-block;
 		color: #999;
 		padding: 0 15px;
 		background:url(../img/icon03.png) no-repeat;
+	}
+	.info{
+		position: absolute;
+		z-index: 5;
+		top: 77px;
+		left: 286px;
+		width: 142px;
+		border: 1px solid #dbe1e5;
+		background: #fff;
+		line-height: 24px;
+		font-size: 12px;
+		color: #333;
+		padding:10px 20px;
+		text-align: left;
+		display: none;
+		.opacity(0);
+		.transition(opacity 0.3s ease);
+		span{
+			position: absolute;
+			display: block;
+			width: 16px;
+			height: 12px;
+			top: -11px;
+			left: 43px;
+			overflow: hidden;
+			background:url(../img/_icon16.png?__sprite) no-repeat;
+		}
+		p{
+			em{
+				color:#ff3333;
+			}
+		}
+		&.show{
+			.opacity(100);
+		}
 	}
 }
 .login-form{
@@ -170,8 +229,7 @@ body{
 .banner{
 	max-width: 1920px;
 	min-width: 1200px;
-	margin-bottom: 20px;
-	margin-top: 101px;
+	margin:101px auto 20px;
 	_width:~'expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%"))';
 	background:url(../img/banner.png) top center no-repeat;
 }
@@ -250,10 +308,10 @@ body{
 	border:0;
 	background:url(../img/icon04.png) 17px 10px no-repeat;
 	cursor:pointer;
-	.transition(all 0.2s ease);
-}
-.ks-input .ks-submit:hover{
-	background-position:19px 10px;
+	.transition(all 0.15s ease-in-out);
+	&:hover{
+		background-position:19px 10px;
+	}
 }
 
 .select-mod{
@@ -751,7 +809,7 @@ body{
 				display: block;
 				width: 16px;
 				height: 12px;
-				top: -10px;
+				top: -11px;
 				left: 15px;
 				overflow: hidden;
 				background:url(../img/_icon16.png?__sprite) no-repeat;
@@ -761,6 +819,15 @@ body{
 			}
 		}
 	}
+}
+// 还没选择
+.not-chose{
+	border: 1px solid #e5e5e5;
+	height:300px;
+	line-height: 300px;
+	font-size:20px;
+	text-align: center;
+	font-family:"Microsoft Yahei";
 }
 .rule{
 	border: 1px solid #e5e5e5;
@@ -818,10 +885,10 @@ body{
 	color:#fff;
 	background:#56b74a;
 	font-weight:bold;
-	margin-top:25px;
 	display:block;
 	max-width: 1920px;
 	min-width: 1200px;
+	margin:25px auto 0;
 	_width:~'expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%"))';
 	span{
 		position:absolute;

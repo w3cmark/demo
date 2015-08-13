@@ -1,9 +1,11 @@
 var Index = function(){
 	var init = function(){
 		fixPlaceholder();
+		qudaoFun();
 		//调用
 		selectMod('#Jselect','#Joption',true);
 		fixHeader();
+		calendarFun();//日历
 	},
 	fixPlaceholder = function(){//兼容输入框placeholder
 	    $('input[placeholder], textarea[placeholder]').focus(function(){
@@ -38,8 +40,14 @@ var Index = function(){
 	},
 	booklistFun = function(){//预约列表的鼠标经过显示相关信息
 		var $btns = $('#Jbooklist .btn');
-		// console.log($btns.length)
-		$btns.bind('mouseenter',function(){
+		infoShowEven($btns);
+	},
+	qudaoFun = function(){//渠道弹层
+		var $btns = $('#Jheader .qudao');
+		infoShowEven($btns);
+	},
+	infoShowEven = function(btn){
+		btn.bind('mouseenter',function(){
 			var $this = $(this),
 				$info = $this.parent().find('.info');
 			showPop($info);
@@ -123,6 +131,18 @@ var Index = function(){
 				})
 			}
 		}
+	},
+	calendarFun = function(){//日期
+		//单个日历（本月）开启select选择
+		var oCal_2 = new Calendar({
+		    id: "#J_Cal_2",
+		    isPopup: !0,
+		    isPrevBtn: !0,
+		    isNextBtn: !0
+		});
+		oCal_2.on("dateClick", function(obj) {
+		    alert(obj["data-date"])
+		});
 	};
 	return{
 		init: init,

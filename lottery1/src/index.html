@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>抽奖组件</title>
+<meta name="keywords" content="<!--#echo var='Keywords'-->" />
+<meta name="description" content="<!--#echo var='Description'-->" />
+<link rel="dns-prefetch" href="http://res.nie.netease.com">
+<style type="text/css">
+@charset "gb2312";
+/*= reset*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;padding:0;vertical-align:baseline;}
+:focus {outline:0;}
+ol,ul,li {list-style:none;}
+i,em{font-style:normal;}
+img{vertical-align:top;}
+table {border-collapse:collapse;border-spacing:0;}
+/*= html5*/
+article,aside,audio,bdi,canvas,command,datalist,details,figcaption,figure,footer,header,hgroup,keygen,mark,meter,nav,output,progress,rp,rt,ruby,section,source,summary,time,track,vedio {display:block}
+/*= base*/
+html,body{height:100%;}
+body{color:#000;font:12px/170% simsun,arial,"Lucida Grande","Lucida Sans Unicode";}
+a {text-decoration:none;}
+a:hover{text-decoration:underline;color:#e1b858}
+#NIE-topBar {height:55px;} 
+.clr:after{clear: both;content:'\0020';display: block;visibility:hidden;height:0;}
+.clr{zoom:1;}
+.hide {display:none;}
+.ht{text-indent:-9999px;overflow:hidden;}
+.cbtn { display: block; text-indent: -999em; overflow: hidden; background: url(../images/spr.png) -9999px -9999px no-repeat; }
+
+.wrap {width:100%;min-width:1200px;_width:~'expression((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%")';overflow:hidden;background-color:#081120;}
+
+/* 抽奖 */
+.lottery-wrap{position:relative; height:408px; background:#8c63ae; border:1px solid #8c63ae;}
+.lottery-award,.lottery-btn{position:absolute; display:block;background:#aaa; overflow:hidden;}
+.lottery-btn{left:175px; top:135px; width:352px; height:136px;line-height: 120px; background:#f60;color:#fff;text-align: center;font-size:30px;}
+
+.lottery-btn em{text-indent: 0;position: absolute;left: 0;top: 89px;width: 100%;text-align: center;
+    color: #fff;font-size: 16px;font-style: normal;line-height: 24px;}
+.lottery-award{width:174px; height:134px;}
+.lottery-span0{left:0; top:0;}
+.lottery-span1{left:176px; top:0;}
+.lottery-span2{left:352px; top:0;}
+.lottery-span3{left:528px; top:0;}
+.lottery-span4{left:528px; top:136px;}
+.lottery-span5{left:528px; top:272px;}
+.lottery-span6{left:352px; top:272px;}
+.lottery-span7{left:176px; top:272px;}
+.lottery-span8{left:0; top:272px;}
+.lottery-span9{left:0; top:136px;}
+.lottery-award.current{background:#fff;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+    <!--抽奖一-->
+        <div class="lottery-wrap" id="Jlotterywrap">
+                <a class="lottery-btn" href="javascript:;">
+                    立即抽奖<em >您还有<label class="lottery-remain">0</label>次机会</em>
+                </a>
+                <span data-num = "1" class="lottery-span0 lottery-award"></span>
+                <span data-num = "2" class="lottery-span1 lottery-award"></span>
+                <span data-num = "3" class="lottery-span2 lottery-award"></span>
+                <span data-num = "4" class="lottery-span3 lottery-award"></span>
+                <span data-num = "5" class="lottery-span4 lottery-award"></span>
+                <span data-num = "6" class="lottery-span5 lottery-award"></span>
+                <span data-num = "7" class="lottery-span6 lottery-award"></span>
+                <span data-num = "8" class="lottery-span7 lottery-award"></span>
+                <span data-num = "9" class="lottery-span8 lottery-award"></span>
+                <span data-num = "10" class="lottery-span9 lottery-award"></span>
+        </div>
+    <br/>
+    <br/>
+    <!--抽奖二-->
+        <div class="lottery-wrap" id="JlotterywrapA">
+                <a class="lottery-btn" href="javascript:;">
+                    立即抽奖<em >您还有<label class="lottery-remain">0</label>次机会</em>
+                </a>
+                <span data-num = "1" class="lottery-span0 lottery-award"></span>
+                <span data-num = "2" class="lottery-span1 lottery-award"></span>
+                <span data-num = "3" class="lottery-span2 lottery-award"></span>
+                <span data-num = "4" class="lottery-span3 lottery-award"></span>
+                <span data-num = "5" class="lottery-span4 lottery-award"></span>
+                <span data-num = "6" class="lottery-span5 lottery-award"></span>
+                <span data-num = "7" class="lottery-span6 lottery-award"></span>
+                <span data-num = "8" class="lottery-span7 lottery-award"></span>
+                <span data-num = "9" class="lottery-span8 lottery-award"></span>
+                <span data-num = "10" class="lottery-span9 lottery-award"></span>
+        </div>
+    
+</div>
+<!-- PC版用jq -->
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).1.11.js"></script>
+<!-- 移动版用zepto   -->
+<!-- <script charset="gb2312" src="http://res.nie.netease.com/comm/js/zepto(mixNIE).last.js"></script> -->
+<script charset="gb2312" src="js/Lottery.js"></script>
+<script type="text/javascript">
+
+nie.use(['util.Lottery'],function(){
+    // 实例化一
+    var loA = Lottery.create({
+        wrap: '#Jlotterywrap',      //抽奖主区域DOM【必填】
+        awards: '.lottery-award',   //奖项DOM【必填】
+        initCallback: function(){   //初始化回调【选填】
+            // console.log('init1...');
+        },
+        successCallback: function(data){ //抽奖成功回调【选填】
+            alert(data)
+        }
+    })
+
+    $('#Jlotterywrap .lottery-btn').bind('click',function(){
+        loA.startLottery();
+
+        $.ajax({
+            url: 'http://xdw-lottery.webapp.163.com/user/lottery',//抽奖接口
+            dataType: "jsonp",
+            success: function (data) {
+                if (data.success) {
+                    loA.stopRotate(data.lottery);
+                }else{
+                    loA.stopRotate();
+                    alert('抽奖失败');
+                }
+            },
+            error: function () {                      
+                alert('网络信号不好，请刷新再试');
+            }
+        });
+    })
+
+    // 实例化二
+    var loB = Lottery.create({
+        wrap: '#JlotterywrapA',      //抽奖主区域DOM【必填】
+        awards: '.lottery-award',   //奖项DOM【必填】
+        initCallback: function(){   //初始化回调【选填】
+            // console.log('init2...');
+        },
+        successCallback: function(data){ //抽奖成功回调【选填】
+            alert(data)
+        }
+    })
+
+
+    $('#JlotterywrapA .lottery-btn').bind('click',function(){
+        loB.startLottery();
+
+        $.ajax({
+            url: 'http://xdw-lottery.webapp.163.com/user/lottery',//抽奖接口
+            dataType: "jsonp",
+            success: function (data) {
+                if (data.success) {
+                    loB.stopRotate(data.lottery);
+                }else{
+                    alert('抽奖失败');
+                }
+                
+            },
+            error: function () {                      
+                alert('网络信号不好，请刷新再试');
+            }
+        });
+    })
+
+})
+
+</script>
+</body>
+</html>

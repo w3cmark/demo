@@ -159,7 +159,6 @@
     <div class="main-right fr">
 
       <div class="th">
-        医生号源
         <div class="mark">
           <form id="" action="#" method="post">
             <input type="radio" name="time" value="全部" checked="" id="all">
@@ -170,13 +169,118 @@
 
             <input type="radio" name="time" value="最近7天" checked="" id="seven">
             <label for="seven" class="mr10">最近7天</label>
-            <span><a href="javascript:;" id="J_Cal_2">弹出日历</a></span>
+            <span class="mark-date"><i>2015-06-18 至 2015-06-23</i><em></em></span>
             <a class="refresh" href="javascript:;"><em></em>刷新</a>
             <input type="checkbox" class="checkbox" id="auto" name="auto" value="0">
             <label for="auto">自动</label>
           </form>
         </div>
+
+        医生号源
       </div>
+
+      <!-- 日期弹层s -->
+      <div class="date-pop" id="Jdatepop">
+        <div class="pop-th">
+          <span class="back-month fr">返回本月</span>
+          <span class="year fl">
+            <select name="year">
+              <option value="2015">2015年</option>
+              <option value="2014">2014年</option>
+              <option value="2013">2013年</option>
+            </select>
+          </span>
+          <span class="month fl">
+            <a href="javascript;:" class="prev-month"></a>
+            <select name="month">
+              <option value="0">1月</option>
+              <option value="1">2月</option>
+              <option value="2">3月</option>
+            </select>
+            <a href="javascript;:" class="next-month"></a>
+          </span>
+        </div>
+        <div class="pop-tb">
+          <ul>
+            <li class="li1">
+              <span>星期一</span>
+              <span>星期二</span>
+              <span>星期三</span>
+              <span>星期四</span>
+              <span>星期五</span>
+              <span class="weekend">星期六</span>
+              <span class="weekend">星期日</span>
+            </li>
+            <li>
+              <a href="javascript;:"></a>
+              <a href="javascript;:"></a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月2日</a>
+              <a href="javascript;:">7月3日</a>
+              <a href="javascript;:" class="current weekend">7月4日</a>
+              <a href="javascript;:" class="weekend">7月5日</a>
+            </li>
+            <li>
+              <a href="javascript;:">7月5日</a>
+              <a href="javascript;:">7月5日</a>
+              <a href="javascript;:">7月5日</a>
+              <a href="javascript;:">7月5日</a>
+              <a href="javascript;:">7月5日</a>
+              <a href="javascript;:" class="weekend">7月5日</a>
+              <a href="javascript;:" class="weekend">7月5日</a>
+            </li>
+            <li>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月2日</a>
+              <a href="javascript;:">7月3日</a>
+              <a href="javascript;:" class="weekend">
+                7月4日
+                <i class="btn btnA">已约满</i>
+              </a>
+              <a href="javascript;:" class="weekend">
+                7月5日
+                <i class="btn">立即预约</i>
+              </a>
+            </li>
+            <li>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月2日</a>
+              <a href="javascript;:">7月3日</a>
+              <a href="javascript;:" class="weekend">
+                7月4日
+                <i class="btn btnA">已约满</i>
+              </a>
+              <a href="javascript;:" class="weekend">
+                7月5日
+                <i class="btn">立即预约</i>
+              </a>
+            </li>
+            <li>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月1日</a>
+              <a href="javascript;:">7月2日</a>
+              <a href="javascript;:">7月3日</a>
+              <a href="javascript;:" class="weekend">
+                7月4日
+                <i class="btn btnA">已约满</i>
+              </a>
+              <a href="javascript;:" class="weekend">
+                7月5日
+                <i class="btn">立即预约</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 日期弹层e -->
+
+
+
       <div class="tb" id="Jbooklist">
         <ul class="clearfix">
           <li>

@@ -5,7 +5,6 @@ var Index = function(){
 		//调用
 		selectMod('#Jselect','#Joption',true);
 		fixHeader();
-		calendarFun();//日历
 	},
 	fixPlaceholder = function(){//兼容输入框placeholder
 	    $('input[placeholder], textarea[placeholder]').focus(function(){
@@ -131,22 +130,12 @@ var Index = function(){
 				})
 			}
 		}
-	},
-	calendarFun = function(){//日期
-		//单个日历（本月）开启select选择
-		var oCal_2 = new Calendar({
-		    id: "#J_Cal_2",
-		    isPopup: !0,
-		    isPrevBtn: !0,
-		    isNextBtn: !0
-		});
-		oCal_2.on("dateClick", function(obj) {
-		    alert(obj["data-date"])
-		});
 	};
 	return{
 		init: init,
-		booklistFun: booklistFun
+		booklistFun: booklistFun,
+		showPop: showPop,
+		hidePop: hidePop
 	}
 
 
@@ -154,4 +143,8 @@ var Index = function(){
 
 Index.init();
 //当预约列表插入完成后调用
-Index.booklistFun()
+Index.booklistFun();
+// 显示某个弹层
+// Index.showPop($('#Jdatepop'));
+//隐藏某个弹层
+// Index.hidePop($('#Jdatepop'));

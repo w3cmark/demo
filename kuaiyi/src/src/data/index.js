@@ -29,14 +29,16 @@ var Index = function(){
 		})
 
 		// 医生弹层滚动条
-		$("#Jdoctorpop .pop-tb").niceScroll({
-            cursorcolor: "#e5e5e5",
-            cursorwidth: "10px",
-            cursorborder: "0",
-            cursorborderradius: "10px",
-            scrollspeed:80,
-            autohidemode:true
-        });
+		if($("#Jdoctorpop .pop-tb")[0]){
+			$("#Jdoctorpop .pop-tb").niceScroll({
+	            cursorcolor: "#e5e5e5",
+	            cursorwidth: "10px",
+	            cursorborder: "0",
+	            cursorborderradius: "10px",
+	            scrollspeed:80,
+	            autohidemode:true
+	        });
+		}		
         // 日期弹层
         $('#Jdate').bind('click',function(){
 			if($datepop.hasClass('show')){
@@ -59,6 +61,11 @@ var Index = function(){
 				hidePop($datepop);
 			}
 		})
+
+		//预约列表鼠标经过显示相关信息
+		booklistFun();
+		//结果页列表鼠标经过显示相关信息
+		resultlistFun();
 
 		fixHeader();		
 	},
@@ -93,20 +100,24 @@ var Index = function(){
 	        }
 	    });
 	},
-	booklistFun = function(){//预约列表的鼠标经过显示相关信息
-		var $btns = $('#Jbooklist .btn');
-		infoShowEven($btns);
+	resultlistFun = function(){//预约列表的鼠标经过显示信息
+		var $btns = $('#Jresultul');
+		infoShowEven($btns,'.btn');
 	},
 	qudaoFun = function(){//渠道弹层
-		var $btns = $('#Jheader .qudao');
-		infoShowEven($btns);
+		var $btns = $('#Jheader');
+		infoShowEven($btns,'.qudao');
 	},
-	infoShowEven = function(btn){
-		btn.bind('mouseenter',function(){
+	booklistFun = function(){//结果页列表的鼠标经过显示相关信息
+		var $btns = $('#Jbooklist');
+		infoShowEven($btns,'.btn');
+	},
+	infoShowEven = function(btn,target){
+		btn.on('mouseenter',target,function(){
 			var $this = $(this),
 				$info = $this.parent().find('.info');
 			showPop($info);
-		}).bind('mouseleave',function(){
+		}).on('mouseleave',target,function(){
 			var $this = $(this),
 				$info = $this.parent().find('.info');
 			hidePop($info);
@@ -190,6 +201,7 @@ var Index = function(){
 	return{
 		init: init,
 		booklistFun: booklistFun,
+		resultlistFun: resultlistFun,
 		showPop: showPop,
 		hidePop: hidePop
 	}
@@ -198,8 +210,7 @@ var Index = function(){
 }();
 
 Index.init();
-//当预约列表插入完成后调用
-Index.booklistFun();
+
 // 显示某个弹层
 // Index.showPop($('#Jdatepop'));
 //隐藏某个弹层

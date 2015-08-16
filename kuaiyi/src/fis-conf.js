@@ -53,7 +53,7 @@ fis.config.merge({
         },
         spriter:  {
             csssprites : {
-                margin: 0,
+                margin: 10,
                 //图片缩放比例，iphone为0.5，默认1
                 scale: fis.config.get('css-scale'),
                 layout: 'matrix'

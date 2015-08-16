@@ -1,6 +1,5 @@
 ﻿@import "_reset.less";
 @import "_animation.less";
-@import "_ri_li.less";
 
 body{
 	position: relative;
@@ -257,6 +256,18 @@ body{
 	margin:101px auto 20px;
 	_width:~'expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%"))';
 	background:url(../img/banner.png) top center no-repeat;
+	&.banner-result{
+		border-top: 2px solid #62c63f;
+		background-image: url(../img/banner02.png);
+		.banner-wrap{
+			width: 1120px;
+			padding-top: 35px;
+			height: 778px;
+			.ks-input{
+				margin-bottom: 40px;
+			}
+		}
+	}
 }
 .banner-wrap{
 	width:1200px;
@@ -548,7 +559,7 @@ body{
 	.ks-input {
 		height: 55px;
 		width: 675px;
-		margin-bottom: 20px;
+		margin: 0 auto 20px;
 		background: url(../img/input02.png) no-repeat;
 		.ks-label{
 			width:577px;
@@ -604,6 +615,7 @@ body{
 	width:1120px;	
 	margin:0 auto;
 	text-align: left;
+	position: relative;
 	font-family:"Microsoft Yahei";
 }
 .main-left{
@@ -919,7 +931,7 @@ body{
 	z-index: 5;
 	left: 50%;
 	margin-left: -670px;
-	top: 590px;
+	top: 50px;
 	width: 98px;
 	border: 1px solid #dbe1e5;
 	font-family:"Microsoft Yahei";
@@ -1266,6 +1278,192 @@ body{
 	}
 }
 
+// 结果页
+.result-th{
+	height: 40px;
+	line-height: 40px;
+	background: #62c63f;
+	color: #fff;
+	text-align: center;
+	span{
+		float: left;
+		&.s1{
+			width: 105px;
+		}
+		&.s2{
+			width: 125px;
+		}
+		&.s3{
+			width: 125px;
+		}
+		&.s4{
+			width: 290px;
+		}
+		&.s5{
+			width: 145px;
+		}
+		&.s6{
+			width: 195px;
+		}
+		&.s7{
+			width: 135px;
+		}
+	}
+}
+.result-ul{
+	background: #fff;
+	li{
+		height: 50px;
+		line-height: 50px;
+		border-bottom: 1px solid #f4f4f4;
+		text-align: center;
+		font-size: 14px;
+	}
+	span{
+		float: left;
+		color: #333;
+		i{
+			color: #ff8800;
+		}
+		&.s1{
+			width: 105px;
+			color: #62c63f;
+		}
+		&.s2{
+			width: 125px;
+		}
+		&.s3{
+			width: 125px;
+		}
+		&.s4{
+			width: 290px;
+		}
+		&.s5{
+			width: 145px;
+		}
+		&.s6{
+			width: 195px;
+			position: relative;
+		}
+		&.s7{
+			width: 135px;
+			color: #999;
+		}
+		.btn{
+			width: 94px;
+			height: 30px;
+			line-height: 30px;
+			display: block;
+			margin: 10px auto 0;
+			color: #fff;
+			font-size: 12px;
+			background:url(../img/_btn03.png?__sprite) no-repeat;				
+			&:hover{
+				color: #fff;
+				text-decoration: none;
+				background:url(../img/_btn05.png?__sprite) no-repeat;
+			}
+			&.btnA{
+				color: #999;
+				background:url(../img/_btn04.png?__sprite) no-repeat;
+			}
+		}
+		.info{
+			position: absolute;
+			z-index: 5;
+			top: 50px;
+			left: 50px;
+			width: 200px;
+			border: 1px solid #dbe1e5;
+			background: #fff;
+			line-height: 24px;
+			font-size: 12px;
+			color: #333;
+			padding:10px 20px;
+			text-align: left;
+			display: none;
+			.opacity(0);
+			.transition(opacity 0.3s ease);
+			box-shadow: 0 0 5px #bbb;
+			-webkit-box-shadow: 0 0 5px #bbb;
+			-moz-box-shadow: 0 0 5px #bbb;
+			-ms-box-shadow: 0 0 5px #bbb;
+			span{
+				position: absolute;
+				display: block;
+				width: 16px;
+				height: 12px;
+				top: -11px;
+				left: 15px;
+				overflow: hidden;
+				background:url(../img/_icon16.png?__sprite) no-repeat;
+			}
+			&.show{
+				.opacity(100);
+			}
+		}
+	}
+}
+.result-page{
+	height: 75px;
+	line-height: 75px;
+	color: #999;
+	background: #fff;
+	padding-left: 30px;
+	i{
+		color: #ff8800;
+	}
+	.nums{
+		float: right;
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+		padding-top: 20px;
+		padding-right: 40px;
+		a{
+			width: 35px;
+			height: 35px;
+			overflow: hidden;
+			margin-right: 5px;
+			float: left;
+			display: inline;
+			background: #f4f4f4;
+			color: #999;
+			.transition(all ease 0.3s);
+			&:hover,&.current{
+				background: #62c63f;
+				text-decoration: none;
+				color: #fff;
+			}
+			&.prev{
+				background:#f4f4f4 url(../img/_icon26.png?__sprite) no-repeat;
+				&:hover{
+					background-color: #f1f1f1;
+				}
+				&.disable{
+					cursor: default;
+					background-image: url(../img/_icon25.png?__sprite);
+					&:hover{
+						background-color: #f4f4f4;
+					}
+				}
+			}
+			&.next{
+				background:#f4f4f4 url(../img/_icon28.png?__sprite) no-repeat;
+				&:hover{
+					background-color: #f1f1f1;
+				}
+				&.disable{
+					cursor: default;
+					background-image: url(../img/_icon27.png?__sprite);
+					&:hover{
+						background-color: #f4f4f4;
+					}
+				}
+			}
+		}
+	}
+}
 // 底部
 .foot-banner{
 	position:relative;

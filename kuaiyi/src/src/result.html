@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>首页</title>
+<title>搜医生查询号源结果页</title>
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="" />
@@ -19,79 +19,211 @@
 <link rel="import" href="inline/top.html?__inline">
 
 <!-- banner -->
-<div class="banner">
-  <div class="banner-wrap clearfix">
-    <div class="banner-left fl">
-      <h2>快速预约挂号</h2>
-      <p class="p1">快医已经开通北京、上海、广州等全国 39 个城市、 3205 家医院预约挂号服务</p>
-      <p class="p2">您如果知道医生的名字，也可以通过搜医生的功能进行预约挂号。</p>
-
-      <div class="ks-input clearfix" style="float:left">
-        <div class="ks-label">
-        <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字">
-        </div>
-        <input type="button" class="ks-submit" value="" id="btnSearch">
-        <a href="#" target="_blank">高级搜索</a>
+<div class="banner banner-result">
+  <div class="banner-wrap banner-wrap-simple">
+    <div class="ks-input clearfix">
+      <div class="ks-label">
+      <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字">
       </div>
-
+      <input type="button" class="ks-submit" value="" id="btnSearch">
     </div>
-
-    <div class="banner-right fr">
-      <div class="location clearfix">
-        <div class="location-icon fl"></div>
-        <div class="select-mod fl">
-          <span class="select-icon"></span>
-          <div class="m-select-cur" id="Jregion">广州</div>
-
-          <!-- 地区弹层 -->
-          <link rel="import" href="inline/region.html?__inline">
-
-        </div>
-        <div class="hot fl">
-          热门： <a href="">北京</a>  <a href="">上海</a>  <a href="">广州</a>  <a href="">天津</a>  
-        </div>
-      </div>     
-
-      <form id="" action="#" method="post">
-        <table>
-          <tbody>
-          <tr class="row1">
-            <th class="tTit">选择医院</th>
-            <td class="iCol">
-              <!-- 医院弹层 -->
-              <link rel="import" href="inline/hospital.html?__inline">
-
-            </td>
-          </tr>
-          <tr class="row1">
-            <th class="tTit">选择科室</th>
-            <td class="iCol">
-              <!-- 科室弹层 -->
-              <link rel="import" href="inline/department.html?__inline">
-
-            </td>
-          </tr>
-          <tr class="row1">
-            <th class="tTit">选择医生</th>
-            <td class="iCol">
-              <!-- 医生弹层 -->
-              <link rel="import" href="inline/doctor.html?__inline">
-
-            </td>
-          </tr>
-
-          <tr class="row8">
-            <th class="tTit"></th>
-            <td class="iCol">         
-              <input class="inpBtn" type="submit" id="submitButton" value="查询号源"></td>
-          </tr>
-        </tbody></table>
-        </form>
-
-        <a href="" class="question"><em></em>遇到问题？</a>
+    <div class="result-th">
+      <span class="s1">医生姓名</span>
+      <span class="s2">医生职称</span>
+      <span class="s3">科室</span>
+      <span class="s4">医院名称</span>
+      <span class="s5">评价</span>
+      <span class="s6">预约挂号</span>
+      <span class="s7">来源</span>
     </div>
-
-    <span class="s-icon"></span>
+    <ul class="result-ul" id="Jresultul">
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+      <li>
+        <span class="s1">张子萌</span>
+        <span class="s2">主任医师</span>
+        <span class="s3">中医门诊</span>
+        <span class="s4">广州市妇女儿童医院珠江新城院区</span>
+        <span class="s5">好评数：<i>78</i>个</span>
+        <span class="s6">
+          <a href="javascript:;" class="btn">立即预约</a>
+          <div class="info">
+            <p>门诊类型：专家门诊</p>
+            <p>出诊时间：2015年6月8日</p>
+            <p>上午 所属科室：中医科</p>
+            <span></span>
+          </div>
+        </span>
+        <span class="s7">来源：挂号网</span>
+      </li>
+    </ul>
+    <div class="result-page">
+      <div class="nums">
+        <!-- 前后箭头不可点状态加class disable -->
+        <a href="javascript:;" class="prev disable"></a>
+        <a href="javascript:;" class="current">1</a>
+        <a href="javascript:;">2</a>
+        <a href="javascript:;">3</a>
+        <a href="javascript:;">4</a>
+        <a href="javascript:;">5</a>
+        <a href="javascript:;">6</a>
+        <a href="javascript:;">···</a>
+        <a href="javascript:;">10</a>
+        <a href="javascript:;" class="next"></a>
+      </div>
+      共<i>35</i>个搜索结果      
+    </div>
 
   </div>
 </div>
@@ -272,6 +404,8 @@
         </div>
       </div>
       <!-- 日期弹层e -->
+
+
 
       <div class="tb" id="Jbooklist">
         <ul class="clearfix">

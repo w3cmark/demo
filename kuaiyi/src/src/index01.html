@@ -41,14 +41,11 @@
         <div class="location-icon fl"></div>
         <div class="select-mod fl">
           <span class="select-icon"></span>
-          <div class="m-select-cur" id="Jselect">广州</div>
-          <div class="m-select-option" id="Joption">
-              <span class="option">广州</span>
-              <span class="option">上海</span>
-              <span class="option">北京</span>
-              <span class="option">天津</span>
-              <span class="option">重庆</span>
-          </div>
+          <div class="m-select-cur" id="Jregion">广州</div>
+
+          <!-- 地区弹层 -->
+          <link rel="import" href="inline/region.html?__inline">
+
         </div>
         <div class="hot fl">
           热门： <a href="">北京</a>  <a href="">上海</a>  <a href="">广州</a>  <a href="">天津</a>  
@@ -61,31 +58,25 @@
           <tr class="row1">
             <th class="tTit">选择医院</th>
             <td class="iCol">
-              <select name="keshi1">
-                <option value="0">内科</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
+              <!-- 医院弹层 -->
+              <link rel="import" href="inline/hospital.html?__inline">
+
             </td>
           </tr>
           <tr class="row1">
             <th class="tTit">选择科室</th>
             <td class="iCol">
-              <select name="keshi1">
-                <option value="0">内科</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
+              <!-- 科室弹层 -->
+              <link rel="import" href="inline/department.html?__inline">
+
             </td>
           </tr>
           <tr class="row1">
             <th class="tTit">选择医生</th>
             <td class="iCol">
-              <select name="doctor">
-                <option value="0">周建芳</option>
-                <option value="1">周芳</option>
-                <option value="2">周建</option>
-              </select>
+              <!-- 医生弹层 -->
+              <link rel="import" href="inline/doctor.html?__inline">
+
             </td>
           </tr>
 
@@ -169,7 +160,10 @@
 
             <input type="radio" name="time" value="最近7天" checked="" id="seven">
             <label for="seven" class="mr10">最近7天</label>
-            <span class="mark-date"><i>2015-06-18 至 2015-06-23</i><em></em></span>
+            <span class="mark-date" id="Jdate">
+              <i>2015-06-18 至 2015-06-23</i>
+              <em class="arow-em"></em>
+            </span>
             <a class="refresh" href="javascript:;"><em></em>刷新</a>
             <input type="checkbox" class="checkbox" id="auto" name="auto" value="0">
             <label for="auto">自动</label>
@@ -212,64 +206,64 @@
               <span class="weekend">星期日</span>
             </li>
             <li>
-              <a href="javascript;:"></a>
-              <a href="javascript;:"></a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月2日</a>
-              <a href="javascript;:">7月3日</a>
-              <a href="javascript;:" class="current weekend">7月4日</a>
-              <a href="javascript;:" class="weekend">7月5日</a>
+              <a href="javascript:;"></a>
+              <a href="javascript:;"></a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月2日</a>
+              <a href="javascript:;">7月3日</a>
+              <a href="javascript:;" class="current weekend">7月4日</a>
+              <a href="javascript:;" class="weekend">7月5日</a>
             </li>
             <li>
-              <a href="javascript;:">7月5日</a>
-              <a href="javascript;:">7月5日</a>
-              <a href="javascript;:">7月5日</a>
-              <a href="javascript;:">7月5日</a>
-              <a href="javascript;:">7月5日</a>
-              <a href="javascript;:" class="weekend">7月5日</a>
-              <a href="javascript;:" class="weekend">7月5日</a>
+              <a href="javascript:;">7月5日</a>
+              <a href="javascript:;">7月5日</a>
+              <a href="javascript:;">7月5日</a>
+              <a href="javascript:;">7月5日</a>
+              <a href="javascript:;">7月5日</a>
+              <a href="javascript:;" class="weekend">7月5日</a>
+              <a href="javascript:;" class="weekend">7月5日</a>
             </li>
             <li>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月2日</a>
-              <a href="javascript;:">7月3日</a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月2日</a>
+              <a href="javascript:;">7月3日</a>
+              <a href="javascript:;" class="weekend">
                 7月4日
                 <i class="btn btnA">已约满</i>
               </a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;" class="weekend">
                 7月5日
                 <i class="btn">立即预约</i>
               </a>
             </li>
             <li>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月2日</a>
-              <a href="javascript;:">7月3日</a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月2日</a>
+              <a href="javascript:;">7月3日</a>
+              <a href="javascript:;" class="weekend">
                 7月4日
                 <i class="btn btnA">已约满</i>
               </a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;" class="weekend">
                 7月5日
                 <i class="btn">立即预约</i>
               </a>
             </li>
             <li>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月1日</a>
-              <a href="javascript;:">7月2日</a>
-              <a href="javascript;:">7月3日</a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月1日</a>
+              <a href="javascript:;">7月2日</a>
+              <a href="javascript:;">7月3日</a>
+              <a href="javascript:;" class="weekend">
                 7月4日
                 <i class="btn btnA">已约满</i>
               </a>
-              <a href="javascript;:" class="weekend">
+              <a href="javascript:;" class="weekend">
                 7月5日
                 <i class="btn">立即预约</i>
               </a>
@@ -563,7 +557,6 @@
 
 <script type="text/javascript" src="data/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="data/jquery.nicescroll.min.js"></script>
-<script type="text/javascript" src="data/calendar.js"></script>
 <script charset="gb2312" type="text/javascript" src="data/index.js"></script>
 </body>
 </html>

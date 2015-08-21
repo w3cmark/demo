@@ -4,6 +4,7 @@ var Index = function(){
 		$departmentpop = $('#Jdepartmentpop'),
 		$doctorpop = $('#Jdoctorpop'),
 		$closepop = $('.close-pop'),
+		$popbg = $('#Jpopbg'),
 		$inputpop = $('.banner-right .input-pop'),
 		$datepop = $('#Jdatepop'),
 	init = function(){
@@ -21,7 +22,7 @@ var Index = function(){
 			}
 		})
 		$closepop.bind('click',function(){
-			hidePop($(this).parent().parent());
+			hidePop($(this).parent().parent(),true);
 		})
 
 		$inputpop.bind('focus',function(){
@@ -123,16 +124,28 @@ var Index = function(){
 			hidePop($info);
 		})
 	},
-	showPop = function(ele){//显示弹层
+	showPop = function(ele,bg){//显示弹层
+		var bg = bg || false;
 		ele.show();
 		setTimeout(function(){
 			ele.addClass('show');
 		},10)
+		if(!bg){return}
+		$popbg.show();
+		setTimeout(function(){
+			$popbg.addClass('show');
+		},10)
 	},
-	hidePop = function(ele){//隐藏弹层
+	hidePop = function(ele,bg){//隐藏弹层
+		var bg = bg || false;
 		ele.removeClass('show');
 		setTimeout(function(){
-			ele.hide();
+			ele.hide();			
+		},310);
+		if(!bg){return}
+		$popbg.removeClass('show');
+		setTimeout(function(){
+			$popbg.hide();
 		},310)
 	},
 	selectMod = function(ele,opt,replace){//伪下拉筛选
@@ -210,10 +223,25 @@ var Index = function(){
 }();
 
 Index.init();
+/*
+显示某个弹层
+第一个参数：dom元素
+第二个参数：是否显示半透明背景，默认为false
+例子：
+1、日期弹层
+Index.showPop($('#Jdatepop'));
+2、绑定成功弹层
+Index.showPop($('#Jbindpop'),true);
 
-// 显示某个弹层
-// Index.showPop($('#Jdatepop'));
-//隐藏某个弹层
-// Index.hidePop($('#Jdatepop'));
+*/
 
+Index.showPop($('#Jloginpop'),true);
+
+/*隐藏某个弹层
+第一个参数：dom元素
+第二个参数：是否显示半透明背景，默认为false
+
+Index.hidePop($('#Jdatepop'));
+
+*/
 // Index.showPop($('#Jhospitalpop'));

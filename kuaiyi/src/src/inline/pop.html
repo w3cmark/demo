@@ -1,0 +1,742 @@
+<!-- 绑定成功 -->
+<div class="pop-main pop-main600" id="Jbindpop">
+  <div class="pop-th">
+    绑定成功
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+    <h2><i class="icon"></i>绑定成功！</h2>
+    <p class="p-center">尊敬的用户，您已经成功绑定挂号网，您以后可以方便快捷预约挂号！</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">马上去挂号</a>
+  </div>
+</div>
+
+<!-- 用户绑定验证 -->
+<div class="pop-main pop-main600" id="Jverifypop">
+  <div class="pop-th">
+    用户绑定验证
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+    <p>尊敬的用户，您正在绑定挂号网，现需要对您进行身份验证：</p>
+    <p class="p-input">
+      验证码：
+      <input type="tel" name="verifycode" id="verifycode" maxlength="11">
+      <a href="javascript:;" class="input-btn">获取验证码</a>
+      <span><em>59</em> 后可重新获取验证码</span>
+    </p>
+    <p class="p-tips"><i class="icon"></i>短信验证码已经发送到您的手机号码<span>1345****154</span>，请注意查收</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 用户注册验证 -->
+<div class="pop-main pop-main600" id="JregVerifypop">
+  <div class="pop-th">
+    用户注册验证
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+    <p>尊敬的用户，您的预约挂号的号源由挂号网提供，现需要对您进行身份验证：</p>
+    <p class="p-input">
+      验证码：
+      <input type="tel" name="regverifycode" id="regverifycode" maxlength="11">
+      <a href="javascript:;" class="input-btn">获取验证码</a>
+      <span><em>59</em> 后可重新获取验证码</span>
+    </p>
+    <p class="p-tips"><i class="icon"></i>短信验证码已经发送到您的手机号码<span>1345****154</span>，请注意查收</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 用户登录 -->
+<div class="pop-main pop-main600" id="Jloginpop">
+  <div class="pop-th">
+    用户登录
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+    <p>尊敬的用户，您正在绑定挂号网帐户，现需要对您进行身份验证：</p>
+    
+    <p class="p-input">
+      用户名：
+      <input type="text" name="lusername" id="lusername" class="input260">
+      <span class="right-tip"><i class="icon"></i> 填写正确</span>
+    </p>
+    <p class="p-input p-input-login">
+      密&nbsp;&nbsp;&nbsp;码：
+      <input type="password" name="lpassword" id="lpassword" class="input260">
+      <span class="wrong-tip"><i class="icon"></i> 密码错误</span><br/>
+      <a href="#" target="_blank">找回密码？</a>
+    </p>
+
+    <p class="p-input">
+      验证码：
+      <input type="tel" name="regverifycode" id="regverifycode" maxlength="11">
+      <a href="javascript:;" class="input-btn">获取验证码</a>
+      <span><em>59</em> 后可重新获取验证码</span>
+    </p>
+
+    <p class="p-tips"><i class="icon"></i>短信验证码已经发送到您的手机号码<span>1345****154</span>，请注意查收</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 就诊信息 -->
+<div class="pop-main pop-main600" id="JseeDoctorpop">
+  <div class="pop-th">
+    就诊信息
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<p class="p-input">
+      初诊/复诊： 
+      	<span class="radioSpan m-hz">
+			<input type="radio" name="isure" value="1" checked="" id="nor" class="input-radio">
+			<label for="nor">初诊</label>
+			<input type="radio" name="isure" value="0" id="pro" class="input-radio">
+			<label for="pro">复诊</label>
+        </span>
+    </p>
+
+    <p class="p-input">
+      就诊卡号： 
+      <input class="input260" type="text" name="cardnumA" id="cardnumA">
+    </p>
+
+    <p class="p-input">
+      社保卡号： 
+      <input class="input260" type="text" name="cardnumB" id="cardnumB">
+    </p>
+
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 登录/注册 -->
+<div class="pop-main pop-main600" id="JloginRegpop">
+  <div class="pop-th">
+    <div class="slider-btn" id="JloginRegdoc">
+    	<a href="javascript:;" class="">登录</a>
+    	<a href="javascript:;" class="">注册</a>
+    </div>
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb" id="JloginRegcon">
+  	<div class="con">
+  		<form id="lLoginFrm" action="#" method="post">
+  		<p class="p-input">
+	      用户名：
+	      <input type="text" name="lusername" id="lusername" value="手机号码/用户名/邮箱" placeholder="手机号码/用户名/邮箱" class="input260">
+	      <span class="right-tip"><i class="icon"></i> 填写正确</span>
+	    </p>
+	    <p class="p-input">
+	      密&nbsp;&nbsp;&nbsp;码：
+	      <input type="text" name="password" id="lpassword" value="请输入您的密码" placeholder="请输入您的密码" class="input260">
+	      <span class="wrong-tip"><i class="icon"></i> 密码错误</span>
+	    </p>
+	    <button type="submit" class="submit-btn">立即登录</button>
+	   	</form>
+  	</div>
+  	<div class="con">
+  		<form id="lRegFrm" action="#" method="post">
+  		<p class="p-input">
+	      用户名：
+	      <input type="text" name="lusername" id="lusername" value="手机号码/用户名/邮箱" placeholder="手机号码/用户名/邮箱" class="input260">
+	    </p>
+	    <p class="p-input">
+	      密&nbsp;&nbsp;&nbsp;码：
+	      <input type="text" name="password" id="lpassword" value="请输入您的密码" placeholder="请输入您的密码" class="input260">	      
+	    </p>
+	    <button type="submit" class="submit-btn">立即注册</button>
+	    </form>
+  	</div>
+
+  </div>
+  <div class="pop-tf">
+  	<h3>会员福利</h3>
+  	<p>1、免费获取全国千家公立三甲医院，医生信息，百万病友分享的就医经验，助您选定好医生</p>
+  	<p>2、实时查询所有预约挂号医生号源，轻松预约挂号！</p>
+  	<p>3、享专业贴心陪诊，咨询名医服务，名医汇可协助会员维权！</p>
+  	<p>4、立即成为名医汇合作医疗机构及药房的至瘭会员，享受您所想你不到的特价优惠！</p>
+  </div>
+</div>
+
+<!-- 信息提示 -->
+<div class="pop-main pop-main600" id="JmessTipspop">
+  <div class="pop-th">
+    信息提示
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<h2>发送提醒到微信</h2>
+  	<p class="p-center">请您按以下说明进行操作，成功挂号后，快医会通过微信提醒：</p>
+  	<div class="wxtips">
+  		<span class="s1">微信扫码关注快医官方微信</span>
+  		<span class="s2">输入提醒码 <em>TX88</em> 并发送</span>
+  	</div>
+  </div>
+</div>
+
+<!-- 提示 -->
+<div class="pop-main pop-main600" id="JTipspop">
+  <div class="pop-th">
+    信息提示
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<p class="p-font20">请您先选择医院所在地区</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 输入 验证码，提交订单 -->
+<div class="pop-main pop-main700" id="JsubmitOrderpop">
+  <div class="pop-th">
+    输入 验证码，提交订单
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：
+      	<span class="radioSpan m-hz">
+			<input type="radio" name="seeTime" value="1" checked="" id="am" class="input-radio">
+			<label for="am">上午 9:00-12:00 </label>
+			<input type="radio" name="seeTime" value="0" id="pm" class="input-radio">
+			<label for="pm">下午 14:00-18:00 </label>
+        </span>
+    </p>
+    <!-- 第一步 -->
+  	<p class="p-input p-padding">
+		验证码：
+		<input type="text" name="lusername" id="lusername">
+		<img src="http://dummyimage.com/101x37/ddd/79c" class="code-img">
+		<span>点击可以刷新验证码</span>
+	</p>
+	<!-- 第二步 -->
+	<p class="p-input p-padding">
+      验证码：
+      <input type="tel" name="regverifycode" id="regverifycode" maxlength="11">
+      <a href="javascript:;" class="input-btn">获取验证码</a>
+    </p>
+    <p class="p-tips p-tipsA">系统拨打您的手机号码1345*****124进行语音验证，请注意收听</p>
+    <!-- 第三步 -->
+    <p class="p-input p-padding">
+      验证码：
+      <input type="tel" name="regverifycode" id="regverifycode" maxlength="11">
+      <a href="javascript:;" class="input-btn">获取验证码</a>
+      <span><em>59</em> 后可重新获取验证码</span>
+    </p>
+    <p class="p-tips p-tipsA"><i class="icon"></i>短信验证码已经发送到您的手机号码<span>1345****154</span>，请注意查收</p>
+
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认提交</a>
+  </div>
+</div>
+
+<!-- 预约成功提示页面 -->
+<div class="pop-main pop-main700" id="JbookSuccesspop">
+  <div class="pop-th">
+    预约成功提示页面
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：上午 9:00-12:00
+    </p>
+
+    <h2><i class="icon"></i>绑定成功！</h2>
+    <p class="p-center">
+    	预约成功短信已经发送到您的手机号码 <span class="red">1345*****256</span> ，请注意查收</p>
+    
+    <p class="p-btn">
+    	<a href="javascript:;" class="btn">付款</a>
+    	<a href="javascript:;" class="btn btnA">查看订单</a>
+    </p>
+  </div>
+  <div class="pop-tf">
+    <h3>注意事项：</h3>
+  	<p>1、您可以在 <a href="#" target="_blank">我的预约单</a> 查看订单详情；</p>
+  	<p>2、如果您预约成功，由于个人原因不能就诊，请及时 <a href="#" target="_blank">取消订单</a>；</p>
+  	<p>3、如遇专家停诊，您的订单会被取消，我们会以短信通知到您，请保持手机畅通；</p>
+  	<p>4、每个账号每月下单和取消订单数量有上限，请按需预约，若超出上限当月将不能再次预约；</p>
+  </div>
+</div>
+
+<!-- 预约失败提示页面 -->
+<div class="pop-main pop-main700" id="JorderFailpop">
+  <div class="pop-th">
+    预约失败提示页面
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：
+      	<span class="radioSpan m-hz">
+			<input type="radio" name="seeTime" value="1" checked="" id="am" class="input-radio">
+			<label for="am">上午 9:00-12:00 </label>
+			<input type="radio" name="seeTime" value="0" id="pm" class="input-radio">
+			<label for="pm">下午 14:00-18:00 </label>
+        </span>
+    </p>
+
+    <div class="fail-tips">
+    	<h2><i class="icon iconA"></i>预约挂号失败！已经没号了！</h2>
+    </div>
+    
+
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">重新预约</a>
+  </div>
+</div>
+
+<!-- 订单提交成功提示页面 -->
+<div class="pop-main pop-main700" id="JorderSuccesspop">
+  <div class="pop-th">
+    预约成功提示页面
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：上午 9:00-12:00
+    </p>
+
+    <h2><i class="icon"></i>订单提交成功</h2>
+    <p class="p-center">
+    	您的预约挂号订单已经提交，请在<span class="red">30</span>分钟内付款<br/>
+    	若在规定时间未付款，您的订单将会被系统自动取消
+    </p>
+    
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">付款</a>
+    <a href="javascript:;" class="btn btnA">查看订单</a>
+  </div>
+</div>
+
+<!-- 订单提交-过程 -->
+<div class="pop-main pop-main700" id="Jorderingpop">
+  <div class="pop-th">
+    预约成功提示页面
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：上午 9:00-12:00
+    </p>
+
+    <h2>系统正在为您提交预约挂号订单…</h2>
+    
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认提交</a>
+  </div>
+</div>
+
+<!-- 付款页面 -->
+<div class="pop-main pop-main700" id="Jpayingpop">
+  <div class="pop-th">
+    预约挂号订单正在付款页面
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s200 s-left">医院名称</span>
+		<span>科室</span>
+		<span>医生</span>
+		<span>就诊人</span>
+		<span class="s120">就诊日期</span>
+		<span>挂号费用</span>
+	</div>
+	<div class="info-tb">
+		<div class="info-tb-item clearfix">
+			<span class="s200 s-left">广东省中山三院附属医院</span>
+			<span>中医科</span>
+			<span>马建华</span>
+			<span>李小龙</span>
+			<span class="s120">2015年8月1日</span>
+			<span>7.5元</span>
+		</div>		
+	</div>
+
+  	<p class="p-input p-border">
+    	就诊时间段：上午 9:00-12:00
+    </p>
+
+    <h2>请您在付款面完成支付…</h2>
+    
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">付款完成</a>
+    <a href="javascript:;" class="btn btnA">遇到问题</a>
+  </div>
+</div>
+
+
+<!-- 新增就诊人 -->
+<div class="pop-main pop-main600" id="JaddPersonpop">
+  <div class="pop-th">
+    新增就诊人
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<form id="frmReg" action="/member/reg_suc.html" method="post" enctype="multipart/form-data" target="_self">
+  		<table>
+	      <tbody>
+	      <tr>
+	        <th class="tTit"><em>*</em> 姓名：</th>
+	        <td class="iCol"><input name="username" id="username" type="text" class="inp input260"></td>
+	      </tr>
+	      <tr>
+	        <th class="tTit"><em>*</em> 性别：</th>
+	        <td class="iCol">
+	          <input type="radio" name="sex" value="1" checked="" id="male" class="input-radio">
+	          <label for="male">男</label>
+	          <input type="radio" name="sex" value="0" id="female" class="input-radio">
+	          <label for="female">女</label>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th class="tTit"><em>*</em> 类型：</th>
+	        <td class="iCol">
+				<input type="radio" name="mold" value="1" checked="" id="adult" class="input-radio">
+				<label for="adult">成人</label>
+				<input type="radio" name="mold" value="0" id="child" class="input-radio">
+				<label for="child">儿童</label>
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 生日：</th>
+	        <td class="iCol">
+	          <select name="birthday-year" id="birthday-year">
+	            <option value="0">2005年</option>
+	            <option value="1">2004年</option>
+	            <option value="2">2003年</option>
+	          </select>
+	          <select name="birthday-month" id="birthday-month">
+	            <option value="0">4月</option>
+	            <option value="1">3月</option>
+	            <option value="2">2月</option>
+	          </select>
+	          <select name="birthday-day" id="birthday-day">
+	            <option value="0">26日</option>
+	            <option value="1">25日</option>
+	            <option value="2">24日</option>
+	          </select>
+	          
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 年龄：</th>
+	        <td class="iCol"><input name="username" id="username" type="text" class="inp input260"></td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 身份证号码：</th>
+	        <td class="iCol"><input name="username" id="username" type="text" class="inp input260"></td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 手机号码：</th>
+	        <td class="iCol"><input name="username" id="username" type="text" class="inp input260"></td>
+	      </tr>
+	  	</tbody></table>
+    </form>
+
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认提交</a>
+  </div>
+</div>
+
+<!-- 修改就诊人 -->
+<div class="pop-main pop-main600" id="JmodifyPersonpop">
+  <div class="pop-th">
+    修改就诊人
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<form id="frmReg" action="/member/reg_suc.html" method="post" enctype="multipart/form-data" target="_self">
+  		<table>
+	      <tbody>
+	      <tr>
+	        <th class="tTit"><em>*</em> 姓名：</th>
+	        <td class="iCol"><input name="modify-username" id="modify-username" type="text" class="inp input260" value="李小龙"></td>
+	      </tr>
+	      <tr>
+	        <th class="tTit"><em>*</em> 性别：</th>
+	        <td class="iCol">
+	          <input type="radio" name="modify-sex" value="1" checked="" id="male" class="input-radio">
+	          <label for="male">男</label>
+	          <input type="radio" name="modify-sex" value="0" id="female" class="input-radio">
+	          <label for="female">女</label>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th class="tTit"><em>*</em> 类型：</th>
+	        <td class="iCol">
+				<input type="radio" name="modify-mold" value="1" checked="" id="adult" class="input-radio">
+				<label for="adult">成人</label>
+				<input type="radio" name="modify-mold" value="0" id="child" class="input-radio">
+				<label for="child">儿童</label>
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 生日：</th>
+	        <td class="iCol">
+	          <select name="birthday-year" id="birthday-year">
+	            <option value="0">2005年</option>
+	            <option value="1">2004年</option>
+	            <option value="2">2003年</option>
+	          </select>
+	          <select name="birthday-month" id="birthday-month">
+	            <option value="0">4月</option>
+	            <option value="1">3月</option>
+	            <option value="2">2月</option>
+	          </select>
+	          <select name="birthday-day" id="birthday-day">
+	            <option value="0">26日</option>
+	            <option value="1">25日</option>
+	            <option value="2">24日</option>
+	          </select>
+	          
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 年龄：</th>
+	        <td class="iCol">
+	        	<input name="username" id="username" type="text" class="inp input260" value="25">
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 身份证号码：</th>
+	        <td class="iCol">
+	        	<input name="username" id="username" type="text" class="inp input260" value="2525252525252525">
+	        </td>
+	      </tr>
+
+	      <tr>
+	        <th class="tTit"><em>*</em> 手机号码：</th>
+	        <td class="iCol">
+	        	<input name="username" id="username" type="text" class="inp input260" value="1356265986">
+	        </td>
+	      </tr>
+	  	</tbody></table>
+    </form>
+
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认提交</a>
+  </div>
+</div>
+
+<!-- 选择救诊人 -->
+<div class="pop-main pop-main700" id="JchosePerpop">
+  <div class="pop-th">
+    选择救诊人
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb pop-tbA">
+  	<div class="info-th clearfix">
+		<span class="s45">选择</span>
+		<span class="s70">姓名</span>
+		<span class="s45">性别</span>
+		<span class="s45">年龄</span>
+		<span class="s150">身份证号码</span>
+		<span class="s120">手机号码</span>
+		<span class="s170">操作</span>
+	</div>
+
+	<div class="loading">
+		正在努力加载…
+	</div>
+	<!-- <div class="info-tb">
+		<div class="info-tb-item info-tb-itemA clearfix">
+			<span class="s45">
+				<input type="radio" name="chosePer" value="1" checked="" class="input-radio">
+			</span>
+			<span class="s70">李小龙</span>
+			<span class="s45">男</span>
+			<span class="s45">27</span>
+			<span class="s150">4409**********3259</span>
+			<span class="s120">134*****369</span>
+			<span class="s170 s-btn">
+				<a href="javascript:;" class="">修改</a> |
+				<a href="javascript:;" class="">删除</a> |
+				<a href="javascript:;" class="default">默认就诊人 <i class="icon"></i></a>
+			</span>
+		</div>
+		<div class="info-tb-item info-tb-itemA clearfix">
+			<span class="s45">
+				<input type="radio" name="chosePer" value="0" class="input-radio">
+			</span>
+			<span class="s70">李小龙</span>
+			<span class="s45">男</span>
+			<span class="s45">27</span>
+			<span class="s150">4409**********3259</span>
+			<span class="s120">134*****369</span>
+			<span class="s170 s-btn">
+				<a href="javascript:;" class="">修改</a> |
+				<a href="javascript:;" class="">删除</a> |
+				<a href="javascript:;" class="">设置为默认</a>
+			</span>
+		</div>
+	</div>
+
+	<a href="javascript:;" class="add-btn"><em>+</em> 新增救诊人</a> -->
+  	
+  </div>
+  <!-- <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认提交</a>
+  </div> -->
+</div>
+
+<!-- 就医160网预约规则  -->
+<div class="pop-main pop-main600" id="JbookRulepop">
+  <div class="pop-th">
+    就医160网预约规则 
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<p>1、填写完预约相关信息后请仔细核对，如信息错误，将无法取到预约号。</p><br/>
+  	<P>2、为保证您准时就诊，就请于就诊当日所预约时间段提前30分钟到门诊大厅取号，逾期作废，取号前请准备好诊疗卡及病历本，初次就诊者需要在挂号处办理诊疗卡后方可取号。</P><br/>
+  	<P>3、专家门诊资源有限，如预约成功后因故确定不能按时就诊，就务必于就诊前一天16:00前及时取消预约，否则按违约处理，累计三次，您将无法进行预约。</P><br/>
+  	<P>4、如果您预约的专家临时请假或改诊，挂号网会通过电话和短信告知，请注意停诊通知或短信通知。</P>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">确认</a>
+  </div>
+</div>
+
+<!-- 有号提醒  -->
+<div class="pop-main pop-main600" id="Jremindpop">
+  <div class="pop-th">
+    有号提醒 
+    <a href="javascript:;" class="close-pop"></a>
+  </div>
+  <div class="pop-tb">
+  	<p class="p-font20">您想预约的
+  		<b>广东省人民医院 骨科 黄小玲医生</b> <br/>
+  		有号源了，请您尽快预约挂号！</p>
+  </div>
+  <div class="pop-tf">
+    <a href="javascript:;" class="btn">马上预约</a>
+  </div>
+</div>
+
+<!-- 弹层半透明背景 -->
+<div class="pop-bg" id="Jpopbg"></div>

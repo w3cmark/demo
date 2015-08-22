@@ -68,10 +68,14 @@ var Index = function(){
 		//结果页列表鼠标经过显示相关信息
 		resultlistFun();
 
-		fixHeader();		
+		fixHeader();
+		// 登录/注册tab
+		slid("#JloginRegdoc","#JloginRegcon",0,"hover");	
 	},
 	fixPlaceholder = function(){//兼容输入框placeholder
-	    $('input[placeholder], textarea[placeholder]').focus(function(){
+		var $inputs = $('input[placeholder], textarea[placeholder]');
+		$inputs.css({'color':'#ccc'});
+	    $inputs.focus(function(){
 	        var elm = $(this),
 	            value = elm.val(),
 	            old = elm.data("placeholder");
@@ -93,7 +97,7 @@ var Index = function(){
 	        if(elm.val() == ""){
 	            elm.val(elm.data("placeholder"));
 	            elm.css({
-	                color: '#aaa'
+	                color: '#ccc'
 	            })
 	            if(elm.attr('name') == 'password'){
 	                elm.attr('type','text');
@@ -131,6 +135,8 @@ var Index = function(){
 			ele.addClass('show');
 		},10)
 		if(!bg){return}
+		var h = ele.height()/2;
+		ele.css({'margin-top':-h});
 		$popbg.show();
 		setTimeout(function(){
 			$popbg.addClass('show');
@@ -210,6 +216,54 @@ var Index = function(){
 				})
 			}
 		}
+	},
+	/*焦点图*/
+	slid = function(id1,id2,offset,action){
+		var $toc = $(id1+" a"),
+			$con = $(id2+" .con");
+		$("document").ready(function(){
+			if(offset){
+				autoslider();
+			}
+
+		})
+		if( action == 'hover' && offset){
+			$toc.hover(function(){
+				var i = $(this).prevAll().length;//prevAll()是查找当前元素之前所有的同辈元素	，用于过滤的表达式
+				clearTimeout(timer);
+				slider(i);
+			},function(){
+				timer = window.setTimeout(autoslider, offset);
+			})
+		}else if (action == 'hover'){
+			$toc.hover(function(){
+				var i = $(this).prevAll().length;//prevAll()是查找当前元素之前所有的同辈元素	，用于过滤的表达式
+				clearTimeout(timer);
+				slider(i);
+			})
+		}else if (action == 'click'){
+			$toc.click(function(){
+				var i = $(this).prevAll().length;
+				clearTimeout(timer);
+				slider(i);
+			})
+		}
+		function slider(i){
+			$toc.eq(i).addClass('current').siblings().removeClass('current');
+			$con.eq(i).css('display','block').siblings().css('display','none');//实现下面内容通过 i 来同步切换
+		}
+		slider(0);
+		var i = -1; //第i+1个tab开始
+		var timer = null;
+		function autoslider(){
+			n = $toc.length-1;
+			i++;
+			if(i > n){
+				i = 0;
+			}
+			slider(i);
+			timer = window.setTimeout(autoslider, offset);
+		}
 	};
 	return{
 		init: init,
@@ -235,7 +289,7 @@ Index.showPop($('#Jbindpop'),true);
 
 */
 
-Index.showPop($('#Jloginpop'),true);
+Index.showPop($('#Jremindpop'),true);
 
 /*隐藏某个弹层
 第一个参数：dom元素

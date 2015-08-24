@@ -308,7 +308,7 @@ Index.showPop($('#Jbindpop'),true)
 
 */
 
-// Index.showPop($('#JbookRulepop'),true);
+// Index.showPop($('#JchosePerpop'),true);
 
 /*隐藏某个弹层
 第一个参数：dom元素

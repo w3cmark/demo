@@ -694,57 +694,64 @@ body{
 		padding: 0 20px;
 		background:url(../img/icon01.png) repeat-x;
 	}
-	.tb{
-		
-	}
 	.box{
 		height: 93px;
 		padding:22px 0 0 15px;
 		border-bottom: 1px solid #e5e5e5;
+		.box-name{
+			font-size: 16px;
+			padding-bottom: 3px;
+			display: block;
+			line-height: 25px;
+			i{
+				display: inline-block;
+				vertical-align: top;
+				width: 81px;
+				height: 22px;
+				line-height: 22px;
+				overflow: hidden;
+				font-size: 12px;
+				text-align: center;
+				color: #33bb11;
+				background:url(../img/_icon10.png?__sprite) no-repeat;
+				background-color: transparent;
+				cursor: pointer;
+				&.i1{
+					color: #ee3636;
+					background-image:url(../img/_icon09.png?__sprite);
+				}
+			}
+			em{
+				display: inline-block;
+				vertical-align: top;
+				width: 16px;
+				height: 16px;
+				font-size: 12px;
+				line-height: 16px;
+				overflow: hidden;
+				margin-top: 3px;
+				background: #06b9e1;
+				text-align: center;
+				color: #fff;
+				cursor: pointer;
+				&.none{
+					background: #aaa;
+				}
+			}
+			&:hover{
+				text-decoration: none;
+			}
+		}
 		span{
 			display: block;
 			line-height: 25px;
-			&.s1{
-				font-size: 16px;
-				padding-bottom: 3px;
-				i{
-					display: inline-block;
-					vertical-align: top;
-					width: 81px;
-					height: 22px;
-					line-height: 22px;
-					overflow: hidden;
-					font-size: 12px;
-					text-align: center;
-					background:url(../img/_icon10.png?__sprite) no-repeat;
-					background-color: transparent;
-					&.i1{
-						background-image:url(../img/_icon09.png?__sprite);
-					}
-				}
-				em{
-					display: inline-block;
-					vertical-align: top;
-					width: 16px;
-					height: 16px;
-					font-size: 12px;
-					line-height: 16px;
-					overflow: hidden;
-					margin-top: 3px;
-					background: #06b9e1;
-					text-align: center;
-					color: #fff;
-					&.none{
-						background: #aaa;
-					}
-				}
-			}
 			&.s2{
 				
 			}
 			&.s3{
 				.i1{
 					color: #f80;
+					cursor: pointer;
 				}
 				.i2{
 					display: inline-block;
@@ -754,12 +761,17 @@ body{
 					height: 13px;
 					overflow: hidden;
 					background: url(../img/icon18.png) repeat-x;
+					cursor: pointer;
 				}
 				em{
 					display: block;
 					width: 50%;
 					height: 100%;
 					background: url(../img/icon17.png) repeat-x;
+					cursor: pointer;
+				}
+				a:hover{
+					text-decoration: none;
 				}
 			}
 		}

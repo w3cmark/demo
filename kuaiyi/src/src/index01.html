@@ -2,12 +2,9 @@
 <html>
 <head>
 <title>首页</title>
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta charset="utf-8">
-<meta name="renderer" content="webkit">
 <link rel="stylesheet" type="text/css" href="css/index.less">    
 </head>
 <body>	
@@ -57,7 +54,7 @@
           <tbody>
           <tr class="row1">
             <th class="tTit">选择医院</th>
-            <td class="iCol">
+            <td class="iCol" style="z-index:10">
               <!-- 医院弹层 -->
               <link rel="import" href="inline/hospital.html?__inline">
 
@@ -65,7 +62,7 @@
           </tr>
           <tr class="row1">
             <th class="tTit">选择科室</th>
-            <td class="iCol">
+            <td class="iCol" style="z-index:9">
               <!-- 科室弹层 -->
               <link rel="import" href="inline/department.html?__inline">
 
@@ -73,7 +70,7 @@
           </tr>
           <tr class="row1">
             <th class="tTit">选择医生</th>
-            <td class="iCol">
+            <td class="iCol" style="z-index:8">
               <!-- 医生弹层 -->
               <link rel="import" href="inline/doctor.html?__inline">
 
@@ -96,7 +93,7 @@
   </div>
 </div>
 <!-- main -->
-<div class="main">
+<div class="main" style="z-index:2">
   <!-- 未选择前 -->
   <div class="not-chose hide">
     请您先选择地区/医院、科室及就诊日期…

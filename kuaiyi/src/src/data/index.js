@@ -26,6 +26,9 @@ var Index = function(){
 		})
 
 		$inputpop.bind('focus',function(){
+			$hospitalpop.hide().removeClass('show');
+			$departmentpop.hide().removeClass('show');
+			$doctorpop.hide().removeClass('show');
 			showPop($(this).parent().parent().find('.select-pop'));
 		})
 
@@ -73,15 +76,23 @@ var Index = function(){
 		slid("#JloginRegdoc","#JloginRegcon",0,"hover");	
 	},
 	fixPlaceholder = function(){//兼容输入框placeholder
-		var $inputs = $('input[placeholder], textarea[placeholder]');
+		var $inputs = $('input[placeholder], textarea[placeholder]'),
+			$passplaceholder = $('#Jpassplaceholder'),
+			$pass_inputs = $('#lpassword');
 		$inputs.css({'color':'#ccc'});
+		$passplaceholder.click(function(){
+			$passplaceholder.hide();
+			$pass_inputs[0].focus();
+		})
+		$pass_inputs.blur(function(){
+			if($(this).val() == ""){
+				$passplaceholder.show();
+			}
+		})
 	    $inputs.focus(function(){
 	        var elm = $(this),
 	            value = elm.val(),
-	            old = elm.data("placeholder");
-	        if(elm.attr('name') == 'password'){
-	            elm.attr('type','password');
-	        }
+	            old = elm.data("placeholder");	        
 	        if (typeof old === "undefined"){
 	            elm.data("placeholder", value);
 	            old = value;            
@@ -92,6 +103,15 @@ var Index = function(){
 	                color:'#333'
 	            })
 	        }
+	        // if(elm.attr('name') == 'password'){
+	        // 	// elm[0].setAttribute('type','password');
+	        //     // elm.attr('type','password');
+	        //     console.log(elm.html())
+	        //     var ele_id = elm.attr('id'),
+	        //     	new_input = elm.replace('type="text"','type="password"');
+	        //     elm.replaceWith(new_input);
+	        //     $('#'+ele_id).get(0).focus();
+	        // }
 	    }).blur(function() {
 	        var elm = $(this);
 	        if(elm.val() == ""){
@@ -99,9 +119,9 @@ var Index = function(){
 	            elm.css({
 	                color: '#ccc'
 	            })
-	            if(elm.attr('name') == 'password'){
-	                elm.attr('type','text');
-	            }
+	            // if(elm.attr('name') == 'password'){
+	            //     elm.attr('type','text');
+	            // }
 	        }
 	    });
 	},
@@ -118,13 +138,17 @@ var Index = function(){
 		infoShowEven($btns,'.btn');
 	},
 	infoShowEven = function(btn,target){
-		btn.on('mouseenter',target,function(){
+		btn.on('mouseover',target,function(){
 			var $this = $(this),
-				$info = $this.parent().find('.info');
+				$parent = $this.parent(),
+				$info = $parent.find('.info');
+			$parent.css({'z-index':2});
 			showPop($info);
-		}).on('mouseleave',target,function(){
+		}).on('mouseout',target,function(){
 			var $this = $(this),
-				$info = $this.parent().find('.info');
+				$parent = $this.parent(),
+				$info = $parent.find('.info');
+			$parent.css({'z-index':1});
 			hidePop($info);
 		})
 	},
@@ -161,7 +185,6 @@ var Index = function(){
 	        heights = 23*$options.length + 1,
 	        replace = replace || false;
 	    function selectShow(ele,h){
-	        // h = h/10 + 'rem';
 	        ele.css({
 	            height : h
 	        })
@@ -217,15 +240,13 @@ var Index = function(){
 			}
 		}
 	},
-	/*焦点图*/
-	slid = function(id1,id2,offset,action){
+	slid = function(id1,id2,offset,action){//焦点图
 		var $toc = $(id1+" a"),
 			$con = $(id2+" .con");
 		$("document").ready(function(){
 			if(offset){
 				autoslider();
 			}
-
 		})
 		if( action == 'hover' && offset){
 			$toc.hover(function(){
@@ -271,9 +292,7 @@ var Index = function(){
 		resultlistFun: resultlistFun,
 		showPop: showPop,
 		hidePop: hidePop
-	}
-
-
+	};
 }();
 
 Index.init();
@@ -283,19 +302,19 @@ Index.init();
 第二个参数：是否显示半透明背景，默认为false
 例子：
 1、日期弹层
-Index.showPop($('#Jdatepop'));
+Index.showPop($('#Jdatepop'))
 2、绑定成功弹层
-Index.showPop($('#Jbindpop'),true);
+Index.showPop($('#Jbindpop'),true)
 
 */
 
-Index.showPop($('#Jremindpop'),true);
+// Index.showPop($('#JbookRulepop'),true);
 
 /*隐藏某个弹层
 第一个参数：dom元素
 第二个参数：是否显示半透明背景，默认为false
 
-Index.hidePop($('#Jdatepop'));
+Index.hidePop($('#Jdatepop'))
 
 */
-// Index.showPop($('#Jhospitalpop'));
+// Index.showPop($('#Jhospitalpop'))

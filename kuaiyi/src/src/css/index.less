@@ -59,6 +59,7 @@ body{
 				display: inline-block;
 				vertical-align: top;
 				margin-top: 1px;
+				margin-right: 7px;
 				width: 13px;
 				height: 12px;
 				background: url(../img/icon02.png) repeat-x;
@@ -82,6 +83,8 @@ body{
 	position: absolute;
 	top: 50px;
 	z-index: 100;
+	left:0;
+	height:101px;
 	.header-wrap{
 		width:1200px;
 		margin:0 auto;
@@ -96,18 +99,37 @@ body{
 			display: block;
 			color: #999;
 			background:url(../img/_logo01.png?__sprite) no-repeat;
-			b{
-				font-size: 16px;
-				color: #52b553;
-				font-family:"Arial";
-			}
-			span{
-				float: left;
-				display: inline-block;
-				margin: 45px 0 0 80px;
-			}
 			&:hover{
 				color: #999;
+				text-decoration: none;
+			}
+		}
+	}
+	.header-num{
+		float: left;
+		margin: 45px 0 0 80px;
+		cursor: pointer;
+		span{
+			font-size: 14px;
+			color: #333;
+			font-family:"Arial";
+			height:22px;
+			border-left:1px solid #dddddd;
+			display:inline-block;
+			*display:inline;
+			zoom: 1;
+			vertical-align: middle;
+		}
+		b{
+			float: left;
+			height:20px;
+			line-height: 20px;
+			width:18px;
+			background:url(../img/_icon35.png?__sprite) no-repeat;
+			border:1px solid #dddddd;
+			border-left:0;
+			&.dot{
+				width:10px;
 			}
 		}
 	}
@@ -142,10 +164,11 @@ body{
 		padding: 0 15px;
 		text-align: center;
 		margin-top: 15px;
+		border-bottom: 3px solid #fff;
 		&:hover,&.cur{
 			color: #52b553;
 			text-decoration: none;
-			border-bottom: 3px solid #52b553;
+			border-bottom-color:#52b553;
 		}
 		&.qudao{
 			position: relative;
@@ -187,7 +210,7 @@ body{
 		padding:10px 20px;
 		text-align: left;
 		display: none;
-		.opacity(0);
+		opacity:0;
 		.transition(opacity 0.3s ease);
 		box-shadow: 0 0 3px #bbb;
 		-webkit-box-shadow: 0 0 3px #bbb;
@@ -209,7 +232,7 @@ body{
 			}
 		}
 		&.show{
-			.opacity(100);
+			opacity:100;
 		}
 	}
 }
@@ -219,14 +242,16 @@ body{
 	font-family:"Microsoft Yahei";
 	color: #f1f1f1;
 	padding-top: 30px;
+	position:relative;
 	input{
 		outline:0;
 		-webkit-appearance:none;
 		-moz-appearance:none;
 		appearance:none;
 		width:218px;
-		height:18px;
-		padding:10px;
+		height:19px;
+		padding:10px 10px 9px;
+		*padding:14px 10px 6px;
 		background: #f9f9f9;
 		border: solid 1px #ddd;
 		color: #aaa;
@@ -248,14 +273,27 @@ body{
 		height: 40px;
 		line-height: 40px;
 	}
+	.pass-placeholder{
+		width:218px;
+		height:19px;
+		padding:10px 10px 9px;
+		*padding:14px 10px 6px;
+		position:absolute;
+		left:250px;
+		top:28px;
+		color:#ccc;
+		text-align: left;
+		cursor: text;
+	}
 }
 
 .banner{
 	max-width: 1920px;
 	min-width: 1200px;
-	margin:101px auto 20px;
+	margin:0 auto 20px;
 	_width:~'expression((document.documentElement.clientWidth>1920||document.body.clientWidth>1920)?"1920px":((document.documentElement.clientWidth<1200||document.body.clientWidth<1200)?"1200px":"100%"))';
-	background:url(../img/banner.png) top center no-repeat;
+	padding-top: 101px;
+	background:url(../img/banner.png) center 101px no-repeat;
 	&.banner-result{
 		border-top: 2px solid #62c63f;
 		background-image: url(../img/banner02.png);
@@ -274,6 +312,7 @@ body{
 	height: 373px;
 	margin:0 auto;
 	position: relative;
+	z-index:4;
 	.s-icon{
 		position: absolute;
 		top: 135px;
@@ -316,8 +355,10 @@ body{
 		width:280px;
 		zoom:1;
 		margin-top: 3px;
+		*margin-top: 6px;
 		float:left;
 		position:relative;
+		z-index:1;
 	}
 	a{
 		color: #fff;
@@ -356,6 +397,7 @@ body{
     height:25px;
     font-size:12px;
     margin-right: 20px;
+    z-index:11;
 }
 .m-select-cur{
     height:23px;
@@ -497,6 +539,7 @@ body{
 			background:#fff;
 			margin-bottom: 15px;
 			width: 343px;
+			overflow: hidden;
 			input{
 				border: 0;
 				height: 18px;
@@ -565,6 +608,7 @@ body{
 			width:577px;
 			zoom:1;
 			margin-top: 3px;
+			*margin-top: 6px;
 			float:left;
 			position:relative;
 		}
@@ -616,6 +660,7 @@ body{
 	margin:0 auto;
 	text-align: left;
 	position: relative;
+	z-index:1;
 	font-family:"Microsoft Yahei";
 }
 .main-left{
@@ -706,6 +751,7 @@ body{
 	border-top: 1px solid #dbe1e5;
 	border-right: 1px solid #dbe1e5;
 	position: relative;
+	z-index:1;
 	.th{
 		height: 43px;
 		line-height: 43px;
@@ -731,17 +777,17 @@ body{
 				zoom:1;
 				vertical-align: middle;
 				height: 16px;
-				margin: 0 10px;
+				margin-right:10px;
 				line-height: 16px;
 				position: relative;
-				padding-left: 20px;
+				padding-left: 30px;
 				em{
 					position: absolute;
 					vertical-align: top;
 					width: 19px;
 					height: 16px;
 					top: 0;
-					left: 0;
+					left: 10px;
 					overflow: hidden;
 					cursor: pointer;
 					background:url(../img/_icon11.png?__sprite) no-repeat;
@@ -753,10 +799,16 @@ body{
 		}
 		.mark-date{
 			background: #fff;
-			padding: 5px 23px 5px 8px;
+			padding: 4px 23px 4px 8px;
 			border: 1px solid #dbe1e5;
 			position: relative;
 			cursor: pointer;
+			display: inline-block;
+			*display: inline;
+			zoom:1;
+			height:18px;
+			line-height: 18px;
+			vertical-align: middle;
 			i{
 				cursor: pointer;	
 			}
@@ -783,6 +835,7 @@ body{
 			height: 115px;
 			position: relative;
 			text-align: center;
+			z-index:1;
 			span{
 				display: block;
 				font-size: 14px;
@@ -879,7 +932,7 @@ body{
 			padding:10px 20px;
 			text-align: left;
 			display: none;
-			.opacity(0);
+			opacity:0;
 			.transition(opacity 0.3s ease);
 			box-shadow: 0 0 5px #bbb;
 			-webkit-box-shadow: 0 0 5px #bbb;
@@ -896,7 +949,7 @@ body{
 				background:url(../img/_icon16.png?__sprite) no-repeat;
 			}
 			&.show{
-				.opacity(100);
+				opacity:100;
 			}
 		}
 	}
@@ -1088,6 +1141,7 @@ body{
 	left: 0;
 	top: 25px;
 	width: 343px;
+	overflow: hidden;
 	border: 1px solid #62cf52;
 	background: #fff;
 	box-shadow: 0 0 2px #56b349;
@@ -1368,39 +1422,39 @@ body{
 				background:url(../img/_btn04.png?__sprite) no-repeat;
 			}
 		}
-		.info{
+	}
+	.info{
+		position: absolute;
+		z-index: 5;
+		top: 50px;
+		left: 50px;
+		width: 200px;
+		border: 1px solid #dbe1e5;
+		background: #fff;
+		line-height: 24px;
+		font-size: 12px;
+		color: #333;
+		padding:10px 20px;
+		text-align: left;
+		display: none;
+		opacity: 0;
+		.transition(opacity 0.3s ease);
+		box-shadow: 0 0 5px #bbb;
+		-webkit-box-shadow: 0 0 5px #bbb;
+		-moz-box-shadow: 0 0 5px #bbb;
+		-ms-box-shadow: 0 0 5px #bbb;
+		span{
 			position: absolute;
-			z-index: 5;
-			top: 50px;
-			left: 50px;
-			width: 200px;
-			border: 1px solid #dbe1e5;
-			background: #fff;
-			line-height: 24px;
-			font-size: 12px;
-			color: #333;
-			padding:10px 20px;
-			text-align: left;
-			display: none;
-			.opacity(0);
-			.transition(opacity 0.3s ease);
-			box-shadow: 0 0 5px #bbb;
-			-webkit-box-shadow: 0 0 5px #bbb;
-			-moz-box-shadow: 0 0 5px #bbb;
-			-ms-box-shadow: 0 0 5px #bbb;
-			span{
-				position: absolute;
-				display: block;
-				width: 16px;
-				height: 12px;
-				top: -11px;
-				left: 15px;
-				overflow: hidden;
-				background:url(../img/_icon16.png?__sprite) no-repeat;
-			}
-			&.show{
-				.opacity(100);
-			}
+			display: block;
+			width: 16px;
+			height: 12px;
+			top: -11px;
+			z-index:6;
+			left: 15px;
+			background:url(../img/_icon16.png?__sprite) no-repeat;
+		}
+		&.show{
+			opacity: 100;
 		}
 	}
 }
@@ -1582,12 +1636,15 @@ body{
 					border:1px solid #ececec;
 					padding:9px 10px 8px;
 					width:150px;
+					vertical-align: middle;
 					&.input260{
 						width: 260px;
 					}
 					&.input-radio{
 						width: auto;
 						vertical-align: middle;
+						border:0;
+						background:none;
 					}
 				}
 				label{
@@ -1635,6 +1692,7 @@ body{
 					height:37px;
 					line-height: 37px;
 					vertical-align: top;
+					*vertical-align: middle;
 					display:inline-block;
 					_display:inline;
 					zoom: 1;
@@ -1697,6 +1755,7 @@ body{
 			width:16px;
 			height:16px;			
 			vertical-align: top;
+			*vertical-align: middle;
 			margin-right: 5px;
 		}
 		.add-btn{

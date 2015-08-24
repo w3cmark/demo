@@ -1,8 +1,8 @@
 <!--param start-->
     //修改cdn的绝对路径（测试环境）
-    fis.config.set('cdn-path','http://test.nie.163.com/test1/zd_pjh');
+    fis.config.set('cdn-path','http://guahao.mingyihui.net/templates/default');
     //修改cdn的绝对路径（正式环境）
-    fis.config.set('cdn-path-release','http://res.zdcq.netease.com/qt/2014/0918_linzhi');
+    fis.config.set('cdn-path-release','http://guahao.mingyihui.net/templates/default');
     //修改雪碧图放大缩小倍数，默认是1，iphone是0.5
     fis.config.set('css-scale',1);
     //修改include文件的域名
@@ -86,12 +86,14 @@ fis.config.merge({
             {
                 reg : /^\/src\/css\/(.*\.less)$/i,
                 release : 'css/$1',
-                useSprite: true
+                useSprite: true,
+                useHash : false
             },
             {
                 reg : /^\/src\/css\/(.*\.css)$/i,
                 release : 'css/$1',
-                useSprite: true
+                useSprite: true,
+                useHash : false
             },
             {
                 reg : /^\/src\/css\/(.*\.png)$/i,

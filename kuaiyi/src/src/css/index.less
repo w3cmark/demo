@@ -15,6 +15,7 @@ body{
 	top: 10px;
 	height: 6px;
 	background:url(../img/_icon19.png?__sprite) no-repeat;
+	background-color: transparent;
 	&.arow-emA{
 		background-image: url(../img/_icon20.png?__sprite);
 	}
@@ -27,6 +28,7 @@ body{
 	top: 10px;
 	height: 12px;
 	background:url(../img/_icon21.png?__sprite) no-repeat;
+	background-color: transparent;
 }
 /*顶部*/
 .navibar{
@@ -99,6 +101,7 @@ body{
 			display: block;
 			color: #999;
 			background:url(../img/_logo01.png?__sprite) no-repeat;
+			background-color: transparent;
 			&:hover{
 				color: #999;
 				text-decoration: none;
@@ -126,6 +129,7 @@ body{
 			line-height: 20px;
 			width:18px;
 			background:url(../img/_icon35.png?__sprite) no-repeat;
+			background-color: transparent;
 			border:1px solid #dddddd;
 			border-left:0;
 			&.dot{
@@ -135,6 +139,9 @@ body{
 	}
 	&.header-fix{
 		position: fixed;
+		_position:absolute;
+		_top:100px!important;
+		// _top:~"expression(documentElement.scrollTop+100+'px')"!important;
 		.header-icon{
 			position: absolute;
 			bottom: -10px;
@@ -185,6 +192,7 @@ body{
 				font-size:12px;
 				font-family: "Arial";
 				background: url(../img/_icon18.png?__sprite) no-repeat;
+				background-color: transparent;
 			}
 		}
 	}
@@ -225,6 +233,7 @@ body{
 			left: 43px;
 			overflow: hidden;
 			background:url(../img/_icon16.png?__sprite) no-repeat;
+			background-color: transparent;
 		}
 		p{
 			em{
@@ -267,6 +276,7 @@ body{
 		cursor: pointer;
 		vertical-align: top;
 		background:url(../img/_btn07.png?__sprite) no-repeat;
+		background-color: transparent;
 	}
 	a{
 		display: inline-block;
@@ -321,6 +331,7 @@ body{
 		height: 70px;
 		display: block;
 		background: url(../img/_icon17.png?__sprite) no-repeat;
+		background-color: transparent;
 	}
 }
 .banner-left{
@@ -420,6 +431,7 @@ body{
 	height: 6px;
 	overflow: hidden;
 	background:url(../img/_icon06.png?__sprite) no-repeat;
+	background-color: transparent;
 }
 .m-select-option{
     position: absolute;
@@ -463,6 +475,7 @@ body{
     	margin: 5px 20px 0 45px;
     	overflow: hidden;
     	background:url(../img/_icon05.png?__sprite) no-repeat;
+    	background-color: transparent;
 	}
 	.hot{
 		height:25px;
@@ -560,9 +573,11 @@ body{
 		cursor: pointer;
 		color: #fff;
 		font-family:"Microsoft Yahei";
-		background:url(../img/_btn01.png?__sprite) no-repeat;
+		background-repeat: no-repeat;
+		background-image:url(../img/_btn01.png?__sprite);
+		background-color: transparent;
 		&:hover{
-			background:url(../img/_btn02.png?__sprite) no-repeat;
+			background-image:url(../img/_btn02.png?__sprite);
 		}
 	}
 	.question{
@@ -579,6 +594,7 @@ body{
 			margin-right: 5px;
 			vertical-align: top;
 			background:url(../img/_icon08.png?__sprite) no-repeat;
+			background-color: transparent;
 		}
 	}
 }
@@ -635,6 +651,7 @@ body{
     	margin: 5px 10px 0 0px;
     	overflow: hidden;
     	background:url(../img/_icon05.png?__sprite) no-repeat;
+    	background-color: transparent;
 	}
 	.question{
 		display: inline-block;
@@ -650,6 +667,7 @@ body{
 			margin-right: 5px;
 			vertical-align: top;
 			background:url(../img/_icon08.png?__sprite) no-repeat;
+			background-color: transparent;
 		}
 	}
 }
@@ -699,8 +717,9 @@ body{
 					font-size: 12px;
 					text-align: center;
 					background:url(../img/_icon10.png?__sprite) no-repeat;
+					background-color: transparent;
 					&.i1{
-						background:url(../img/_icon09.png?__sprite) no-repeat;
+						background-image:url(../img/_icon09.png?__sprite);
 					}
 				}
 				em{
@@ -791,6 +810,7 @@ body{
 					overflow: hidden;
 					cursor: pointer;
 					background:url(../img/_icon11.png?__sprite) no-repeat;
+					background-color: transparent;
 				}
 				&:hover{
 					text-decoration: none;
@@ -859,15 +879,16 @@ body{
 				margin: 4px auto 0;
 				color: #fff;
 				font-size: 12px;
-				background:url(../img/_btn03.png?__sprite) no-repeat;				
+				background:url(../img/_btn03.png?__sprite) no-repeat;
+				background-color: transparent;
 				&:hover{
 					color: #fff;
 					text-decoration: none;
-					background:url(../img/_btn05.png?__sprite) no-repeat;
+					background-image:url(../img/_btn05.png?__sprite);
 				}
 				&.btnA{
 					color: #999;
-					background:url(../img/_btn04.png?__sprite) no-repeat;
+					background-image:url(../img/_btn04.png?__sprite);
 				}
 			}
 			&.last{
@@ -896,8 +917,9 @@ body{
 							padding: 3px 2px 0 0;
 							font-size: 12px;
 							background:url(../img/_icon12.png?__sprite) no-repeat;
+							background-color: transparent;
 							&.none{
-								background:url(../img/_icon13.png?__sprite) no-repeat;
+								background-image:url(../img/_icon13.png?__sprite);
 							}
 						}
 						&.s2{
@@ -906,6 +928,7 @@ body{
 							top: 35px;
 							left: 35px;
 							background:url(../img/_icon14.png?__sprite) no-repeat;
+							background-color: transparent;
 						}
 					}
 					&:hover{
@@ -913,6 +936,7 @@ body{
 						color: #6c866c;
 						&.s2{
 							background:url(../img/_icon15.png?__sprite) no-repeat;
+							background-color: transparent;
 						}
 					}
 				}
@@ -947,6 +971,7 @@ body{
 				left: 15px;
 				overflow: hidden;
 				background:url(../img/_icon16.png?__sprite) no-repeat;
+				background-color: transparent;
 			}
 			&.show{
 				opacity:100;
@@ -1059,7 +1084,7 @@ body{
 			top: 0;
 			height: 28px;
 			border: 1px solid #dbe1e5;
-			background: #f9f9f9;
+			background-color: #f9f9f9;
 			background-repeat: no-repeat;
 			width: 26px;
 			&.prev-month{
@@ -1121,11 +1146,13 @@ body{
 				margin: 0 auto;
 				&.btn{
 					background: url(../img/_btn11.png?__sprite) no-repeat;
+					background-color: transparent;
+					&.btnA{
+						color:#999;
+						background-image: url(../img/_btn10.png?__sprite);
+					}
 				}
-				&.btnA{
-					color:#999;
-					background-image: url(../img/_btn10.png?__sprite);
-				}
+
 			}
 		}
 	}
@@ -1243,6 +1270,7 @@ body{
 			color: #fff;
 			text-align: center;
 			background: url(../img/_btn09.png?__sprite) no-repeat;
+			background-color: transparent;
 			&.btnA{
 				color: #999;
 				background-image: url(../img/_btn08.png?__sprite);
@@ -1307,6 +1335,7 @@ body{
 				width: 10px;
 				height: 10px;
 				background: url(../img/_icon22.png?__sprite) no-repeat;
+				background-color: transparent;
 			}
 		}
 	}
@@ -1411,15 +1440,16 @@ body{
 			margin: 10px auto 0;
 			color: #fff;
 			font-size: 12px;
-			background:url(../img/_btn03.png?__sprite) no-repeat;				
+			background:url(../img/_btn03.png?__sprite) no-repeat;
+			background-color: transparent;
 			&:hover{
 				color: #fff;
 				text-decoration: none;
-				background:url(../img/_btn05.png?__sprite) no-repeat;
+				background-image:url(../img/_btn05.png?__sprite);
 			}
 			&.btnA{
 				color: #999;
-				background:url(../img/_btn04.png?__sprite) no-repeat;
+				background-image:url(../img/_btn04.png?__sprite);
 			}
 		}
 	}
@@ -1452,6 +1482,7 @@ body{
 			z-index:6;
 			left: 15px;
 			background:url(../img/_icon16.png?__sprite) no-repeat;
+			background-color: transparent;
 		}
 		&.show{
 			opacity: 100;
@@ -1540,6 +1571,7 @@ body{
 		width:200px;
 		height:70px;
 		background:url(../img/_logo02.png?__sprite) no-repeat;
+		background-color: transparent;
 	}
 	em{
 		position:absolute;
@@ -1549,6 +1581,7 @@ body{
 		height:43px;
 		width:124px;
 		background:url(../img/_btn06.png?__sprite) no-repeat;
+		background-color: transparent;
 		overflow:hidden;
 	}
 	&:hover{
@@ -1572,6 +1605,8 @@ body{
 // 弹层
 .pop-main{
 	position: fixed;
+	_position:absolute;
+	_top:~"expression(documentElement.scrollTop+200+'px')";
 	z-index:1000;
 	background: #fff;
 	top:50%;
@@ -1617,8 +1652,9 @@ body{
 				height:40px;
 				margin-right: 10px;
 				background:url(../img/_icon30.png?__sprite) no-repeat;
+				background-color: transparent;
 				&.iconA{
-					background:url(../img/_icon34.png?__sprite) no-repeat;
+					background-image:url(../img/_icon34.png?__sprite);
 				}
 			}
 
@@ -1667,6 +1703,7 @@ body{
 						padding-left: 5px;
 						.icon{
 							background:url(../img/_icon31.png?__sprite) no-repeat;
+							background-color: transparent;
 						}
 					}
 					&.wrong-tip{
@@ -1681,6 +1718,7 @@ body{
 						padding-left: 5px;
 						.icon{
 							background:url(../img/_icon32.png?__sprite) no-repeat;
+							background-color: transparent;
 						}
 					}
 				}
@@ -1726,6 +1764,7 @@ body{
 				padding-left: 60px;
 				.icon{
 					background:url(../img/_icon31.png?__sprite) no-repeat;
+					background-color: transparent;
 				}
 			}
 			&.p-tipsA{
@@ -1821,8 +1860,9 @@ body{
 		line-height: 40px;
 		margin: 0 5px;
 		background:url(../img/_btn12.png?__sprite) no-repeat;
+		background-color: transparent;
 		&.btnA{
-			background:url(../img/_btn14.png?__sprite) no-repeat;
+			background-image:url(../img/_btn14.png?__sprite);
 		}
 		&:hover{
 			text-decoration: none;
@@ -1837,6 +1877,7 @@ body{
 		width:16px;
 		height:16px;
 		background:url(../img/_icon29.png?__sprite) no-repeat;
+		background-color: transparent;
 		.transition(all ease-in-out 0.4s);
 		.transform(rotate(0deg));
 		&:hover{
@@ -1870,6 +1911,7 @@ body{
 		color: #fff;
 		font-size: 14px;
 		background: url(../img/_btn13.png?__sprite) no-repeat;
+		background-color: transparent;
 		border: 0;
 		cursor: pointer;
 		margin: 15px 0 0 58px;
@@ -1981,6 +2023,7 @@ body{
 					right: -11px;
 					bottom: -5px;
 					background: url(../img/_icon33.png?__sprite) no-repeat;
+					background-color: transparent;
 				}
 				&:hover{
 					text-decoration: none;

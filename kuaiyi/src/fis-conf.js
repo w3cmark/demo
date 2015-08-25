@@ -102,7 +102,8 @@ fis.config.merge({
             },
             {
                 reg : /^\/src\/img\/(.*)$/i,
-                release : 'img/$1'
+                release : 'img/$1',
+                useHash : false
             },
             {
                 reg : /^\/src\/data\/(.*)$/i,

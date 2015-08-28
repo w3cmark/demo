@@ -1,0 +1,4 @@
+<link rel="stylesheet" data-fixed="true" type="text/css" href="../css/index.less" />
+<div>
+    我是本地的include，发布到正式环境，会引用线上的
+</div>

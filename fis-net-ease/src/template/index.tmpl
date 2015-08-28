@@ -1,0 +1,17 @@
+﻿<div>
+    <!-- 我是注释，语法均为Javascript原生语法，默认分割符为 <% %> ，也可以自定义，参见API部分 -->
+    <!-- 输出变量语句，输出title -->
+    <h1>title:<%=title%></h1>
+    <!-- 判断语句if else-->
+    <%if(list.length>1) { %>
+        <h2>输出list，共有<%=list.length%>个元素</h2>
+        <ul>
+            <!-- 循环语句 for-->
+            <%for(var i=0;i<5;i++){%>
+                <li><%=list[i]%></li>
+            <%}%>
+        </ul>
+    <%}else{%>
+        <h2>没有list数据</h2>   
+    <%}%>
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "fis-postprocessor-trueload",
+  "version": "0.0.1",
+  "description": "一个fis的插件，把外链css、外链js抽出来",
+  "main": "index.js",
+  "keywords": [
+    "fis",
+    "include"
+  ],
+  "author": {
+    "name": "gzzhengxuze"
+  },
+  "license": "NET-EASE",
+  "dependencies": {},
+  "gitHead": "fb5cbb7f8b98789543bbd4dd49b5c74581891b91",
+  "_id": "fis-postprocessor-trueload@0.0.1",
+  "scripts": {},
+  "_shasum": "b4fcd561b83602a77f400a795873e81a768f2a92",
+  "_from": "fis-postprocessor-trueload@",
+  "_npmVersion": "1.4.21",
+  "_npmUser": {
+    "name": "gzzhengxuze",
+    "email": "81735738@qq.com"
+  },
+  "maintainers": [
+    {
+      "name": "gzzhengxuze",
+      "email": "81735738@qq.com"
+    }
+  ],
+  "dist": {
+    "shasum": "b4fcd561b83602a77f400a795873e81a768f2a92",
+    "tarball": "http://registry.npmjs.org/fis-postprocessor-trueload/-/fis-postprocessor-trueload-0.0.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/fis-postprocessor-trueload/-/fis-postprocessor-trueload-0.0.1.tgz"
+}

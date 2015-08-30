@@ -4,12 +4,11 @@ Loader.show({
         'http://dummyimage.com/10x10/22d/79c',
         'http://dummyimage.com/100x10/22d/79c',
         'http://dummyimage.com/10x100/22d/79c',
-        __uri('../../img/bg.jpg'),
-        __uri('../../img/button.png')
+        'http://dummyimage.com/320x300/ddd/79c'
 
     ],
     bgColor: '#000',//loading背景色值，默认#000
-    mainWrap: '#Jmain',//主题内容DOM，默认id值是Jmain
+    // mainWrap: '#Jmain',//主题内容DOM，默认id值是Jmain
     defaultAnimation: true,//布尔值，默认值true。是否显示默认的loading动画
     customAnimation: function(curPer){//加载进度回调函数，取值0~1
         // console.log(curPer);

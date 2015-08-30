@@ -13,7 +13,7 @@ var Loader = function(){
         _options = {
             iFileData: [],
             bgColor: '#000',
-            mainWrap: '#Jmain',
+            // mainWrap: '#Jmain',
             defaultAnimation: true,
             customAnimation: function(curPer){
             },
@@ -26,9 +26,13 @@ var Loader = function(){
             }
             var startTime = +new Date,
                 newdiv = document.createElement("div");
-            _loadId = 'Nie_load_id'+ startTime;
-            _loadBgId = 'Nie_loadBg_id'+ startTime;
-            _loadTopId = 'Nie_loadTop_id'+ startTime;
+            _loadId = 'Nie_load_id';
+            _loadBgId = 'Nie_loadBg_id';
+            _loadTopId = 'Nie_loadTop_id';
+            if($$('#'+ _loadId)){
+                // console.log('...');
+                return;
+            }
             var newdiv = document.createElement("div");
             newdiv.id = _loadId;
             newdiv.style.cssText = 'position:absolute;z-index:9999;left:0;top:0;width:100%;height:100%;background:' + _options.bgColor + ';overflow:hidden;margin:0;padding:0;';
@@ -134,7 +138,8 @@ var Loader = function(){
             if(_loaded == _total) {
                 setTimeout(function(){
                     hide();
-                    $$(_options.mainWrap).style.display = 'block';
+                    loadOverFun();
+                    // $$(_options.mainWrap).style.display = 'block';
                 },450)
             }
         };

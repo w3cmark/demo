@@ -8,10 +8,15 @@ module.exports = function(content,file,conf){
 
     var cssfileReg = /<link\s(type=\"text\/css\"|rel=\"stylesheet\").+>/gim,
 
-        // jsfileReg = /<script.+(src=.+\/trueLoad.+\.js).+><\/script>/gim,
+        trueLoadJsfileReg = /<script.+(src=.+\/trueLoad.+\.js).+><\/script>/gim,
+
         jsfileReg = /<script.+(src=.+\.js).+><\/script>/gim,
 
         bodyfileReg = /<body>[\s\S]+<\/body>/gim;
+
+    if(!trueLoadJsfileReg.test(content)){
+        return;
+    }
 
     var arrMactches_css,
         requreHtml_css = '',
@@ -35,12 +40,12 @@ module.exports = function(content,file,conf){
                         +'};',
         appendJsFun = 'function appendJsFun(arr) {'
                             +'var len = arr.length;'
-                            +'if(len == 0){return}'
-                            +'for(var i = 0;i < len; i++){'
-                                +'arr[i].onload = arr[i].onerror = function(){'
-                                +'console.log(arr[0]);'
-                                +'    document.body.appendChild(arr[i]);'
-                                +'};'
+                            +'if(len == 0){return;};'
+                            +'document.body.appendChild(arr[0]);'
+                            +'for(var i = 0;i < len-1; i++){'
+                                +'arr[i].onload = arr[i].onerror = function(j){'
+                                +'    document.body.appendChild(arr[j+1]);'
+                                +'}(i);'
                             +'};'
                         +'};',
         
@@ -78,11 +83,6 @@ module.exports = function(content,file,conf){
         arrMactches_js = content.match(jsfileReg);
         
         if(arrMactches_js){
-            for (var i=0;i < arrMactches_js.length ; i++)
-            {
-                // console.log('js'+i+':'+arrMactches_js[i]);   //Cat  cat
-                // requreHtml_js +="document.write('"+ arrMactches_js[0] +"');";
-            }
 
             content = content.replace(jsfileReg,'');
         }
@@ -94,12 +94,8 @@ module.exports = function(content,file,conf){
             for (var i=0;i < arrMactches_css.length ; i++){
                 var href = arrMactches_css[i].match(csshrefReg),
                     href = href[0];
-                // console.log('href:'+RegExp.$1)
                 requreHtml_css += 'createLink("'+ RegExp.$1 +'");';
-                
-                
             }
-            // requreHtml_css = html+'appendJsFun(requreJsArr);';
         }
 
         if(arrMactches_js){
@@ -108,7 +104,6 @@ module.exports = function(content,file,conf){
             {
                 var href = arrMactches_js[i].match(jshrefReg),
                     href = href[0];
-                // console.log('href:'+RegExp.$1);
                 html += 'createScript("'+ RegExp.$1 +'");';
             }
             requreHtml_js = html+'appendJsFun(requreJsArr);';

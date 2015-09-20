@@ -1,8 +1,8 @@
 <!--param start-->
     //修改cdn的绝对路径（测试环境）
-    fis.set('cdn-path','http://test.nie.163.com/test15/mxxc-gw-m-20150907');
+    fis.set('cdn-path','http://test.nie.163.com/zzres/eid/sjgj-m-20150919');
     //修改cdn的绝对路径（正式环境）
-    fis.set('cdn-path-release','http://res.mxxc.netease.com/gw/15v3/m');
+    fis.set('cdn-path-release','http://test.nie.163.com/test/zzres/eid/sjgj-m-20150919');
     //修改雪碧图放大缩小倍数，默认是1，iphone是0.5
     fis.set('css-scale',1);
     //修改include文件的域名
@@ -79,18 +79,21 @@ fis.media('local')
     .match('**', {
       relative: true,
       charset : fis.get("charset"),
-      deploy: fis.plugin('encoding')
+      deploy: [fis.plugin('encoding'),fis.plugin('local-deliver', {
+            to: './local',
+            exclude : ['inline','temp_file','config']
+        })]
     })
     .match("**.html",{
         postprocessor : fis.plugin('include',{
             nouse : true
         })
     })
-    .match('**', {
-      deploy: fis.plugin('local-deliver', {
-          to: './local'
-      })
-    })
+    // .match('**', {
+    //   deploy: [fis.plugin('local-deliver', {
+    //       to: './local'
+    //   })]
+    // })
 
 //配置测试打包
 

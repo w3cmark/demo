@@ -60,6 +60,7 @@ body{
 
 .stage1{
     background-image: url(../img/bg01.jpg);
+    background-color: #403f3a;
     .slide-btn{
         width:3rem;
         height:0.52rem;
@@ -107,7 +108,7 @@ body{
     .mess{
         width:5.79rem;
         height:4.48rem;
-        margin:2rem 0 0 0.15rem;
+        margin:2.5rem 0 0 0.15rem;
         position: relative;
         z-index:1;
         background-size: 100%;
@@ -185,19 +186,30 @@ body{
 }
 .stage3{
     background-image: url(../img/bg03_01.jpg);
-    p{
-        font-size:0.4rem;
-        text-align: center;
-        padding-top: 2.3rem;
-        width:1.6rem;
-        margin:0 auto;
-        color:#fff;
+    background-color: #40403a;
+    // p{
+    //     font-size:0.4rem;
+    //     text-align: center;
+    //     padding-top: 2.6rem;
+    //     width:1.6rem;
+    //     margin:0 auto;
+    //     color:#fff;
+    // }
+    .phone-cacel-btn{
+        display: block;
+        margin: 75% auto 0;
+        width: 1.76rem;
+        height: 2.26rem;
+        background-size: 100%;
+        background-repeat:no-repeat;
+        background-image: url(../img/icon12.png);
     }
     
 }
 
 .stage4{
     background-image: url(../img/bg04_01.jpg);
+    background-color: #3d3d3d;
     .pop-chose{
         position: absolute;
         width:100%;
@@ -315,7 +327,7 @@ body{
         width:1.75rem;
         height:3.67rem;
         bottom:1rem;
-        left:1.2rem;
+        left:1.25rem;
         background-size: 100%;
         background-repeat:no-repeat;
         background-image: url(../img/bg06_03.jpg);
@@ -347,15 +359,46 @@ body{
 .stage7{
     background-image: url(../img/bg07_01.jpg);
     background-color: #fff;
+    .input{
+        width: 6.48rem;
+        height: 0.84rem;
+        line-height: 0.84rem;
+        margin: 2.2rem auto 0;
+        border: 0.03rem solid #c6ccd8;
+        border-radius: 0.1rem;
+        position: relative;
+        overflow: hidden;
+        span{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1.3rem;
+            height: 100%;
+            line-height: 0.84rem;
+            text-align: center;
+            display: block;
+            font-size: 0.3rem;
+            background: #2d73d2;
+            color: #fff;
+        }
+    }
     .num{
         width:2.23rem;
         height:0.35rem;
-        margin:2.2rem 0 0 0.9rem;
+        margin: 0.25rem 0 0 0.2rem;
         background-size:2.3rem;
         background-repeat:no-repeat;
         background-image: url(../img/icon11.png);
         .widthAni();
         .animation(widthAni 1.4s 0.3s linear both);
+    }
+    p{
+        font-size: 0.2rem;
+        color: #ccc;
+        text-indent: 1em;
+        padding-top: 0.2rem;
+        width: 6.6rem;
+        margin: 0 auto;
     }
 }
 
@@ -371,7 +414,7 @@ body{
         text-align: center;
         display: block;
         background: #2d73d2;
-        margin: 5rem auto 0;
+        margin: 6rem auto 0;
     }
     .stage-pop{
         position: absolute;
@@ -404,7 +447,7 @@ body{
     .txt{
         width:5.9rem;
         height:7.8rem;
-        margin:1rem auto 0;
+        margin:0.5rem auto 0;
         background-size: 100%;
         background-repeat:no-repeat;
         background-image: url(../img/bg09_02.png);
@@ -428,4 +471,77 @@ body{
             margin:0.36rem auto 0;
         }
     }
+    .stage-pop{
+        position: absolute;
+        z-index:10;
+        width:100%;
+        height:100%;
+        top: 0;
+        left:0;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        display: none;
+        // font-size: 0.4rem;
+        // line-height: 1rem;
+        color: #fff;
+        text-align: center;
+        .transition(all ease 0.3s);
+        &.show{
+            opacity: 1;
+        }
+    }
+    .refer_insetapp {
+        color: #fff;
+        position: relative;
+        margin: 0 auto;
+        top: 0.4rem;
+        width: 6rem;
+        height: 1.8rem;
+        border-left: 0.04rem solid #fff;
+        border-right: 0.04rem solid #fff;
+        border-bottom: 0.04rem solid #fff;
+        padding-top: 0.36rem;
+    }
+    .refer_insetapp p {
+        font-size: 0.48rem;
+        text-align: center;
+    }
+    .refer_insetapp .arrow_line {
+        display: table;
+        width: 100%;
+        -webkit-transform: translate(0, -0.36rem);
+        -moz-transform: translate(0, -0.36rem);
+        -ms-transform: translate(0, -0.36rem);
+        transform: translate(0, -0.36rem);
+    }
+    .refer_insetapp .arrow_line em,
+    .refer_insetapp .arrow_line span {
+        display: block;
+        height: 0.04rem;
+        background: #fff;
+    }
+    .refer_insetapp .arrow_line em {
+        float: left;
+        margin-right: 0.04rem;
+        width: 4.68rem;
+    }
+    .refer_insetapp .arrow_line span {
+        float: right;
+        width: 0.77rem;
+        margin-left: 0.04rem;
+    }
+    .refer_insetapp .arrow_line i {
+        display: block;
+        float: left;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-left: .04rem solid #fff;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-top: .04rem solid #fff;
+        margin-top: -0.2rem;
+    }
 }
+

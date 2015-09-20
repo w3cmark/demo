@@ -2,22 +2,19 @@
 <html>
 <head>
 <meta charset="gb2312">
-<title>管家安全出行</title>
-<meta name="keywords" content="来自星星的你手游,来自星星的你,星你,星你手游,养成游戏,模拟游戏,红人即时社交手游,社交手游,金秀贤,都敏俊,全智贤,千颂伊,梦想星城官方网站,来自星星的你官方网站,梦想星城攻略,来自星星的你攻略,星你攻略,梦想星城礼包,来自星星的你礼包,星你礼包,社交,养成,交友,社交,网易游戏,男女比例1:1,模拟经营,卡通,全民小镇,卡通农场,奇迹暖暖" />
-<meta name="description" content="全新养成体验，红人即时社交手游。《来自星星的你》正版授权手游，10月App Store、安卓双平台公测！" />
+<title>管家安全出行1</title>
+<meta name="keywords" content="您最近预订的航班因飞机故障已被取消！" />
+<meta name="description" content="您最近预订的航班因飞机故障已被取消！" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 <meta name="format-detection" content="telephone=no"/>
 <meta name="format-detection" content="address=no"/>
 <meta name="applicable-device"content="mobile">
-<link rel="canonical" href="http://bjx.163.com" >
-<link rel="dns-prefetch" href="http://res.nie.netease.com">
-
 <link type="text/css" rel="stylesheet" href="css/index.less" media="all" />
 </head>
 <body>
 <div id="share_content" class="hide">
-    <p id="share_title" pub-name="分享标题">管家安全出行</p>
-    <p id="share_desc" pub-name="分享描述">管家安全出行</p>
+    <p id="share_title" pub-name="分享标题">您最近预订的航班因飞机故障已被取消！</p>
+    <p id="share_desc" pub-name="分享描述">您最近预订的航班因飞机故障已被取消！</p>
     <img id="share_pic" pub-name="分享图片" data-src="img/share.png">
 </div>
 <div class="viewtips" id="forhorview">
@@ -49,12 +46,13 @@
     </div>
 
     <div class="stage stage3">
-        <p>通话中...</p>
-        <div class="pop-chose" id="Jpopchose">
+        <!-- <p>通话中...</p> -->
+        <a class="phone-cacel-btn" id="Jphonecacelbtn" href="javascript:;"></a>
+        <!-- <div class="pop-chose" id="Jpopchose">
             <div class="pop-chose-con">
                 <a class="cacel-btn" href="javascript:;"></a><a class="call-btn" href="javascript:;" ></a>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="stage stage4">
@@ -87,7 +85,11 @@
     </div>
 
     <div class="stage stage7">
-        <div class="num"></div>
+        <div class="input">
+            <div class="num"></div>
+            <span>查询</span>
+        </div>        
+        <p>本平台数据来源于"天下无贼反信息诈骗联盟",可查询恶意电话号码、网站、银行卡号</p>
     </div>
 
     <div class="stage stage8">
@@ -99,22 +101,32 @@
 
     <div class="stage stage9">
         <div class="txt"></div>
-        <a href="javascript:;" class="btn btnA">下载手机管家防骗</a>
-        <a href="javascript:;" class="btn btnB" id="Jstage9btn">多一人分享,少一人被骗</a>
+        <a href="https://www.baidu.com/" class="btn btnA">下载手机管家防骗</a>
+        <a href="javascript:;" class="btn btnB" id="Jsharebtn">多一人分享，少一人被骗</a>
+        <div class="stage-pop" id="Jsharepop">
+            <div class="refer_insetapp">
+                <div class="arrow_line">
+                    <em></em><i></i><span></span>
+                </div>
+                <p>“分享至朋友圈”，<br>邀请好友一起来玩吧！
+                </p>
+            </div>
+        </div>
     </div>
 
     <a class="music-btn on" id="Jaudiobtn" href="javascript:;"></a>
     <!-- 音频 start-->
-    <!-- <audio id="Jaudio" class="media-audio" src="data/Destiny.mp3" autoplay preload loop="loop">
-    </audio > -->
+    <audio id="JaudioA" class="media-audio" src="data/mess.mp3" preload autoplay>
+    </audio >
+    <audio id="Jaudio" class="media-audio" src="data/zealer.mp3" preload>
+    </audio >
     <!-- 音频 end-->
-
 
 </div>
 
 <!-- zepto mix NIE (最新版本）-->
 <script charset="gb2312" src="js/lib/zepto.min.js"></script>
 <script charset="gb2312" src="js/app/index.js"></script>
-<script charset="gb2312" src="js/app/blank.js"></script>
+<script charset="gb2312" src="js/app/mobiShare.js"></script>
 </body>
 </html> 

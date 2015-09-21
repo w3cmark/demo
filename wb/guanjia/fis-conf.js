@@ -12,7 +12,7 @@
 
 //配置通用
 fis.set('project.files', ['src/**']);
-fis.set('project.ignore', ['node_modules/**', 'dist/**', 'release/**', 'README.md' , 'local/**' ,'.git/**', 'fis-conf.js']);
+fis.set('project.ignore', ['node_modules/**', 'dist/**','js/**', 'release/**', 'README.md' , 'local/**' ,'.git/**', 'fis-conf.js']);
 fis.set('charset', 'gbk');
 fis.set('project.charset', 'gbk');
 
@@ -79,7 +79,7 @@ fis.media('local')
     .match('**', {
       relative: true,
       charset : fis.get("charset"),
-      deploy: [fis.plugin('encoding'),fis.plugin('local-deliver', {
+      deploy: [fis.plugin('encoding'),fis.plugin('local-supply', {
             to: './local',
             exclude : ['inline','temp_file','config']
         })]
@@ -89,11 +89,6 @@ fis.media('local')
             nouse : true
         })
     })
-    // .match('**', {
-    //   deploy: [fis.plugin('local-deliver', {
-    //       to: './local'
-    //   })]
-    // })
 
 //配置测试打包
 

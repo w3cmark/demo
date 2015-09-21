@@ -6,6 +6,7 @@ var Index = function(){
         $share = $("#share"),
         $btn_close_sign,
         _audio = $("#Jaudio").get(0),
+        _audioB = $("#JaudioB").get(0),
         $audio_btn = $("#Jaudiobtn"),
         $stages = $main.find('.stage'),
         $stage6pop = $('#Jstage6pop'),
@@ -79,7 +80,7 @@ var Index = function(){
                 _audio.pause();
                 $stages.eq(2).hide();
                 showEle($stages.eq(3));
-            },12000)
+            },19000)
         })
 
         _audio.addEventListener('ended', function () {
@@ -98,8 +99,9 @@ var Index = function(){
 
         $('#Jpopchose .pop-chose-con a').bind('click',function(){
             $stages.eq(3).hide();
-            if($(this).index() == 0){
+            if($(this).index() == 1){
                 showEle($stages.eq(4));
+                _audioB.play();
             }else{
                 showEle($stages.eq(5));
                 setTimeout(function(){
@@ -117,6 +119,7 @@ var Index = function(){
         })
 
         $stages.eq(4).bind('click',function(){
+            _audioB.pause();
             $stages.eq(4).hide();
             showEle($stages.eq(8));
         })

@@ -105,14 +105,14 @@ var Index = function(){
                 setTimeout(function(){
                     showEle($stage6pop);
                 },450)
-                setTimeout(function(){
-                    $stages.eq(5).hide();
-                    showEle($stages.eq(6));
-                },2500)
-                setTimeout(function(){
-                    $stages.eq(6).hide();
-                    showEle($stages.eq(7));
-                },5500)
+                // setTimeout(function(){
+                //     $stages.eq(5).hide();
+                //     showEle($stages.eq(6));
+                // },2500)
+                // setTimeout(function(){
+                //     $stages.eq(6).hide();
+                //     showEle($stages.eq(7));
+                // },5500)
             }
         })
 
@@ -282,3 +282,77 @@ var Index = function(){
 }();
 
 Index.init();
+
+//自定义分享设置
+var shareInfo = {
+    title: $('#share_title').html(),//分享标题
+    desc: $('#share_desc').html(),//分享正文
+    url: window.location.href,//分享URL
+    imgurl: $('#share_pic').attr('data-src')//分享图片
+};
+wx.config({
+    appId: '',
+    timestamp: '',
+    nonceStr: '',
+    signature: '',
+    jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareWeibo']
+});
+wx.ready(function () {
+        wx.onMenuShareAppMessage({
+            title: shareInfo.title,
+            desc: shareInfo.desc,
+            link: shareInfo.url,
+            imgUrl: shareInfo.imgurl,
+            trigger: function () {
+                if(shareData){
+                    this.title = shareData.title;
+                    this.desc = shareData.desc;
+                }
+            },
+            success: function () {
+            }
+        });
+        wx.onMenuShareTimeline({
+            title: shareInfo.desc,
+            link: shareInfo.url,
+            imgUrl: shareInfo.imgurl,
+            trigger: function () {
+                if(shareData){
+                    this.title = shareData.desc;
+                }
+            },
+            success: function () {
+            }
+        });
+        wx.onMenuShareQQ({
+            title: shareInfo.title,
+            desc: shareInfo.desc,
+            link: shareInfo.url,
+            imgUrl: shareInfo.imgurl,
+            trigger: function () {
+                if(shareData){
+                    this.title = shareData.title;
+                    this.desc = shareData.desc;
+                }
+            },
+            success: function () { 
+            },
+            cancel: function () { 
+            }
+        });
+        wx.onMenuShareWeibo({
+            title: shareInfo.title,
+            desc: shareInfo.desc,
+            link: shareInfo.url,
+            imgUrl: shareInfo.imgurl,
+            trigger: function () {
+                if(shareData){
+                    this.title = shareData.desc;
+                }
+            },
+            success: function () { 
+            },
+            cancel: function () { 
+            }
+        });
+});

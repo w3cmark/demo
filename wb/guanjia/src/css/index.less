@@ -62,21 +62,23 @@ body{
     background-image: url(../img/bg01.jpg);
     background-color: #403f3a;
     .slide-btn{
-        width:3rem;
-        height:0.52rem;
-        background-size:auto 100%;
+        width:5rem;
+        height:1rem;
+        background-size:3rem;
         background-repeat:no-repeat;
         background-image: url(../img/icon02.png);
-        margin:10rem auto 0;
+        margin:9.5rem auto 0;
         display: block;
-        background-position:0.55rem 0;
+        background-position:1rem 0.2rem;
         em{
             display: block;
             width:0.23rem;
+            margin-left: 0.5rem;
             height:100%;
             background-size: 100%;
             background-repeat:no-repeat;
             background-image: url(../img/icon01.png);
+            background-position:0 0.25rem;
             .aniArrowA();
             .animation(aniArrowA 1s 0.3s ease-in-out alternate infinite both);
         }
@@ -141,7 +143,20 @@ body{
                 opacity: 1;
                 .transform(translateY(-0.2rem));
             }
-        }        
+        }
+        .s-icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            top: 2.8rem;
+            left: 4rem;
+            z-index: 4;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(../img/icon13.png);
+            .fadeIn();
+            .animation(fadeIn 1s 0.3s ease-in-out 6 alternate both);
+        }      
     }
     .pop-phone{
         position: absolute;
@@ -167,6 +182,17 @@ body{
             height:0.87rem;
             display:inline-block;
             margin-top: 1.1rem;
+        }
+        .s-icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            z-index: 4;
+            display:block;
+            margin:0.3rem 0 0 1.5rem;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(../img/icon13.png);
+            .animation(fadeIn 1s 0.3s ease-in-out 6 alternate both);
         }
         &.show{
             opacity: 1;
@@ -197,7 +223,10 @@ body{
     // }
     .phone-cacel-btn{
         display: block;
-        margin: 75% auto 0;
+        position: absolute;
+        left: 50%;
+        margin-left: -0.88rem;
+        bottom: 2%;
         width: 1.76rem;
         height: 2.26rem;
         background-size: 100%;
@@ -338,6 +367,18 @@ body{
             display:block;
             width:100%;
             height:1rem;
+            padding-top: 0.2rem;
+            .s-icon {
+                width: 1.2rem;
+                height: 1.2rem;
+                z-index: 4;
+                display:block;
+                margin:0 0 0 1rem;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-image: url(../img/icon13.png);
+                .animation(fadeIn 1s 0.3s ease-in-out 6 alternate both);
+            }
         }
         &.show{
             opacity: 1;
@@ -367,8 +408,8 @@ body{
         border: 0.03rem solid #c6ccd8;
         border-radius: 0.1rem;
         position: relative;
-        overflow: hidden;
-        span{
+        // overflow: hidden;
+        a{
             position: absolute;
             right: 0;
             top: 0;
@@ -380,6 +421,19 @@ body{
             font-size: 0.3rem;
             background: #2d73d2;
             color: #fff;
+            .s-icon {
+                width: 1.2rem;
+                height: 1.2rem;
+                z-index: 4;
+                display:block;
+                position: absolute;
+                top:0.2rem;
+                left:0.6rem;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-image: url(../img/icon13.png);
+                .animation(fadeIn 1s 0.3s ease-in-out 6 alternate both);
+            }
         }
     }
     .num{

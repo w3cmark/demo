@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="gb2312">
-<title>管家安全出行1</title>
+<title>对不起，您的航班已因故取消</title>
 <meta name="keywords" content="您最近预订的航班因飞机故障已被取消！" />
 <meta name="description" content="您最近预订的航班因飞机故障已被取消！" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
@@ -14,8 +14,8 @@
 <body>
 <div id="share_content" class="hide">
     <p id="share_title" pub-name="分享标题">您最近预订的航班因飞机故障已被取消！</p>
-    <p id="share_desc" pub-name="分享描述">您最近预订的航班因飞机故障已被取消！</p>
-    <img id="share_pic" pub-name="分享图片" data-src="img/share.png">
+    <p id="share_desc" pub-name="分享描述">对不起，请点击查看！</p>
+    <img id="share_pic" pub-name="分享图片" data-src="img/share.jpg">
 </div>
 <div class="viewtips" id="forhorview">
     <i></i>
@@ -36,10 +36,11 @@
         <div class="mess">
             <a class="mess-btn" href="javascript:;" id="Jmessbtn"></a>
             <a class="phone-btn" href="javascript:;" id="Jphonebtn"></a>
+            <span class="s-icon"></span>
         </div>
         <div class="pop-phone" id="Jpopphone">
             <div class="pop-phone-con">
-                <a class="cacel-btn" href="javascript:;"></a><a class="call-btn" href="javascript:;" ></a>
+                <a class="cacel-btn" href="javascript:;"></a><a class="call-btn" href="javascript:;" ><span class="s-icon"></span></a>
             </div>
         </div>
         <div class="bottom-bg"></div>
@@ -79,7 +80,7 @@
 
     <div class="stage stage6">
         <div class="stage-pop" id="Jstage6pop">
-            <a href="javascript:;"></a>
+            <a href="javascript:;"><span class="s-icon"></span></a>
         </div>
         <div class="bottom-bg"></div>
     </div>
@@ -87,7 +88,7 @@
     <div class="stage stage7">
         <div class="input">
             <div class="num"></div>
-            <span>查询</span>
+            <a href="javascript:;">查询<span class="s-icon"></span></a>
         </div>        
         <p>本平台数据来源于"天下无贼反信息诈骗联盟",可查询恶意电话号码、网站、银行卡号</p>
     </div>
@@ -125,8 +126,9 @@
 </div>
 
 <!-- zepto mix NIE (最新版本）-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script charset="gb2312" src="js/lib/zepto.min.js"></script>
 <script charset="gb2312" src="js/app/index.js"></script>
-<script charset="gb2312" src="js/app/mobiShare.js"></script>
+<!-- <script charset="gb2312" src="js/app/mobiShare.js"></script> -->
 </body>
 </html> 

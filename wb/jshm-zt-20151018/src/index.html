@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>军师很忙</title>
+<meta name="keywords" content="军师很忙" />
+<meta name="description" content="军师很忙" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="address=no"/>
+<meta name="applicable-device"content="mobile">
+<link rel="canonical" href="http://bjx.163.com" >
+<link rel="dns-prefetch" href="http://res.nie.netease.com">
+
+<link type="text/css" rel="stylesheet" href="css/index.less" media="all" />
+</head>
+<body>
+<div id="share_content" class="hide">
+    <p id="share_title" pub-name="分享标题">军师很忙分享标题</p>
+    <p id="share_desc" pub-name="分享正文">军师很忙分享正文</p>
+    <img id="share_pic" pub-name="分享图片" data-src="img/share.png">
+</div>
+<div class="viewtips" id="forhorview">
+    <i></i>
+    为了更好的体验，请在竖屏下浏览~
+</div>
+<div class="main" id="Jmain">
+
+    <div class="stage stage0">
+        <div class="m-bigbtn">
+            <div class="icon-round">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <div class="m-left-bg"></div>
+            <div class="m-right-bg"></div>
+            <span class="m-left-zi"><em>阴</em></span>
+            <span class="m-right-zi"><em>阳</em></span>
+            <a class="m-bigbtn-btns m-left-btn" href="javascript:;"></a>
+            <a class="m-bigbtn-btns m-right-btn" href="javascript:;"></a>
+        </div>
+        <div class="m-txt"></div>
+        <a class="m-btn" href="javascript:;">确定选择</a>
+    </div>
+    
+    <div class="stage stage1">
+        <div class="m-time"></div>
+        <a href="javascript:;" class="slide-btn" id="Jslidebtn">
+            <em></em>
+        </a>
+        <div class="m-mess" id="Jmessbtn">
+            <p>微信 <span>现在</span></p>
+            <p id="Jmessname"></p>
+            <p><span>滑动来查看</span></p>
+            <i class="m-mess-icon"></i>
+        </div>
+        <div class="iconA"></div>
+        <div class="iconB"></div>
+        
+    </div>
+
+    <div class="stage stage2">
+        <div class="m-small-point" id="Jlocksmallpoint">
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+            <span><em></em></span>
+        </div>
+        <p id="Jpassresult">确认解锁文案</p>
+        <div class="m-big-point" id="Jlockpoint">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <i class="i-line01"></i>
+            <i class="i-line03"></i>
+            <i class="i-line04"></i>
+
+            <i class="i-line12"></i>
+            <i class="i-line13"></i>
+            <i class="i-line14"></i>
+            <i class="i-line15"></i>
+
+            <i class="i-line24"></i>
+            <i class="i-line25"></i>
+
+            <i class="i-line34"></i>
+            <i class="i-line36"></i>
+            <i class="i-line37"></i>
+
+            <i class="i-line45"></i>
+            <i class="i-line46"></i>
+            <i class="i-line47"></i>
+            <i class="i-line48"></i>
+
+            <i class="i-line57"></i>
+            <i class="i-line58"></i>
+            
+            <i class="i-line67"></i>
+            <i class="i-line78"></i>
+        </div>
+    </div>
+
+    <div class="stage stage3">
+        <div class="m-messwin" id="Jmesswin">
+            <p>
+                <span class="s-icon"></span>
+                <span class="s-txt"></span>
+            </p>
+        </div>
+
+        <div class="m-messinput">
+            <div class="m-messinput-tool">
+                <span></span>
+                <span id="Jmessinputtxt"></span>
+                <span id="Jmesssent">发送</span>
+                <span></span>
+                <div class="icon-round">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+            </div>
+            <p data-num="0"></p>
+            <p data-num="1"></p>
+            <a href="javascript:;">发送</a>
+        </div>
+
+    </div>
+
+    <div class="stage stage4">
+        <p class="p1"></p>
+        <a href="javascript:;" class="btn btnA" id="Jstage4btnA"></a>
+        <p class="p2"></p>
+        <a href="http://jshm.163.com/m/" class="btn btnB"></a>
+        <div class="stage-pop" id="Jstage4pop">
+            <div class="stage-pop-con">
+                点击右上角<br/>分享到朋友圈
+            </div>
+        </div>
+    </div>
+
+    <audio id="Jaudiomess" class="media-audio" src="data/mess.mp3" preload="">
+    </audio>
+    <audio id="Jaudio" class="media-audio" src="">
+    </audio>
+
+
+</div>
+
+<!-- <script charset="gb2312" src="js/lib/zepto.min.js"></script> -->
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/nie/util/trueLoad.v2.1.js"></script>
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/zepto(mixNIE).last.js"></script>
+<script charset="gb2312" src="js/app/unlock.js"></script>
+<script charset="gb2312" src="js/app/index.js"></script>
+</body>
+</html> 

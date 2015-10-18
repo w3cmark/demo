@@ -1,0 +1,14 @@
+{
+  "name": "fis3-net-ease",
+  "version": "0.0.1",
+  "description": "基于FIS3的网易游戏网站部解决方案",
+  "main": "fis-conf.js",
+  "keywords": [
+    "fis",
+    "net-ease"
+  ],
+  "author": {
+    "name": "gzzhengxuze"
+  },
+  "license": "NET-EASE"
+}

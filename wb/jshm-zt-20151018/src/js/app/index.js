@@ -50,7 +50,7 @@ var Index = function(){
         _audioTimeout,
         _messName = '',
         _dataArr = {
-            'gril':{
+            'boy':{
                 'name':[
                     '貂蝉',
                     '小乔',
@@ -112,8 +112,8 @@ var Index = function(){
                         '5'
                     ],
                     'audio_txt':[
-                        '呵呵，就这样，我去洗澡了',
-                        '只怪余生太长，只怨你好难忘。'
+                        '洞房花烛，温床软语，美人在卧，官人还来不睡吗？',
+                        '你，会是我的英雄吗？'
                     ]
                 },
                 '大乔':{
@@ -142,12 +142,12 @@ var Index = function(){
                         '7'
                     ],
                     'audio_txt':[
-                        '洞房花烛，温床软语，美人在卧，官人还来不睡吗？',
-                        '你，会是我的英雄吗？'
+                        '呵呵，就这样，我去洗澡了',
+                        '我是只温柔的小绵羊，只愿一生服侍着我的官人'
                     ]
                 }
             },
-            'boy':{
+            'gril':{
                 'name':[
                     '张飞',
                     '诸葛亮',
@@ -261,7 +261,7 @@ var Index = function(){
         showEle($stages.eq(0));
         // stage0
         $stages.eq(0).find('.m-bigbtn-btns').bind('touchend',function(){
-            $stages.eq(0).find('.icon-round').hide();
+            $stages.eq(0).find('.icon-hand').hide();
             if($(this).hasClass('m-left-btn')){
                 $stages.eq(0).addClass('stage-left').removeClass('stage-right');
                 _chose = 'gril';
@@ -309,6 +309,7 @@ var Index = function(){
                 $this.removeClass('show');
             }else{
                 $this.addClass('show');
+                $stages.eq(3).find('.icon-round').hide();
             }
         })
 
@@ -333,15 +334,20 @@ var Index = function(){
                 $messinputTxt.html(_dataArr[_chose][_messName]['txt3'][num]);
                 var $messinput_tool = $stages.eq(3).find('.m-messinput-tool');
                 $messinput_tool.addClass('m-messinput-toolA');
+                $stages.eq(3).find('.icon-round').show();
                 $('#Jmesssent').bind('touchend',function(){
                     addMess(_dataArr[_chose][_messName]['txt3'][num]);
                     $messinput_tool.removeClass('m-messinput-toolA');
+                    $stages.eq(3).find('.icon-round').hide();
                     $messinputTxt.html('');
                     addAudio(_dataArr[_chose][_messName]['audio'][num],_dataArr[_chose][_messName]['audio_time'][num]);
                     $(this).unbind('touchend');
 
                     // share
                     shareInfo.title = _dataArr[_chose][_messName]['audio_txt'][num];
+                    shareInfo.desc = _messName+'竟然发语音跟我说。。';
+                    shareInfo.imgurl = __CDNPATH+'/data/'+_imgClass+'.png';
+                    console.log(shareInfo.imgurl)
                     shareFun();
                 })
                 // addMess('');
@@ -413,13 +419,23 @@ var Index = function(){
         clearTimeout(_audioTimeout);
         ele.addEventListener('ended', function () {
             // _isClickAudio = true;
+            $stages.eq(3).find('.icon-round').show();
             _isPlaying = false;
             $messwin.find('.s-yuyin').removeClass('play');
+            jumpLastStage();
             _audioTimeout = setTimeout(function(){
                 $stages.eq(3).hide();
                 showEle($stages.eq(4));
-            },2500)
+            },3000)
         }, false);
+    },
+    jumpLastStage = function(){
+        var $tool = $stages.eq(3).find('.m-messinput-tool');
+        $tool.unbind('touchend');
+        $tool.bind('touchend',function(){
+            $stages.eq(3).hide();
+            showEle($stages.eq(4));
+        })
     },
     choseMess = function(){
         var $mess_P = $stages.eq(3).find('.m-messinput p');

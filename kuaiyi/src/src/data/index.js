@@ -18,7 +18,8 @@ var Index = function(){
 			}else{
 				showPop($regionpop);
 				hidePop($hospitalpop);
-				hidePop($departmentpop);				
+				hidePop($departmentpop);
+				hidePop($searchtips);			
 			}
 		})
 		$closepop.bind('click',function(){
@@ -60,14 +61,7 @@ var Index = function(){
 				hidePop($hospitalpop);
 				hidePop($departmentpop);
 				hidePop($doctorpop);
-				
-				if($searchtips.hasClass('show')){
-					hidePop($searchtips);
-					// var cla =  $searchtips.attr('class'),
-					// 	re = /nadd(\S+)tips/igm;
-					// $searchtips.removeClass(re.exec(cla)[0])
-					// console.log(re.exec(cla)[0]);
-				}
+				hidePop($searchtips);
 			}
 			if(target.closest("#Jdate").length == 0 && target.closest("#Jdatepop").length == 0){
 				hidePop($datepop);
@@ -302,12 +296,21 @@ var Index = function(){
 			ele_top = $ele_parent.offset().top,
 			ele_height = $ele_parent.height(),
 			ele_width = ele.width();
-			// newclass = 'nadd-'+ele.attr('id')+'-tips';
+
 		ele.bind('keyup',function(){
 			var $this = $(this),
 				val = $this.val();
+			if(ele_left == 0 || ele_top == 0){
+				if(ele.attr('id') == 'Jregioninput'){
+					ele_left = $ele_parent.offset().left - 1;
+				}else{
+					ele_left = $ele_parent.offset().left;
+				}				
+				ele_top = $ele_parent.offset().top;
+			}
+
 			$searchtips.css({
-				top: ele_top + ele_height,
+				top: ele_top + ele_height + 1,
 				left: ele_left,
 				width: ele_width + 9
 			})
@@ -399,5 +402,8 @@ Index.hasSearchtips($('#Jdoctorinput'), function(){
 	Index.hidePop($('#Jdoctorpop'));
 });
 
-// searchKey
+// 搜索输入框
 Index.hasSearchtips($('#searchKey'));
+
+//选择地区
+Index.hasSearchtips($('#Jregioninput'));

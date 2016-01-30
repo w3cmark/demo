@@ -25,7 +25,7 @@
 
       <div class="ks-input clearfix" style="float:left">
         <div class="ks-label">
-        <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字">
+        <input type="text" name="q" class="ks-q" id="searchKey" placeholder="请输入您想查找的医生名字" value="请输入您想查找的医生名字" autocomplete="off">
         </div>
         <input type="button" class="ks-submit" value="" id="btnSearch">
         <a href="#" target="_blank">高级搜索</a>
@@ -571,3 +571,10 @@
 <script charset="utf-8" type="text/javascript" src="data/index.js"></script>
 </body>
 </html>
+
+<!-- 
+20160130调整
+
+1- id="searchKey"的input标签添加属性 autocomplete="off" 
+2- 增加搜索下拉提示html代码
+-->

@@ -83,11 +83,6 @@ fis.media('local')
     .match('*.{css,less}',{
         useSprite : true
     })
-    // .match(/^\/src\/data\/(.*)$/i,{
-    //     useHash : false,
-    //     useDomain : false,
-    //     useSprite : false
-    // },true)
     .match('**', {
       relative: true,
       useDomain : false,
@@ -108,79 +103,79 @@ fis.media('local')
 
 //配置测试打包
 
-// fis.media('dist')
-//     .match('**.js', {
-//         postprocessor : fis.plugin('replace',{
-//             debug : "dist"
-//         })
-//     })
-//     .match('*.{js,css,less,png,jpg,jpeg,gif,mp3,mp4,flv,swf,svg,eot,ttf,woff}',{
-//         domain: fis.get("cdn-path"),
-//         useHash: true
-//     })
-//     .match('::package', {
-//         spriter: fis.plugin('csssprites',{
-//             layout: 'matrix',
-//             margin: '5px'
-//         }),
-//         postpackager : [fis.plugin('usemin'),fis.plugin('supply')]
-//     })
-//     .match('*.{css,less}',{
-//         useSprite : true
-//     })
-//     .match('**', {
-//         charset : fis.get("charset"),
-//         deploy: [fis.plugin('encoding'),fis.plugin('local-supply', {
-//             to: './dist',
-//             exclude : ['inline','temp_file']
-//         })]
-//     })
+fis.media('dist')
+    .match('**.js', {
+        postprocessor : fis.plugin('replace',{
+            debug : "dist"
+        })
+    })
+    .match('*.{js,css,less,png,jpg,jpeg,gif,mp3,mp4,flv,swf,svg,eot,ttf,woff}',{
+        domain: fis.get("cdn-path"),
+        useHash: true
+    })
+    .match('::package', {
+        spriter: fis.plugin('csssprites',{
+            layout: 'matrix',
+            margin: '5px'
+        }),
+        postpackager : [fis.plugin('supply')]
+    })
+    .match('*.{css,less}',{
+        useSprite : true
+    })
+    .match('**', {
+        charset : fis.get("charset"),
+        deploy: [fis.plugin('encoding'),fis.plugin('local-supply', {
+            to: './dist',
+            exclude : ['inline','temp_file']
+        })]
+    })
 
-// //配置正式打包
+//配置正式打包
 
-// fis.media('release')
-//     .match('**.js',{
-//         postprocessor : fis.plugin('replace',{
-//             debug : "release"
-//         }),
-//         optimizer: fis.plugin('uglify-js',{
-//             output : {
-//                 ascii_only : true
-//             }
-//         })
-//     })
-//     .match('**.html:js',{
-//         optimizer: fis.plugin('uglify-js')
-//     })
-//     .match('*.{css,less}',{
-//         optimizer: fis.plugin('clean-css')
-//     })
-//     .match('**html:css',{
-//         optimizer: fis.plugin('clean-css')
-//     })
-//     .match("**.html",{
-//         postprocessor : fis.plugin('include',{
-//             nouse : true
-//         })
-//     })
-//     .match('*.{js,css,less,png,jpg,jpeg,gif,mp3,mp4,flv,swf,svg,eot,ttf,woff}',{
-//         domain: fis.get("cdn-path-release"),
-//         useHash: true
-//     })
-//     .match('::package', {
-//       spriter: fis.plugin('csssprites',{
-//             layout: 'matrix',
-//             margin: '5px'
-//         }),
-//         postpackager : [fis.plugin('usemin'),fis.plugin('supply')]
-//     })
-//     .match('*.{css,less}',{
-//         useSprite : true
-//     })
-//     .match('**', {
-//         charset : fis.get("charset"),
-//         deploy: [fis.plugin('encoding'),fis.plugin('local-supply', {
-//             to: './release',
-//             exclude : ['inline','temp_file']
-//         })]
-//     })
+fis.media('release')
+    .match('**.js',{
+        postprocessor : fis.plugin('replace',{
+            debug : "release"
+        }),
+        optimizer: fis.plugin('uglify-js',{
+            output : {
+                ascii_only : true
+            }
+        })
+    })
+    .match('**.html:js',{
+        optimizer: fis.plugin('uglify-js')
+    })
+    .match('*.{css,less}',{
+        optimizer: fis.plugin('clean-css')
+    })
+    .match('**html:css',{
+        optimizer: fis.plugin('clean-css')
+    })
+    .match("**.html",{
+        postprocessor : fis.plugin('include',{
+            nouse : true
+        })
+    })
+    .match('*.{js,css,less,png,jpg,jpeg,gif,mp3,mp4,flv,swf,svg,eot,ttf,woff}',{
+        domain: fis.get("cdn-path-release"),
+        useHash: true
+    })
+    .match('::package', {
+      spriter: fis.plugin('csssprites',{
+            layout: 'matrix',
+            margin: '5px'
+        }),
+        postpackager : [fis.plugin('supply')]
+    })
+    .match('*.{css,less}',{
+        useSprite : true
+    })
+    .match('**', {
+        charset : fis.get("charset"),
+        deploy: [fis.plugin('encoding'),fis.plugin('local-supply', {
+            to: './release',
+            exclude : ['inline','temp_file']
+        })]
+    })

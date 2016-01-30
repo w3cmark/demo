@@ -84,7 +84,7 @@ body{
 	background: #fff;
 	position: absolute;
 	top: 50px;
-	z-index: 100;
+	z-index: 110;
 	left:0;
 	height:101px;
 	.header-wrap{
@@ -313,6 +313,10 @@ body{
 			height: 778px;
 			.ks-input{
 				margin-bottom: 40px;
+				padding-left: 2px;
+				.ks-q{
+					width:565px;
+				}
 			}
 		}
 	}
@@ -356,7 +360,9 @@ body{
 	}
 }
 .ks-input input{height:38px;float:left;zoom:1}
-.ks-q{border:1px solid #e5e5e5;border-right:0;color:#aaa}
+.ks-q{
+	border:1px solid #e5e5e5;border-right:0;color:#aaa
+}
 .ks-input input{outline:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}
 .ks-input .focus{color:#333}
 .ks-input {
@@ -384,9 +390,9 @@ body{
 	border-radius:5px 0 0 0;
 }
 .ks-input .ks-q{
-	width:265px;
+	width:270px;
 	height:18px;
-	padding:9px 0 9px 10px;
+	padding:9px 0 9px 9px;
 	background: none;
 	border: 0;
 }
@@ -556,7 +562,7 @@ body{
 			input{
 				border: 0;
 				height: 18px;
-				width: 320px;
+				width: 334px;
 				padding: 7px 0 8px 9px;
 			}
 			.arow-em{
@@ -629,7 +635,7 @@ body{
 			position:relative;
 		}
 		.ks-q{
-			width: 568px;
+			width: 567px;
 			padding: 14px 0 16px 9px;
 		}
 		.ks-submit{
@@ -2114,5 +2120,29 @@ body{
 	.transition(all ease-in-out 0.3s);
 	&.show{
 		.opacity(50);
+	}
+}
+
+//搜索提示
+.search-tips{
+	text-align: left;
+	left:0;
+	top:275px;
+	z-index:102;
+	.pop-th{
+		line-height: 35px;
+		color:#fff;
+	}
+	.pop-tb{
+		a{
+			display:block;
+			height:34px;
+			line-height: 34px;
+			margin:0 10px;
+			&:hover{
+				color:#33bb11;
+				text-decoration: none;
+			}
+		}
 	}
 }

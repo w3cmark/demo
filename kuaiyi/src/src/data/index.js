@@ -7,6 +7,7 @@ var Index = function(){
 		$popbg = $('#Jpopbg'),
 		$inputpop = $('.banner-right .input-pop'),
 		$datepop = $('#Jdatepop'),
+		$searchtips = $('#Jsearchtips'),
 	init = function(){
 		fixPlaceholder();
 		qudaoFun();
@@ -17,8 +18,7 @@ var Index = function(){
 			}else{
 				showPop($regionpop);
 				hidePop($hospitalpop);
-				hidePop($departmentpop);
-				hidePop($doctorpop);
+				hidePop($departmentpop);				
 			}
 		})
 		$closepop.bind('click',function(){
@@ -60,6 +60,14 @@ var Index = function(){
 				hidePop($hospitalpop);
 				hidePop($departmentpop);
 				hidePop($doctorpop);
+				
+				if($searchtips.hasClass('show')){
+					hidePop($searchtips);
+					// var cla =  $searchtips.attr('class'),
+					// 	re = /nadd(\S+)tips/igm;
+					// $searchtips.removeClass(re.exec(cla)[0])
+					// console.log(re.exec(cla)[0]);
+				}
 			}
 			if(target.closest("#Jdate").length == 0 && target.closest("#Jdatepop").length == 0){
 				hidePop($datepop);
@@ -285,13 +293,54 @@ var Index = function(){
 			slider(i);
 			timer = window.setTimeout(autoslider, offset);
 		}
+	},
+	hasSearchtips = function(ele, keyupcal, clickcal){//显示搜索提示
+		if(ele.length < 1){return;}
+		var $ele_parent = ele.parent();
+		if($ele_parent.length < 1){return;}
+		var ele_left = $ele_parent.offset().left,
+			ele_top = $ele_parent.offset().top,
+			ele_height = $ele_parent.height(),
+			ele_width = ele.width();
+			// newclass = 'nadd-'+ele.attr('id')+'-tips';
+		ele.bind('keyup',function(){
+			var $this = $(this),
+				val = $this.val();
+			$searchtips.css({
+				top: ele_top + ele_height,
+				left: ele_left,
+				width: ele_width + 9
+			})
+			if(val == ''){
+				hidePop($searchtips);
+				return;
+			}
+			showPop($searchtips);
+			// $searchtips.addClass(newclass);
+			$searchtips.find('.pop-th').html('“'+ val +'”相关搜索结果...');
+			if(typeof keyupcal == 'function'){
+				keyupcal(val);
+			}
+			$searchtips.find('.pop-tb a').off().on('click',function(){
+				var txt = $(this).text();
+				ele.val(txt);
+				hidePop($searchtips);
+				// $searchtips.removeClass(newclass);
+				if(typeof clickcal == 'function'){
+					clickcal();
+				}
+			})
+
+		})
+		
 	};
 	return{
 		init: init,
 		booklistFun: booklistFun,
 		resultlistFun: resultlistFun,
 		showPop: showPop,
-		hidePop: hidePop
+		hidePop: hidePop,
+		hasSearchtips: hasSearchtips
 	};
 }();
 
@@ -318,3 +367,37 @@ Index.hidePop($('#Jdatepop'))
 
 */
 // Index.showPop($('#Jhospitalpop'))
+
+/***
+给某个输入框绑定输入提示
+@pram1: 输入框的dom元素
+@pram2: 输入内容时的回调，传回的参数是用户输入的内容
+@pram3: 点击下面出现的提示时的回调
+
+调用例子如下：
+Index.hasSearchtips($('#Jhospitalinput'));
+***/
+
+//例子1：选择医院搜索提示
+Index.hasSearchtips($('#Jhospitalinput'), function(text){//输入内容时的回调，传回的参数是用户输入的内容
+	// console.log(text);
+}, function(){//点击下面出现的提示时的回调
+	Index.hidePop($('#Jhospitalpop'));//隐藏点击输入框时出现的弹层
+});
+
+//例子2：选择可是搜索提示
+Index.hasSearchtips($('#Jdepartmentinput'), function(){
+
+}, function(){
+	Index.hidePop($('#Jdepartmentpop'));
+});
+
+//例子3：选择医生搜索提示
+Index.hasSearchtips($('#Jdoctorinput'), function(){
+
+}, function(){
+	Index.hidePop($('#Jdoctorpop'));
+});
+
+// searchKey
+Index.hasSearchtips($('#searchKey'));

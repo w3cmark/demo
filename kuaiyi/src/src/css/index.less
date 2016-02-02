@@ -687,9 +687,14 @@ body{
 	z-index:1;
 	font-family:"Microsoft Yahei";
 }
-.main-left{
-	width: 258px;
+.chose-list{
 	border: 1px solid #dbe1e5;
+	border-top:0;
+}
+.main-left{
+	width: 260px;
+	border: 1px solid #dbe1e5;
+	border-left:0;
 	border-bottom: 0;	
 	.th{
 		height: 43px;
@@ -701,8 +706,8 @@ body{
 		background:url(../img/icon01.png) repeat-x;
 	}
 	.box{
-		height: 93px;
-		padding:22px 0 0 15px;
+		height: 97px;
+		padding:18px 0 0 15px;
 		border-bottom: 1px solid #e5e5e5;
 		.box-name{
 			font-size: 16px;
@@ -748,6 +753,9 @@ body{
 				text-decoration: none;
 			}
 		}
+		&:last-child{
+			border-bottom:0;
+		}
 		span{
 			display: block;
 			line-height: 25px;
@@ -782,12 +790,39 @@ body{
 			}
 		}
 	}
+	.box-info{
+		padding:10px 10px 0 15px;
+		p{
+			line-height:20px;
+			padding-bottom: 5px;
+			position: relative;
+			text-indent:2em;
+			span{
+				position: absolute;
+				left:0;
+				top:3px;
+				width:16px;
+				height:16px;
+				&.s-iconA{
+					background: url(../img/_icon36.png?__sprite) no-repeat;
+				}
+				&.s-iconB{
+					background: url(../img/_icon37.png?__sprite) no-repeat;
+				}
+			}
+		}
+		i{
+			font-style:normal;
+			color:#f1f3f5;
+		}
+	}
 }
 .main-right{
-	width: 859px;
+	width: 857px;
 	border-top: 1px solid #dbe1e5;
-	border-right: 1px solid #dbe1e5;
+	border-left: 1px solid #dbe1e5;
 	position: relative;
+	margin-left: -1px;
 	z-index:1;
 	.th{
 		height: 43px;
@@ -910,7 +945,8 @@ body{
 				}
 			}
 			&.last{
-				width: 98px;
+				width: 97px;
+				border-right:0;
 				a{
 					display: block;
 					background: #f9fdf8;
@@ -993,6 +1029,16 @@ body{
 			}
 			&.show{
 				opacity:100;
+			}
+		}
+		&.booklistA{
+			ul{
+				border-bottom:0;
+				margin-right: -1px;
+				li{
+					width:142px;
+					border-bottom: 1px solid #e5e5e5;
+				}
 			}
 		}
 	}

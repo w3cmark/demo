@@ -717,6 +717,44 @@
 </div>
 <!-- 20160130 end-->
 
+<!-- 20160217 start-->
+
+<!-- 弹层半透明背景 -->
+<div class="pop-bg" id="Jpopbg"></div>
+<!-- 反馈弹窗 -->
+<div class="suggest-box" id="J_popup_suggest">
+  <a href="javascript:Index.hidePop($('#J_popup_suggest'),true);" class="login-close" target="_self"></a>
+  <p class="suggest-box-p">欢迎提出建议</p>
+  <form id="J_StaticForm" action="#" method="post">
+    <table>
+      <tbody>
+      <tr class="row0">
+        <th class="tTit">页面链接</th>
+        <td class="iCol"><input name="url" id="Allurl" type="text" class="inp redInput" value="http://www.mingyihui.net/"></td>
+      </tr>
+
+      <tr class="row0">
+        <th class="tTit">详细描述</th>
+        <td class="iCol">
+          <textarea name="content" id="Allcontent" rows="10" placeholder="请输入您的建议..."></textarea>
+        </td>
+      </tr>
+      <tr class="row6">
+        <th class="tTit">联系方式</th>
+        <td class="iCol">
+          <input name="contact" id="Allcontact" type="text" class="inp redInputA">
+          <p>您可以留下E-mail、QQ或电话号码，方便我们与您进一步沟通(可以不填写)</p>
+        </td>
+      </tr>
+
+      <tr class="row8">
+        <td class="iCol" id="row8Input" colspan="2" style="text-align:center"><input class="inpBtn" type="button" id="btnAllSiteFeedback" value="立即提交" style="border:none;"></td>
+      </tr>
+    </tbody></table>
+    </form>
+</div>
+<!-- 20160217 end-->
+
 <!-- 底部 -->
 <link rel="import" href="inline/footer.html?__inline">
 

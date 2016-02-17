@@ -78,7 +78,70 @@ body{
 	margin:0 auto;
 	position:relative;
 	z-index:200;
+	.navibar-lb{
+		float: right;
+	}
 }
+.navibar{
+	.nb-menu{
+		padding:0 8px 0 20px;
+		background:url(http://www.mingyihui.net/templates/default/img/bg.png) no-repeat;
+		background-position:-484px 3px;
+		display:inline-block;
+		height:20px;
+		line-height:20px;
+		margin:5px 0 0 0;
+		*margin:2px 0 0 0;
+		&.nb-menuA{
+			background-position:-484px -18px;
+		}
+		&.nb-menuB{
+			background-position:-483px -39px;
+		}
+		&.nb-menuC{
+			position: relative;
+			background-position:-483px -237px;
+			span{
+				position: absolute;
+				z-index:3;
+				top:26px;
+				width:150px;
+				left:0;
+				height:0;
+				border:1px solid #dbe1e5;
+				.opacity(0);
+				// overflow: hidden;
+				background:url(../img/ewm_m.png) no-repeat;
+				.transition(all ease-in-out 0.3s);
+			}
+			em{
+				position: absolute;
+				display: block;
+				width: 16px;
+				height: 12px;
+				top: -10px;
+				left: 11px;
+				display: none;
+				overflow: hidden;
+				background:url(../img/_icon16.png?__sprite) no-repeat;
+				background-color: transparent;
+			}
+			&:hover{
+				span{
+					height:150px;
+					.opacity(100);
+				}
+				em{
+					display:block;
+				}
+			}
+		}
+	}
+	.nb-menuD{
+		padding-left: 0;
+	}
+}
+
 .header{
 	width: 100%;
 	background: #fff;
@@ -2192,3 +2255,21 @@ body{
 		}
 	}
 }
+
+.inp{height:34px;border:1px solid #ddd;padding:0 5px;width:400px;-moz-border-radius:1px;-webkit-border-radius:1px;border-radius:1px;line-height:33px\9;_line-height:34px;margin-bottom:10px}
+.inpBtn{background:#ef864d;height:30px;color:#fff;font-size:14px;cursor:pointer;border:1px solid #e9880e;}
+.login-close{position:absolute;overflow:hidden;height:33px;width:33px;right:0;top:0;background:url(http://www.mingyihui.net/templates/default/img/bg.png) no-repeat -331px 0}
+.suggest-box{
+	position:fixed;width:480px;height:420px;left:50%;top:50%;margin:-210px 0 0 -290px;padding:30px 50px 10px;background-color:#fff;z-index:999999;display:none;text-align:left;_position:absolute;
+	_top:~"expression(documentElement.scrollTop+documentElement.clientHeight - this.clientHeight + 180+'px')";
+	.opacity(0);
+	.transition(all ease-in-out 0.3s);
+	&.show{
+		.opacity(100);
+	}
+}
+.suggest-box-p{font-size:20px;padding-bottom:10px}
+.suggest-box .tTit{width:65px;color:#aaa;font-size:14px;font-weight:normal;vertical-align:top;padding:6px 5px 0 0;text-align: right;}
+.suggest-box .iCol textarea{width:400px;border:1px solid #ddd;padding:5px;margin-bottom:5px}
+.suggest-box .iCol p{color:#aaa}
+.suggest-box .inpBtn{width:320px;margin-top:15px}

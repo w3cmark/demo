@@ -75,8 +75,30 @@ var Index = function(){
 
 		fixHeader();
 		// 登录/注册tab
-		slid("#JloginRegdoc","#JloginRegcon",0,"hover");	
+		slid("#JloginRegdoc","#JloginRegcon",0,"hover");
+
+		// 收藏本站代码
+		var loc_url = window.location,
+            loc_title = '名医汇-中国最大的开放式全程就医服务平台';
+        $('#btnFav').bind('click',function(){
+            addFavorite($(this),loc_url,loc_title);
+        });
 	},
+	addFavorite = function(t,url, title) {//收藏本站代码
+        try{
+            window.external.addFavorite(url, title);
+        }
+        catch(e){
+            if (/firefox/.test(navigator.userAgent.toLowerCase()) || /opera/.test(navigator.userAgent.toLowerCase())) {
+                t.attr("rel", "sidebar");
+                t.attr("title", title);
+                t.attr("href", url);
+            } else {
+                alert("您的浏览器不支持自动添加到收藏夹，建议您使用Ctrl+D将本页加入收藏夹！");
+            }
+        }
+        
+    },
 	fixPlaceholder = function(){//兼容输入框placeholder
 		var $inputs = $('input[placeholder], textarea[placeholder]'),
 			$passplaceholder = $('#Jpassplaceholder'),
@@ -364,7 +386,7 @@ Index.showPop($('#Jbindpop'),true)
 
 /*隐藏某个弹层
 第一个参数：dom元素
-第二个参数：是否显示半透明背景，默认为false
+第二个参数：是否隐藏半透明背景，默认为false
 
 Index.hidePop($('#Jdatepop'))
 

@@ -56,7 +56,7 @@ var Index = function(){
 		//点击页面其它地方关闭弹层
 		$(document).bind('click',function(e){
 			var target = $(e.target);
-			if(target.attr('id') !='Jregion' && !target.hasClass('input-pop') && target.closest(".select-pop").length == 0){
+			if(target.attr('id') !='Jregion' && !target.hasClass('input-pop') && target.closest(".select-pop").length == 0 && target.closest(".location .hot").length == 0){
 				hidePop($regionpop);
 				hidePop($hospitalpop);
 				hidePop($departmentpop);

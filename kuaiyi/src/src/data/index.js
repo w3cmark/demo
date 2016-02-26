@@ -370,8 +370,11 @@ var Index = function(){
 }();
 
 Index.init();
-/*
+
+/***
 显示某个弹层
+Index.showPop(ele,true)
+
 第一个参数：dom元素
 第二个参数：是否显示半透明背景，默认为false
 例子：
@@ -382,9 +385,12 @@ Index.showPop($('#Jbindpop'),true)
 
 */
 
-// Index.showPop($('#JchosePerpop'),true);
+// Index.showPop($('#JseeDoctorpop'),true);
 
-/*隐藏某个弹层
+/***
+隐藏某个弹层
+Index.hidePop(ele,true);
+
 第一个参数：dom元素
 第二个参数：是否隐藏半透明背景，默认为false
 
@@ -395,6 +401,7 @@ Index.hidePop($('#Jdatepop'))
 
 /***
 给某个输入框绑定输入提示
+Index.hasSearchtips(ele,fun1,fun2);
 @pram1: 输入框的dom元素
 @pram2: 输入内容时的回调，传回的参数是用户输入的内容
 @pram3: 点击下面出现的提示时的回调

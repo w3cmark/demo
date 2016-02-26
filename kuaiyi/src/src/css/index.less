@@ -780,7 +780,10 @@ body{
 			i{
 				display: inline-block;
 				vertical-align: top;
-				width: 81px;
+				*width: 85px;
+				min-width: 70px;
+				max-width: 97px;
+				padding:0 3px 0 10px;
 				height: 22px;
 				line-height: 22px;
 				overflow: hidden;
@@ -790,8 +793,10 @@ body{
 				background:url(../img/_icon10.png?__sprite) no-repeat;
 				background-color: transparent;
 				cursor: pointer;
+				border-right: 1px solid #62c63f;
 				&.i1{
 					color: #ee3636;
+					border-right: 1px solid #ee3636;
 					background-image:url(../img/_icon09.png?__sprite);
 				}
 			}
@@ -1784,7 +1789,6 @@ body{
 					background-image:url(../img/_icon34.png?__sprite);
 				}
 			}
-
 		}
 		p{
 			font-size:14px;
@@ -1912,6 +1916,16 @@ body{
 			}
 			.red{
 				color: #ff8800;
+			}
+		}
+		.choose-list{
+			p{
+				
+				&.p-input{
+					float: left;
+					width: 50%;
+					padding:5px 0;
+				}
 			}
 		}
 		.icon{

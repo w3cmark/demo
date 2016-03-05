@@ -1,0 +1,119 @@
+@import url(_animation.less);
+
+@charset "gb2312";
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+ul,li,div,p,body,dl,dt,dd{margin:0;padding:0;text-align:left;}
+input{padding:0;border-radius:0;}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;vertical-align:baseline;outline:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}
+li{list-style:none;}
+a{text-decoration:none;color:#000}
+img{vertical-align:top;width:100%}
+.hide{display:none;}
+body,html{background:#001424;text-align: left;height: 100%;width: 100%;font-family: "Microsoft YaHei","Helvetica Neue",Arial, HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;font-weight: normal;overflow: hidden;}
+*{
+    -webkit-tap-highlight-color:rgba(14,159,111,0);
+    -webkit-touch-callout:none;
+    //-webkit-backface-visibility: hidden;
+    //backface-visibility: hidden;
+}
+.main{margin:0 auto;overflow:hidden;position: relative;}
+@media only screen and (min-width:1025px){
+.main{max-width:7.5rem}
+}
+html{
+    font-size:312.5%;
+}
+//px转rem：设计稿宽度除以100
+@media screen and (max-width:359px) and (orientation:portrait) {
+    html {
+        font-size: 266.67%;
+    }
+}
+@media screen and (min-width:360px) and (max-width:374px) and (orientation:portrait) {
+    html {
+        font-size: 300%;
+    }
+}
+@media screen and (min-width:384px) and (max-width:399px) and (orientation:portrait) {
+    html {
+        font-size: 320%;
+    }
+}
+@media screen and (min-width:400px) and (max-width:413px) and (orientation:portrait) {
+    html {
+        font-size: 333.33%;
+    }
+}
+@media screen and (min-width:414px) and (max-width:431px) and (orientation:portrait) {
+    html {
+        font-size: 345%;
+    }
+}
+@media screen and (min-width:432px) and (max-width:479px) and (orientation:portrait) {
+    html {
+        font-size: 360%;
+    }
+}
+@media screen and (min-width:480px)and (max-width:639px) and (orientation:portrait) {
+    html {
+        font-size: 400%;
+    }
+}
+@media screen and (min-width:640px) and (orientation:portrait) {
+    html {
+        font-size: 533.33%;
+    }
+}
+
+.rotation(@n:rotation){
+    .keyframes(@n);
+    .-frames(@-...){
+        0%{
+            @{-}transform:rotate(90deg);
+        }
+        50% {
+            @{-}transform:rotate(0deg);
+        }
+        100% {
+            @{-}transform:rotate(90deg);
+        }
+    }
+}
+.viewtips{
+    position: fixed;
+    width:100%;
+    height:120%;
+    background:rgba(0, 0, 0, 0.8);
+    color:#fff;
+    font-size:0.32rem;
+    text-align: center;
+    z-index:300;
+    display: none;
+    i{
+        display: block;
+        width:1.34rem;
+        height:2.18rem;
+        background-image:url(../img/turn.png);
+        background-repeat:no-repeat;
+        background-size: 100%;
+        margin:10% auto 0.3rem;
+        .transform(rotate(90deg));
+        .rotation();
+        .animation(rotation infinite 2s ease-in-out both);
+    }
+}
+
+@media screen and (min-height:509px) and (max-height:519px) and (orientation:portrait){//MX2
+    
+}
+
+@media screen and (max-height:416px) and (orientation:portrait){
+    
+}

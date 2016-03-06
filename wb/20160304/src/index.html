@@ -11,8 +11,10 @@
 <meta name="applicable-device"content="mobile">
 <link rel="canonical" href="http://bjx.163.com" >
 <link rel="dns-prefetch" href="http://res.nie.netease.com">
-<link rel="stylesheet" href="http://res.nie.netease.com/comm/js/nie/ref/css/swiper.css">
-<link type="text/css" rel="stylesheet" href="css/index.less" media="all" />
+<!--usemin css(pkg/index.css)-->
+<link type="text/css" rel="stylesheet" href="css/swiper.css">
+<link type="text/css" rel="stylesheet" href="css/index.less">
+<!--end-->
 </head>
 <body>
 <div id="share_content" class="hide">
@@ -123,24 +125,33 @@
 
     </div>
     
-    <div class="stage stage3">
+    <div class="stage stage3" id="Jgamestage">
+        <div class="bottom-bg"></div>
         <div class="game-top">
             <div class="game-time">
                 <i>6</i>
                 <span></span>
             </div>
-            <div class="game-hit">15</div>
+            <div class="game-hit">0</div>
         </div>
         <div class="game-rule"></div>
-        <div class="game-peo"></div>
-        <a href="javascript:;" class="game-play"></a>
+        <div class="game-peo">
+            <span></span>
+        </div>
+        <a href="javascript:;" class="game-play" id="Jgameplay"></a>
         <div class="game-btn">
             <a href="javascript:;"></a>
             <a href="javascript:;"></a>
         </div>
+        <div class="num">
+            <i>3</i>
+        </div>
+    </div>
+    <div class="stage stage4">
+        <video class="video-box" id="Jvideo"  x-webkit-airplay="true" webkit-playsinline="true" preload="auto"  src="data/chenhe.mp4"></video>
     </div>
 
-    <div class="stage stage4">
+    <div class="stage stage5">
         <p class="p1"></p>
         <a href="javascript:;" class="btn btnA" id="Jstage4btnA"></a>
         <p class="p2"></p>
@@ -159,9 +170,15 @@
 
 
 </div>
+<!--usemin js(pkg/lib.js)-->
+<script charset="gb2312" src="js/lib/zepto.min.js"></script>
+<script charset="gb2312" src="js/lib/swiper.js"></script>
+<!--end-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script>document.write('<script src="http://www.huihaicenter.com/api/wx/jssdk.php?url=' + encodeURIComponent(window.location.href) + '"><\/script>');</script>
 
-<script charset="gb2312" src="http://res.nie.netease.com/comm/js/zepto(mixNIE).last.js"></script>
-<script src="http://res.nie.netease.com/comm/js/nie/ref/swiper.js"></script>
+<!--usemin js(pkg/index.js)-->
 <script charset="gb2312" src="js/app/index.js"></script>
+<!--end-->
 </body>
 </html> 

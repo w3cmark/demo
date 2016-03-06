@@ -12,8 +12,8 @@
 //配置通用
 fis.set('project.files', ['src/**']);
 fis.set('project.ignore', ['node_modules/**', 'dist/**', 'release/**', 'README.md' , 'local/**' ,'.git/**', 'fis-conf.js']);
-fis.set('charset', 'gbk');
-fis.set('project.charset', 'gbk');
+fis.set('charset', 'utf8');
+fis.set('project.charset', 'utf8');
 
 fis.match('**.less', {
     parser: fis.plugin('less'), // invoke `fis-parser-less`,
@@ -30,7 +30,7 @@ fis.match('**.html', {
         host : fis.get('include-host'),
         debug : true,
         release : false,
-        encode : 'gbk',
+        encode : 'utf8',
     })
 });
 fis.match('**.js', {
@@ -77,8 +77,18 @@ fis.match(/^\/src\/data\/(.*)$/i,{
 
 fis.hook('relative');
 fis.media('local')
+    .match('::package', {
+        spriter: fis.plugin('csssprites',{
+            layout: 'matrix',
+            margin: '5px'
+        })
+    })
+    .match('*.{css,less}',{
+        useSprite : true
+    })
     .match('**', {
       relative: true,
+      useDomain : false,
       charset : fis.get("charset"),
       deploy: fis.plugin('encoding')
     })
@@ -88,8 +98,9 @@ fis.media('local')
         })
     })
     .match('**', {
-      deploy: fis.plugin('local-deliver', {
-          to: './local'
+      deploy: fis.plugin('local-supply', {
+          to: './local',
+          exclude : ['inline','temp_file']
       })
     })
 

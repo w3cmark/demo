@@ -44,7 +44,7 @@ var Index = function(){
 
         setTimeout(function(){
             _messaudio.play();
-        },1000)
+        },800)
         // stage1
 
         $messbtn[0].addEventListener('touchstart', _events, false);
@@ -66,7 +66,8 @@ var Index = function(){
         })
 
         onorientationchange();
-        shareFun();
+        // shareFun();
+        shareSDK.init();
     },
     showStage2 = function(){
         var $p = $('#Jmesswin p'),
@@ -340,8 +341,8 @@ var Index = function(){
     },
     shareSDK = {
         _info: {
-            shareTitle: $('#share_title').html(),
-            descContent: $('#share_desc').html(),
+            shareTitle: $('#share_desc').html(),
+            descContent: $('#share_title').html(),
             shareTimeTitle: '',
             imgUrl: $('#share_pic').attr('data-src'),
             lineLink: window.location.href

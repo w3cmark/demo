@@ -12,7 +12,8 @@ var Index = function(){
         _isSent = false,
         _imgClass = '',
         _isClickAudio = false,
-        _isPlaying = false,        
+        _isPlaying = false,
+        _hitnum = 0,
         dummyStyle = document.createElement('div').style,
         vendor = (function () {
             var vendors = 't,webkitT,MozT,msT,OT'.split(','),
@@ -137,7 +138,11 @@ var Index = function(){
                     changeTime($gamestage.find('.game-time i'), 6,function(ele){
                         ele.text('0');
                         $num.css('width','85%');
-                        $num.find('i').text('Game Over!')
+                        if(_hitnum >= 20){
+                            $num.find('i').text('恭喜通过!');
+                        }else{
+                            $num.find('i').text('Game Over!');
+                        }
                         showEle($num);
                         $gamestage.find('.game-btn').hide();
 
@@ -154,11 +159,10 @@ var Index = function(){
             });
         })
         function addEvent(ele){
-            var num = 0,
-                $hit = $gamestage.find('.game-hit'),
+            var $hit = $gamestage.find('.game-hit'),
                 $peo = $gamestage.find('.game-peo');
             ele.on('touchstart',function(){
-                _messaudio.pause();
+                // _messaudio.pause();
                 _messaudio.play();
                 $(this).addClass('on');
                 $peo.addClass('on');
@@ -166,8 +170,8 @@ var Index = function(){
             ele.on('touchend',function(){
                 $(this).removeClass('on');
                 $peo.removeClass('on');
-                num++;
-                $hit.text(num);
+                _hitnum++;
+                $hit.text(_hitnum);
             })
         }
     },
@@ -341,9 +345,9 @@ var Index = function(){
     },
     shareSDK = {
         _info: {
-            shareTitle: $('#share_desc').html(),
-            descContent: $('#share_title').html(),
-            shareTimeTitle: '',
+            shareTitle: $('#share_title').html(),
+            descContent: $('#share_desc').html(),
+            shareTimeTitle: $('#share_title').html(),
             imgUrl: $('#share_pic').attr('data-src'),
             lineLink: window.location.href
         },
@@ -427,12 +431,12 @@ var Index = function(){
                 });
             }, false);
 
-            wx_conf.jsApiList = [
+            wx_config.jsApiList = [
                 'onMenuShareTimeline',
                 'onMenuShareAppMessage'
             ];
 
-            wx.config(wx_conf);
+            wx.config(wx_config);
 
             this.set();
 

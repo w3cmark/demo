@@ -26,42 +26,52 @@
     <i></i>
     为了更好的体验，请在竖屏下浏览~
 </div>
+
+<div id="loading"><div class="tip"><span>0</span>%</div></div>
+
 <div class="main" id="Jmain">
     
     <div class="stage stage1">
         <!-- <a href="javascript:;" class="slide-btn" id="Jslidebtn">
             <em></em>
         </a> -->
-        <div class="m-mess">
+        <div class="stage-time">
+            <p>1:03</p>
+            3月1日 星期二
+        </div>
+        <div class="m-mess m-messA">
             <p class="m-mess-name">网易考拉：</p>
             <p>你有新的订单，已开始配送</p>
             <p><span>滑动来查看</span></p>
             <i class="m-mess-icon"></i>
         </div>
-        <div class="m-mess">
+        <div class="m-mess m-messB">
             <p class="m-mess-name">网易云音乐：</p>
             <p>已订林更新电视剧专辑。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
-        <div class="m-mess">
+        <div class="m-mess m-messC">
             <p class="m-mess-name">粉丝信息：</p>
             <p>林更新已与你互相关注。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
-        <div class="m-mess">
+        <div class="m-mess m-messD">
             <p class="m-mess-name">重打新闻信息：</p>
             <p>网曝林更新密友再换新。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
-        <div class="m-mess" id="Jmessbtn">
+        <div class="m-mess m-messE" id="Jmessbtn">
             <p class="m-mess-name">微信：</p>
             <p>林更新请求添加你为朋友</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
+        <a href="javascript:;" class="slide-btn" id="Jslidebtn">
+            <em id="Jslidebtnem"></em> 滑动来解锁
+        </a>
         <div class="iconA"></div>
         <div class="iconB"></div>
         
@@ -179,6 +189,7 @@
   <script>document.write('<script src="http://www.huihaicenter.com/api/wx/jssdk.php?url=' + encodeURIComponent(window.location.href) + '"><\/script>');</script>
 
 <!--usemin js(pkg/index.js)-->
+<script charset="utf-8" src="js/lib/preloadjs.min.js"></script>
 <script charset="utf-8" src="js/app/index.js"></script>
 <!--end-->
 </body>

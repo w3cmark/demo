@@ -78,7 +78,29 @@
 body{
     background: #ebebeb;
 }
+#loading {
+  position   : fixed;
+  z-index    : 999999;
+  left       : 0;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  background : #000;
+
+  .tip {
+    position    : absolute;
+    width       : 100%;
+    height      : 0;
+    left        : 0;
+    top         : 50%;
+    margin-top  : -12px;
+    font-size   : 24px;
+    color       : #fff;
+    text-align  : center;
+  }
+}
 .main{
+    display: none;
     height:100%;
     background-color: #ebebeb;
 }
@@ -101,9 +123,24 @@ body{
 
 .stage1{
     box-sizing: border-box;
-    padding-top: 4.1rem;
+    padding-top: 0.6rem;
     background-color: #465650;
     background-image: url(../img/bg01.jpg);
+    .stage-time{
+        color: #fff;
+        font-size: 0.3rem;
+        text-align: center;
+        border-bottom: 1px solid #466fb0;
+        margin: 0 auto;
+        padding-bottom: 0.3rem;
+        width: 90%;
+        p{
+            text-align: center;
+            font-size: 1.6rem;
+            font-family: Arial;
+            font-weight: normal;
+        }
+    }
     .m-mess{
         width:90%;
         padding:0.2rem 0;
@@ -133,62 +170,64 @@ body{
             background-repeat:no-repeat;
             
         }
-        &:nth-of-type(1){
+        &.m-messA{
             .fadeInUp();
             .animation(fadeInUp ease-out 0.3s 0.5s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon01.png?__inline);
             }
         }
-        &:nth-of-type(2){
+        &.m-messB{
             .animation(fadeInUp ease-out 0.3s 1s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon02.png?__inline);
             }
         }
-        &:nth-of-type(3){
+        &.m-messC{
             .animation(fadeInUp ease-out 0.3s 1.5s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon03.png?__inline);
             }
         }
-        &:nth-of-type(4){
+        &.m-messD{
             .animation(fadeInUp ease-out 0.3s 2s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon04.png?__inline);
             }
         }
-        &:nth-of-type(5){
+        &.m-messE{
             .animation(fadeInUp ease-out 0.3s 2.5s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon05.png?__inline);
             }
         }
     }
-    // .slide-btn{
-    //     width:4rem;
-    //     height:0.5rem;
-    //     left:50%;
-    //     margin-left: -2rem;
-    //     bottom:1rem;
-    //     position: absolute;
-    //     background-size:auto 100%;
-    //     background-repeat:no-repeat;
-    //     background-image: url(../img/bg02_2.png);
-    //     display: block;
-    //     background-position:0.8rem 0;
-    //     em{
-    //         display: block;
-    //         width:0.3rem;
-    //         height:100%;
-    //         margin-left: 0.3rem;
-    //         background-size: 100%;
-    //         background-repeat:no-repeat;
-    //         background-image: url(../img/bg02_3.png);
-    //         .aniArrowA();
-    //         .animation(aniArrowA 1s 0.3s ease-in-out alternate infinite both);
-    //     }
-    // }
+    .slide-btn{
+        width:3rem;
+        height:0.5rem;
+        line-height: 0.5rem;
+        left:50%;
+        margin-left: -3/2rem;
+        bottom:0.5rem;
+        position: absolute;
+        display: block;
+        font-size: 0.32rem;
+        color: #b1b4b4;
+        padding-left: 0.8rem;
+        z-index: 20;
+        em{
+            position: absolute;
+            top: 0;
+            left: 0.3rem;
+            width:0.3rem;
+            height:100%;
+            background-size: 100%;
+            background-repeat:no-repeat;
+            background-image: url(../img/bg02_3.png);
+            .aniArrowA();
+            .animation(aniArrowA 1s 0.3s ease-in-out alternate infinite both);
+        }
+    }
     .iconA{
         position: absolute;
         left:50%;
@@ -522,10 +561,10 @@ body{
     }
     .game-peo{
         width:2.88rem;
-        height: 7.29rem;        
+        height: 7.29rem;
         position:absolute;
         z-index: 5;
-        top:3.5rem;
+        bottom:2rem;
         left:50%;
         display: none;
         opacity:0;
@@ -609,8 +648,8 @@ body{
             }
             &.on{
                 span{
-                    .tada();
-                    .animation(tada ease 0.3s both); 
+                    .flash();
+                    .animation(flash ease 0.3s both); 
                 }
             }
         }
@@ -636,7 +675,7 @@ body{
         position: absolute;
         z-index: 20;
         left: 50%;
-        top: 3.7rem;
+        bottom:1.6rem;
         .wuqi_ani();
         .animation(wuqi_ani ease-in 0.15s 0s both);
         &.wuqi1{
@@ -647,6 +686,7 @@ body{
         &.wuqi2{
             width: 3.2rem;
             height: 3.38rem;
+            bottom:1rem;
             background-image: url(../img/wuqi2.png);
         }
         &.wuqi3{

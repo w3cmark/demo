@@ -34,20 +34,25 @@ var Index = function(){
         csstrans = {},
         _audioTimeout,
     init = function(){
+        
         initScreen();
 
         $(window).bind('touchmove',function(e){
             e.preventDefault();
         })
 
-        showEle($stages.eq(0));
-        // playGame();
+        showEle($stages.eq(2));
+        playGame();
         // jumpLastStage();
 
         setTimeout(function(){
             _messaudio.play();
         },2400)
         // stage1
+        // 解锁
+        $slidebtn[0].addEventListener('touchstart', _events, false);
+        $slidebtn[0].addEventListener('touchmove', _events, false);
+        $slidebtn[0].addEventListener('touchend', _events, false);
 
         $messbtn[0].addEventListener('touchstart', _events, false);
         $messbtn[0].addEventListener('touchmove', _events, false);
@@ -96,8 +101,8 @@ var Index = function(){
                     return;
                 }
                 addmess();
-            },1500);
-        },900)
+            },1400);
+        },500)
         
         function addmess(){
             _messaudio.play();
@@ -156,8 +161,8 @@ var Index = function(){
                         //游戏结束3s后去到落地页
                         setTimeout(function(){
                             // playVideo();
-                            jumpLastStage();
-                        },3000)
+                            // jumpLastStage();
+                        },2000)
                         
                     })
 
@@ -185,9 +190,9 @@ var Index = function(){
         }
         function addWuqi(){
             var n = randomNum(1,4),
-                t = Math.random() * 5 - 2.5,
+                t = Math.random() * 2,
                 l = Math.random() * 5 - 2.5,
-                html = '<div class="wuqi wuqi'+n+'" style="margin:'+t+'rem 0 0 '+l+'rem"></div>';
+                html = '<div class="wuqi wuqi'+n+'" style="margin:0 0 '+t+'rem '+l+'rem"></div>';
             $gamestage.append(html);
         }
     },
@@ -341,7 +346,7 @@ var Index = function(){
             if(delta.x > 0){
                 event.preventDefault();                
                 csstrans[_css3pre+"transform"]="translate("+delta.x+"px,0)";
-                if(event.target.id == 'Jslidebtn'){
+                if(event.target.id == 'Jslidebtn' || event.target.id == 'Jslidebtnem'){
                     $slidebtn.css(csstrans);
                 }else{
                     $messbtn.css(csstrans);
@@ -469,5 +474,39 @@ var Index = function(){
     }
 	
 }();
+function ImageLoader(imgList, doneCbk, progressCbk) {
+    this._list = imgList;
 
-Index.init();
+    this._loader = new createjs.LoadQueue(false);
+
+    this._loader.addEventListener('complete', function() {
+        doneCbk && doneCbk();
+    });
+
+    this._loader.addEventListener('progress', function(event) {
+        progressCbk && progressCbk(event.progress);
+    });
+}
+ImageLoader.prototype = {
+
+    get: function(id) {
+        return this._loader.getResult(id);
+    },
+
+    load: function() {
+        this._loader.loadManifest(this._list);
+        return this;
+    }
+};
+// Init
+new ImageLoader(__resload('img'), function() {
+    $('#Jmain').show();
+    setTimeout(function(){
+        $('#loading').remove();
+        Index.init();
+    },300)
+
+}, function(pct) {
+    $('#loading .tip span').html(Math.floor(pct * 100));
+
+}).load();

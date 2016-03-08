@@ -46,7 +46,7 @@ var Index = function(){
 
         setTimeout(function(){
             _messaudio.play();
-        },1800)
+        },2400)
         // stage1
 
         $messbtn[0].addEventListener('touchstart', _events, false);
@@ -249,6 +249,7 @@ var Index = function(){
        });
     },
     jumpLastStage = function(){
+        $stages.eq(2).hide();
         $stages.eq(3).hide();
         showEle($stages.eq(4));
         $('#Jvideobtn')[0].addEventListener("click",function(evt) {

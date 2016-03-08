@@ -253,7 +253,7 @@ body{
             height: 0.3rem;
             background-size: 100%;
             background-repeat:no-repeat;
-            background-image: url(../img/icon18.png); 
+            background-image: url(../img/icon18.png?__inline); 
         }
     }
     p{
@@ -551,7 +551,7 @@ body{
     .game-btn{
         width: 100%;
         position: absolute;
-        z-index: 6;
+        z-index: 26;
         bottom:1rem;
         left:0;
         display: none;
@@ -742,4 +742,87 @@ body{
             opacity: 1;
         }
     }
+}
+
+.NIE-share-m {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    display: none;
+    opacity: 0;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    z-index: 999;
+    &.show{
+        opacity: 1;
+    }
+}
+.NIE-share-guide {
+    position: relative;
+    margin: 0 auto;
+    top: .4em;
+    width: 7em;
+    height: 2em;
+    border-left: .04em solid #fff;
+    border-right: .04em solid #fff;
+    border-bottom: .04em solid #fff;
+    padding-top: .36em;
+}
+.NIE-share-guide .arrow_line {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    width: 100%;
+    -webkit-transform: translate(0,-.37em);
+    -moz-transform: translate(0,-.37em);
+    -ms-transform: translate(0,-.37em);
+    -o-transform: translate(0,-.37em);
+    transform: translate(0,-.37em);
+}
+.NIE-share-guide .arrow_line em, .NIE-share-guide .arrow_line span {
+    display: block;
+    font-size: 1em;
+    height: .04em;
+    background: #fff;
+    margin-bottom: .18em;
+}
+.NIE-share-guide .arrow_line em {
+    -moz-box-flext: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    margin-right: .04em;
+    width: 4.68em;
+}
+.NIE-share-guide .arrow_line i {
+    display: block;
+    width: .4em;
+    height: .4em;
+    border-left: .05em solid #fff;
+    -webkit-transform: scale(0.85) rotate(45deg);
+    -moz-transform: scale(0.85) rotate(45deg);
+    -ms-transform: scale(0.85) rotate(45deg);
+    -o-transform: scale(0.85) rotate(45deg);
+    transform: scale(0.85) rotate(45deg);
+    border-top: .05em solid #fff;
+    margin-top: -.2em;
+}
+.NIE-share-guide .arrow_line span {
+    width: .3em;
+    margin-left: .04em;
+}
+.NIE-share-guide p {
+    font-size: .48em;
+    text-align: center;
+    color: #fff;
 }

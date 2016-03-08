@@ -58,12 +58,12 @@ var Index = function(){
         // stage3
         $('#Jstage4btnA').bind('touchend',function(){            
             if(_isWx){
-                showEle($('#Jstage4pop'));
+                showEle($('#NIE-share-m'));
             }else{
                 showTips('请在微信客户端打开分享~');
             }
         })
-        $('#Jstage4pop').bind('touchend',function(){
+        $('#NIE-share-m').bind('touchend',function(){
             $(this).hide();
         })
 
@@ -182,10 +182,6 @@ var Index = function(){
                 $hit.text(_hitnum);
                 addWuqi();
             })
-        }
-        function randomNum(n,m){
-            var c = m - n + 1;
-            return Math.floor(Math.random() * c + n);
         }
         function addWuqi(){
             var n = randomNum(1,4),

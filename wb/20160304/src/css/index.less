@@ -61,6 +61,19 @@
         }
     }
 }
+.wuqi_ani(@n:wuqi_ani){
+    .keyframes(@n);
+    .-frames(@-...){
+        0% {
+            @{-}transform:scale(8) translateX(-50%);
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            @{-}transform:scale(1) translateX(-50%);
+        }
+    }
+}
 
 body{
     background: #ebebeb;
@@ -96,7 +109,7 @@ body{
         padding:0.2rem 0;
         margin:0 auto;
         position: relative;
-        border-bottom: 1px solid #4f637e;        
+        border-bottom: 1px solid #4f637e;
         p{
             padding-left: 0.5rem;
             font-size: 0.26rem;
@@ -121,28 +134,32 @@ body{
             
         }
         &:nth-of-type(1){
+            .fadeInUp();
+            .animation(fadeInUp ease-out 0.3s 0.3s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon01.png?__inline);
             }
         }
         &:nth-of-type(2){
+            .animation(fadeInUp ease-out 0.3s 0.7s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon02.png?__inline);
             }
         }
         &:nth-of-type(3){
+            .animation(fadeInUp ease-out 0.3s 1.1s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon03.png?__inline);
             }
         }
         &:nth-of-type(4){
+            .animation(fadeInUp ease-out 0.3s 1.5s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon04.png?__inline);
             }
         }
         &:nth-of-type(5){
-            .fadeInUp();
-            .animation(fadeInUp ease-out 0.4s 1.3s backwards);
+            .animation(fadeInUp ease-out 0.3s 1.9s backwards);
             .m-mess-icon{
                 background-image: url(../img/icon05.png?__inline);
             }
@@ -425,7 +442,7 @@ body{
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    .game-time,.game-hit,.game-rule,.game-peo span,.game-play,.game-btn a,.bottom-bg{
+    .game-time,.game-hit,.game-rule,.game-peo span,.game-play,.game-btn a,.bottom-bg,.wuqi{
         background-size: 100%;
         background-repeat: no-repeat;
     }
@@ -442,8 +459,10 @@ body{
         overflow: hidden;
         font-size: 0.24rem;
         color:#fff;
-        padding:0.25rem 0.15rem;
+        padding:0.25rem 0.05rem;
         opacity:0;
+        position: relative;
+        z-index: 30;
         .game-time{
             float:left;
             width: 4.4rem;
@@ -459,7 +478,7 @@ body{
                 background-size: 2.86rem;
                 background-repeat: no-repeat;
                 background-image: url(../img/game03.png);
-                .transition(width linear 6s);
+                .transition(width linear 20s);
             }
             i{
                 font-size: 0.58rem;
@@ -479,8 +498,9 @@ body{
             font-weight: bold;
             font-style: italic;
             text-shadow:2px 2px 0.04rem #000;
-            width: 0.85rem;
+            width: 1.2rem;
             height:1.18rem;
+            text-align: center;
             line-height: 1.08rem;
             padding-left: 1.7rem;
             background-size:auto 100%;
@@ -537,7 +557,7 @@ body{
         display: none;
         a{            
             width: 2.1rem;
-            height: 2.06rem;
+            height: 2rem;
             margin:0 0.4rem;
             opacity:0;
             &:nth-of-type(1){
@@ -570,7 +590,7 @@ body{
         left: 50%;
         margin-top: -2rem;
         .transform(translateX(-50%));
-        z-index: 15;
+        z-index: 25;
         display: none;
         .transition(opacity ease 0.3s);
     }
@@ -612,6 +632,38 @@ body{
             }
         }
     }
+    .wuqi{
+        position: absolute;
+        z-index: 20;
+        left: 50%;
+        top: 3.7rem;
+        .wuqi_ani();
+        .animation(wuqi_ani ease-in 0.15s 0s both);
+        &.wuqi1{
+            width: 2.44rem;
+            height: 2.77rem;
+            background-image: url(../img/wuqi1.png);
+        }
+        &.wuqi2{
+            width: 3.2rem;
+            height: 3.38rem;
+            background-image: url(../img/wuqi2.png);
+        }
+        &.wuqi3{
+            width: 2.63rem;
+            height: 2.65rem;
+            background-image: url(../img/wuqi3.png);
+        }
+        &.wuqi4{
+            width: 1.96rem;
+            height: 2.08rem;
+            background-image: url(../img/wuqi4.png);
+        }
+        // &.show{
+            
+
+        // }
+    }
 }
 .stage4{
     background: #000;
@@ -620,13 +672,33 @@ body{
     }
 }
 .stage5{
-    background-color: #fff;
-    background-size: 9.5rem;
-    background-position: center;
+    background-size: 100%;
+    background-image: url(../img/bg03.jpg);
     z-index: 1;
+    .stage-video{
+        width: 6.5rem;
+        height: 4.22rem;
+        margin: 4rem auto 0.5rem;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-image: url(../img/bg04.png);
+        display: block;
+        overflow: hidden;
+        span{
+            width: 1.38rem;
+            height: 1.38rem;
+            display: block;
+            margin: 1.8rem auto 0;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-image: url(../img/btn02.png);
+            .pulse(1.15);
+            .animation(pulse ease-in-out 1.5s 0s infinite alternate both);
+        }
+    }
     .btn{
-        width:3.3rem;
-        height:1.3rem;
+        width:4.22em;
+        height:1.29rem;
         display: block;
         margin: -0.12rem auto 0;
         background-size: 100%;
@@ -634,12 +706,12 @@ body{
         position: relative;
         &.btnA{
             z-index: 5;
-            background-image: url(../img/icon09.png);
+            background-image: url(../img/btn01.png);
         }
-        &.btnB{
-            margin-top: -0.15rem;
-            background-image: url(../img/icon10.png);
-        }
+        // &.btnB{
+        //     margin-top: -0.15rem;
+        //     background-image: url(../img/icon10.png);
+        // }
     }
     .stage-pop{
         position: absolute;
@@ -668,23 +740,6 @@ body{
         }
         &.show{
             opacity: 1;
-        }
-    }
-    p{
-        font-size: 0.34rem;
-        height:0.6rem;
-        line-height: 0.6rem;
-        text-align: center;
-        background: #000;
-        width:5.6rem;
-        margin:0 auto;
-        &.p1{
-            color:#f6a83d;
-            margin-top: 6rem;
-        }
-        &.p2{
-            color:#00c5ff;
-            margin-top: 0.2rem;
         }
     }
 }

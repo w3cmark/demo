@@ -42,10 +42,11 @@ var Index = function(){
 
         showEle($stages.eq(0));
         // playGame();
+        // jumpLastStage();
 
         setTimeout(function(){
             _messaudio.play();
-        },800)
+        },1800)
         // stage1
 
         $messbtn[0].addEventListener('touchstart', _events, false);
@@ -85,20 +86,26 @@ var Index = function(){
             document.title = '林更新';
             swiper.onResize();
         },50)
-
-        var inter = setInterval(function(){
-            if(num == len){
-                clearInterval(inter);
-                showEle($('#Jchose'));
-                choseFun();
-                return;
-            }
+        setTimeout(function(){
+            addmess();
+            var inter = setInterval(function(){
+                if(num == len){
+                    clearInterval(inter);
+                    showEle($('#Jchose'));
+                    choseFun();
+                    return;
+                }
+                addmess();
+            },1500);
+        },900)
+        
+        function addmess(){
             _messaudio.play();
             showEle($p.eq(num));
             swiper.onResize();
             swiper.slideNext();
             num++;
-        },1550);
+        }
     },
     choseFun = function(){
         var $btns = $('#Jchose .chose-btn a');
@@ -135,20 +142,21 @@ var Index = function(){
                     addEvent($gamestage.find('.game-btn a'));
                     // 计时
                     $gamestage.find('.game-time span').addClass('on');
-                    changeTime($gamestage.find('.game-time i'), 6,function(ele){
+                    changeTime($gamestage.find('.game-time i'), 20,function(ele){
                         ele.text('0');
                         $num.css('width','85%');
                         if(_hitnum >= 20){
-                            $num.find('i').text('恭喜通过!');
+                            $num.find('i').text('已neng死他!');
                         }else{
                             $num.find('i').text('Game Over!');
                         }
                         showEle($num);
                         $gamestage.find('.game-btn').hide();
 
-                        //游戏结束3s后播放视频
+                        //游戏结束3s后去到落地页
                         setTimeout(function(){
-                            playVideo();
+                            // playVideo();
+                            jumpLastStage();
                         },3000)
                         
                     })
@@ -172,7 +180,19 @@ var Index = function(){
                 $peo.removeClass('on');
                 _hitnum++;
                 $hit.text(_hitnum);
+                addWuqi();
             })
+        }
+        function randomNum(n,m){
+            var c = m - n + 1;
+            return Math.floor(Math.random() * c + n);
+        }
+        function addWuqi(){
+            var n = randomNum(1,4),
+                t = Math.random() * 5 - 2.5,
+                l = Math.random() * 5 - 2.5,
+                html = '<div class="wuqi wuqi'+n+'" style="margin:'+t+'rem 0 0 '+l+'rem"></div>';
+            $gamestage.append(html);
         }
     },
     changeTime = function(ele, time, endfn){
@@ -231,6 +251,10 @@ var Index = function(){
     jumpLastStage = function(){
         $stages.eq(3).hide();
         showEle($stages.eq(4));
+        $('#Jvideobtn')[0].addEventListener("click",function(evt) {
+            playVideo();
+            $stages.eq(4).hide().removeClass('show');
+       });
     },
     randomNum = function(n,m){
         var c = m - n + 1;

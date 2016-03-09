@@ -41,8 +41,8 @@ var Index = function(){
             e.preventDefault();
         })
 
-        showEle($stages.eq(2));
-        playGame();
+        showEle($stages.eq(0));
+        // playGame();
         // jumpLastStage();
 
         setTimeout(function(){
@@ -161,7 +161,7 @@ var Index = function(){
                         //游戏结束3s后去到落地页
                         setTimeout(function(){
                             // playVideo();
-                            // jumpLastStage();
+                            jumpLastStage();
                         },2000)
                         
                     })
@@ -499,7 +499,7 @@ ImageLoader.prototype = {
     }
 };
 // Init
-new ImageLoader(__resload('img'), function() {
+new ImageLoader(["img/bg01.jpg","img/bg02.png","img/bg02_3.png","img/bg03.jpg","img/bg04.png","img/btn01.png","img/btn02.png","img/game01.png","img/game02.png","img/game03.png","img/game04.png","img/game05.png","img/game06.png","img/game07.png","img/game08.png","img/game09.png","img/head.png","img/icon01.png","img/icon02.png","img/icon03.png","img/icon04.png","img/icon05.png","img/icon06.png","img/icon07.png","img/icon08.png","img/icon09.png","img/icon18.png","img/pic.png","img/turn.png","img/wuqi1.png","img/wuqi2.png","img/wuqi3.png","img/wuqi4.png"], function() {
     $('#Jmain').show();
     setTimeout(function(){
         $('#loading').remove();

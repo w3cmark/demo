@@ -9,8 +9,6 @@
 <meta name="format-detection" content="telephone=no"/>
 <meta name="format-detection" content="address=no"/>
 <meta name="applicable-device"content="mobile">
-<link rel="canonical" href="http://bjx.163.com" >
-<link rel="dns-prefetch" href="http://res.nie.netease.com">
 <!--usemin css(pkg/index.css)-->
 <link type="text/css" rel="stylesheet" href="css/swiper.css">
 <link type="text/css" rel="stylesheet" href="css/index.less">
@@ -27,7 +25,15 @@
     为了更好的体验，请在竖屏下浏览~
 </div>
 
-<div id="loading"><div class="tip"><span>0</span>%</div></div>
+<div id="loading">
+    <div class="tip">
+    <div class="tip-logo"></div>
+    <div class="tip-line">
+        <i></i>
+    </div>
+    <span>0</span>%
+    </div>
+</div>
 
 <div class="main" id="Jmain">
     
@@ -41,13 +47,13 @@
         </div>
         <div class="m-mess m-messA">
             <p class="m-mess-name">网易考拉：</p>
-            <p>你有新的订单，已开始配送</p>
+            <p>您有新的订单消息，请注意查阅。</p>
             <p><span>滑动来查看</span></p>
             <i class="m-mess-icon"></i>
         </div>
         <div class="m-mess m-messB">
             <p class="m-mess-name">网易云音乐：</p>
-            <p>已订林更新电视剧专辑。</p>
+            <p>订阅提示：已订阅林更新电视剧原声大碟专辑。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
@@ -59,7 +65,7 @@
         </div>
         <div class="m-mess m-messD">
             <p class="m-mess-name">重打新闻信息：</p>
-            <p>网曝林更新密友再换新。</p>
+            <p>林更新密友再换新，公开表白心意。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
@@ -85,25 +91,49 @@
                     <div class="m-messwin-tips">你已添加了林更新，现在可以开始聊天了。</div>
                     <p>
                         <span class="s-icon"></span>
-                        <span class="s-txt">担心你饿坏了，所以我帮你订了一 份外卖。</span>
+                        <span class="s-txt">终于找到你了，怕再次失去你，请原谅我黑进了你的手机。 </span>
                     </p>
                     <p>
                         <span class="s-icon"></span>
-                        <span class="s-txt">无聊时不用怕，我已经帮你订阅了 我的新电视剧。</span>
+                        <span class="s-txt">担心你饿坏了，所以我帮你订了一堆零食。</span>
                     </p>
                     <p>
                         <span class="s-icon"></span>
-                        <span class="s-txt">我已跟你在微博上，互相关注，让 我来当你的私人段子手，只为你一 个人逗逼。</span>
+                        <span class="s-txt">在你无聊的时候，不用怕，有我电视剧的原声大碟陪着你。 </span>
                     </p>
                     <p>
                         <span class="s-icon"></span>
-                        <span class="s-txt">为了防止你太想念我，所以我决定 给你发我的自拍。</span>
+                        <span class="s-txt">已跟你在微博上互相关注，让我来当你的私人段子手，好吗？  </span>
                     </p>
                     <p>
+                        <span class="s-icon"></span>
+                        <span class="s-txt">我是真心的，我已跟媒体公开了我们的关系，我们的感情会受到大家 的祝福。 </span>
+                    </p>
+                    <p>
+                        <span class="s-icon"></span>
+                        <span class="s-txt">为了防止你太想念我，所以我决定把我的自拍发给你，请收好。 </span>
+                    </p>
+                    <p class="p-imgA">
                         <span class="s-icon"></span>
                         <span class="s-txt s-img"></span>
                     </p>
-                    <p>
+                    <p class="p-imgB">
+                        <span class="s-icon"></span>
+                        <span class="s-txt s-img"></span>
+                    </p>
+                    <p class="p-imgC">
+                        <span class="s-icon"></span>
+                        <span class="s-txt s-img"></span>
+                    </p>
+                    <p class="p-imgD">
+                        <span class="s-icon"></span>
+                        <span class="s-txt s-img"></span>
+                    </p>
+                    <p class="p-imgE">
+                        <span class="s-icon"></span>
+                        <span class="s-txt s-img"></span>
+                    </p>
+                    <p class="p-imgF">
                         <span class="s-icon"></span>
                         <span class="s-txt s-img"></span>
                     </p>
@@ -122,7 +152,9 @@
             <p data-num="1"></p>
             <a href="javascript:;">发送</a>
         </div>
-
+        <div class="dead-lock" id="Jdead">
+            <span></span>
+        </div>
         <div class="chose" id="Jchose">
             <div class="chose-con">
                 <p>受到林更新自拍轰炸骚扰，<br/>是否关闭微信？</p>
@@ -156,7 +188,7 @@
         <div class="num">
             <i>3</i>
         </div>
-
+        <div class="end-tip" id="Jendtip"></div>
     </div>
     <div class="stage stage4">
         <video class="video-box" id="Jvideo"  x-webkit-airplay="true" webkit-playsinline="true" preload="auto"  src="data/chenhe.mp4"></video>

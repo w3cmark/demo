@@ -40,24 +40,8 @@ var Index = function(){
         $(window).bind('touchmove',function(e){
             e.preventDefault();
         })
-
-        showEle($stages.eq(0));
-        // playGame();
-        // jumpLastStage();
-
-        setTimeout(function(){
-            _messaudio.play();
-        },2400)
         // stage1
-        // 解锁
-        $slidebtn[0].addEventListener('touchstart', _events, false);
-        $slidebtn[0].addEventListener('touchmove', _events, false);
-        $slidebtn[0].addEventListener('touchend', _events, false);
-
-        $messbtn[0].addEventListener('touchstart', _events, false);
-        $messbtn[0].addEventListener('touchmove', _events, false);
-        $messbtn[0].addEventListener('touchend', _events, false);
-
+        showAppMess();
         // stage2     
         
         // stage3
@@ -76,11 +60,48 @@ var Index = function(){
         // shareFun();
         shareSDK.init();
     },
+    showAppMess = function(){
+        var len = $stages.eq(0).find('.m-mess').length,
+            cur = 0;
+        showEle($stages.eq(2));
+        playGame();
+        // jumpLastStage();
+        var mess_int = setInterval(function(){
+            cur++;
+            // console.log(cur);
+            if(cur == len){
+                clearInterval(mess_int);
+                return;
+            }
+            _messaudio.play();
+        },1300)
+        _messaudio.play();
+        
+        // 解锁
+        $messbtns = $('#Jmain .stage1 .m-mess');
+        $messbtns.each(function(i){
+            var $this = $(this);
+            $this[0].addEventListener('touchstart', _events, false);
+            $this[0].addEventListener('touchmove', _events, false);
+            $this[0].addEventListener('touchend', _events, false);
+        })
+        // $messbtns.bind('touchstart',_events);
+        // $messbtns.bind('touchmove',_events);
+        // $messbtns.bind('touchend',_events);
+        $slidebtn[0].addEventListener('touchstart', _events, false);
+        $slidebtn[0].addEventListener('touchmove', _events, false);
+        $slidebtn[0].addEventListener('touchend', _events, false);
+
+        // $messbtn[0].addEventListener('touchstart', _events, false);
+        // $messbtn[0].addEventListener('touchmove', _events, false);
+        // $messbtn[0].addEventListener('touchend', _events, false);
+    },
     showStage2 = function(){
         var $p = $('#Jmesswin p'),
             len = $p.length,
             num = 0;
         $stages.eq(0).hide();
+        _messaudio.pause();
         var swiper = new Swiper('#Jmesswin', {
             direction: 'vertical',
             slidesPerView: 'auto',
@@ -96,12 +117,12 @@ var Index = function(){
             var inter = setInterval(function(){
                 if(num == len){
                     clearInterval(inter);
-                    showEle($('#Jchose'));
-                    choseFun();
+                    deadLock();
+                    
                     return;
                 }
                 addmess();
-            },1400);
+            },1350);
         },500)
         
         function addmess(){
@@ -111,6 +132,18 @@ var Index = function(){
             swiper.slideNext();
             num++;
         }
+    },
+    deadLock = function(){
+        $main.addClass('shake');
+        setTimeout(function(){
+            showEle($('#Jdead'));
+            $main.removeClass('shake');
+        },1500)
+
+        setTimeout(function(){
+            showEle($('#Jchose'));
+            choseFun();
+        },3000)
     },
     choseFun = function(){
         var $btns = $('#Jchose .chose-btn a');
@@ -150,19 +183,19 @@ var Index = function(){
                     changeTime($gamestage.find('.game-time i'), 20,function(ele){
                         ele.text('0');
                         $num.css('width','85%');
-                        if(_hitnum >= 20){
-                            $num.find('i').text('已neng死他!');
-                        }else{
-                            $num.find('i').text('Game Over!');
-                        }
-                        showEle($num);
+                        // if(_hitnum >= 20){
+                        //     $num.find('i').text('已neng死他!');
+                        // }else{
+                        //     $num.find('i').text('Game Over!');
+                        // }
+                        showEle($('#Jendtip'));
                         $gamestage.find('.game-btn').hide();
-
+                        $('#Jendtip').on('click',jumpLastStage)
                         //游戏结束3s后去到落地页
-                        setTimeout(function(){
-                            // playVideo();
-                            jumpLastStage();
-                        },2000)
+                        // setTimeout(function(){
+                        //     // playVideo();
+                        //     // jumpLastStage();
+                        // },2000)
                         
                     })
 
@@ -189,7 +222,7 @@ var Index = function(){
             })
         }
         function addWuqi(){
-            var n = randomNum(1,4),
+            var n = randomNum(1,5),
                 t = Math.random() * 2,
                 l = Math.random() * 5 - 2.5,
                 html = '<div class="wuqi wuqi'+n+'" style="margin:0 0 '+t+'rem '+l+'rem"></div>';
@@ -349,7 +382,7 @@ var Index = function(){
                 if(event.target.id == 'Jslidebtn' || event.target.id == 'Jslidebtnem'){
                     $slidebtn.css(csstrans);
                 }else{
-                    $messbtn.css(csstrans);
+                    $('#Jmain .stage1 .m-mess').css(csstrans);
                 }
             }
             
@@ -363,7 +396,7 @@ var Index = function(){
                 if(event.target.id == 'Jslidebtn'){
                     $slidebtn.css(csstrans);
                 }else{
-                    $messbtn.css(csstrans);
+                    $('#Jmain .stage1 .m-mess').css(csstrans);
                 }
             }
             
@@ -499,7 +532,7 @@ ImageLoader.prototype = {
     }
 };
 // Init
-new ImageLoader(["img/bg01.jpg","img/bg02.png","img/bg02_3.png","img/bg03.jpg","img/bg04.png","img/btn01.png","img/btn02.png","img/game01.png","img/game02.png","img/game03.png","img/game04.png","img/game05.png","img/game06.png","img/game07.png","img/game08.png","img/game09.png","img/head.png","img/icon01.png","img/icon02.png","img/icon03.png","img/icon04.png","img/icon05.png","img/icon06.png","img/icon07.png","img/icon08.png","img/icon09.png","img/icon18.png","img/pic.png","img/turn.png","img/wuqi1.png","img/wuqi2.png","img/wuqi3.png","img/wuqi4.png"], function() {
+new ImageLoader(["img/logo.png","img/bg00.jpg","img/bg01.jpg","img/bg02.png","img/bg02_3.png","img/bg03.jpg","img/bg04.jpg","img/bg04.png","img/bg05.png","img/btn01.png","img/btn02.png","img/game01.png","img/game02.png","img/game03.png","img/game04.png","img/game05.png","img/game06.png","img/game07.png","img/game08.png","img/game09.png","img/head.png","img/icon01.png","img/icon02.png","img/icon03.png","img/icon04.png","img/icon05.png","img/icon06.png","img/icon07.png","img/icon08.png","img/icon09.png","img/icon10.png","img/icon11.png","img/icon12.png","img/icon13.png","img/icon14.png","img/icon15.png","img/icon16.png","img/icon18.png","img/pic01.png","img/pic02.png","img/pic03.png","img/pic04.png","img/pic05.png","img/pic06.png","img/turn.png","img/wuqi1.png","img/wuqi2.png","img/wuqi3.png","img/wuqi4.png","img/wuqi5.png"], function() {
     $('#Jmain').show();
     setTimeout(function(){
         $('#loading').remove();
@@ -508,5 +541,5 @@ new ImageLoader(["img/bg01.jpg","img/bg02.png","img/bg02_3.png","img/bg03.jpg","
 
 }, function(pct) {
     $('#loading .tip span').html(Math.floor(pct * 100));
-
+    $('#loading .tip-line i').css('width',pct * 100+'%');
 }).load();

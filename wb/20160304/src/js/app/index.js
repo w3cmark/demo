@@ -14,6 +14,7 @@ var Index = function(){
         _isClickAudio = false,
         _isPlaying = false,
         _hitnum = 0,
+        _mess_int,
         dummyStyle = document.createElement('div').style,
         vendor = (function () {
             var vendors = 't,webkitT,MozT,msT,OT'.split(','),
@@ -63,18 +64,18 @@ var Index = function(){
     showAppMess = function(){
         var len = $stages.eq(0).find('.m-mess').length,
             cur = 0;
-        showEle($stages.eq(2));
-        playGame();
+        showEle($stages.eq(0));
+        // playGame();
         // jumpLastStage();
-        var mess_int = setInterval(function(){
+        _mess_int = setInterval(function(){
             cur++;
             // console.log(cur);
             if(cur == len){
-                clearInterval(mess_int);
+                clearInterval(_mess_int);
                 return;
             }
             _messaudio.play();
-        },1300)
+        },800)
         _messaudio.play();
         
         // 解锁
@@ -101,6 +102,8 @@ var Index = function(){
             len = $p.length,
             num = 0;
         $stages.eq(0).hide();
+        clearInterval(_mess_int);
+        _messaudio.currentTime = 0;
         _messaudio.pause();
         var swiper = new Swiper('#Jmesswin', {
             direction: 'vertical',
@@ -118,11 +121,10 @@ var Index = function(){
                 if(num == len){
                     clearInterval(inter);
                     deadLock();
-                    
                     return;
                 }
                 addmess();
-            },1350);
+            },1200);
         },500)
         
         function addmess(){

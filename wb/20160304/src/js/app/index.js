@@ -34,6 +34,12 @@ var Index = function(){
         _css3pre = vendor ? '-' + vendor.toLowerCase() + '-' : '',
         csstrans = {},
         _audioTimeout,
+        _shareTxt = [
+            '娱乐花边——林更新微信表白，露骨聊天记录曝光！',
+            '节点——白色情人节，看林更新大胆告白',
+            '好奇心——在爱情的时间里，林更新是受虐狂？',
+            '虚荣心——林更新高调表白，我委婉拒绝！'
+        ],
     init = function(){
         
         initScreen();
@@ -46,7 +52,7 @@ var Index = function(){
         // stage2     
         
         // stage3
-        $('#Jstage4btnA').bind('touchend',function(){            
+        $('#Jstage4btnA').bind('touchend',function(){
             if(_isWx){
                 showEle($('#NIE-share-m'));
             }else{
@@ -168,11 +174,16 @@ var Index = function(){
     playGame = function(){
         var $gamestage = $('#Jgamestage'),
             $begain_btn = $('#Jgameplay'),
-            $num = $gamestage.find('.num');
+            $num = $gamestage.find('.num'),
+            $audiowuqi = $('.Jaudiowuqi');
         $begain_btn.on('touchend',function(){
             $gamestage.addClass('play');
             $(this).hide();
             showEle($num);
+            $audiowuqi.each(function(i){
+                var $this = $(this);
+                $this[0].load();
+            })
             //3s倒计时
             changeTime($num.find('i'), 3,function(ele){
                 ele.text('GO!');
@@ -190,14 +201,13 @@ var Index = function(){
                         // }else{
                         //     $num.find('i').text('Game Over!');
                         // }
-                        showEle($('#Jendtip'));
+                        $gamestage.find('.game-peo').addClass('end');
                         $gamestage.find('.game-btn').hide();
-                        $('#Jendtip').on('click',jumpLastStage)
                         //游戏结束3s后去到落地页
-                        // setTimeout(function(){
-                        //     // playVideo();
-                        //     // jumpLastStage();
-                        // },2000)
+                        setTimeout(function(){
+                            showEle($('#Jendtip'));
+                            $('#Jendtip').on('click',jumpLastStage);
+                        },1000)
                         
                     })
 
@@ -211,23 +221,25 @@ var Index = function(){
                 $peo = $gamestage.find('.game-peo');
             ele.on('touchstart',function(){
                 // _messaudio.pause();
-                _messaudio.play();
+                // _messaudio.play();
                 $(this).addClass('on');
                 $peo.addClass('on');
+                addWuqi();
             })
             ele.on('touchend',function(){
                 $(this).removeClass('on');
                 $peo.removeClass('on');
                 _hitnum++;
                 $hit.text(_hitnum);
-                addWuqi();
             })
         }
         function addWuqi(){
-            var n = randomNum(1,5),
-                t = Math.random() * 2,
-                l = Math.random() * 5 - 2.5,
+            var n = randomNumInt(1,5),
+                t = randomNum(0,3),
+                l = randomNum(0,4) - 3.5,
                 html = '<div class="wuqi wuqi'+n+'" style="margin:0 0 '+t+'rem '+l+'rem"></div>';
+            // console.log(n-1);
+            $audiowuqi.eq(n-1)[0].play();
             $gamestage.append(html);
         }
     },
@@ -293,9 +305,13 @@ var Index = function(){
             $stages.eq(4).hide().removeClass('show');
        });
     },
-    randomNum = function(n,m){
+    randomNumInt = function(n,m){
         var c = m - n + 1;
         return Math.floor(Math.random() * c + n);
+    },
+    randomNum = function(n,m){
+        var c = m - n + 1;
+        return Math.random() * c + n;
     },
     showTips = function(msg){
         var tips = document.getElementById('Jtips');
@@ -406,10 +422,10 @@ var Index = function(){
     },
     shareSDK = {
         _info: {
-            shareTitle: $('#share_title').html(),
+            shareTitle: _shareTxt[randomNumInt(0,3)],
             descContent: $('#share_desc').html(),
             shareTimeTitle: $('#share_title').html(),
-            imgUrl: $('#share_pic').attr('data-src'),
+            imgUrl: $('#share_pic').attr('src'),
             lineLink: window.location.href
         },
 
@@ -464,7 +480,6 @@ var Index = function(){
         init: function() {
 
             var that = this;
-
             document.addEventListener('YixinJSBridgeReady', function() {
                 YixinJSBridge.on('menu:share:appmessage', function() {
                     YixinJSBridge.invoke('sendAppMessage', {

@@ -64,13 +64,17 @@
 .wuqi_ani(@n:wuqi_ani){
     .keyframes(@n);
     .-frames(@-...){
+        // 0% {
+        //     opacity: 0;
+        //     @{-}transform:scale(0) translate(-5rem,18rem);
+        // }
         0% {
-            @{-}transform:scale(8) translateX(-50%);
             opacity: 0;
+            @{-}transform:scale(0.2) translate(-7rem,10rem);
         }
         100% {
             opacity: 1;
-            @{-}transform:scale(1) translateX(-50%);
+            @{-}transform:scale(1) translateX(0,0);
         }
     }
 }
@@ -85,6 +89,17 @@
         }
         20%, 40%, 60%, 80% {
             @{-}transform: scale3d(1, 1, 1);
+        }
+    }
+}
+.moveUp(@n:moveUp){
+    .keyframes(@n);
+    .-frames(@-...){
+        0%{
+            @{-}transform: translateY(0);
+        }
+        100%{
+            @{-}transform: translateY(-10%);
         }
     }
 }
@@ -243,22 +258,22 @@ body{
         }
     }
     .slide-btn{
-        width:2.6rem;
-        height:0.54rem;
-        line-height: 0.54rem;
+        width:6rem;
+        height:0.8rem;
+        line-height: 0.8rem;
         left:50%;
-        margin-left: -3.4/2rem;
+        margin-left: -6/2rem;
         bottom:0.64rem;
         position: absolute;
         display: block;
         font-size: 0.46rem;
         color: #b1b4b4;
-        padding-left: 0.8rem;
         z-index: 20;
+        text-align: center;
         em{
             position: absolute;
-            top: 0.06rem;
-            left: 0.34rem;
+            top: 0.22rem;
+            left: 1.3rem;
             width:0.26rem;
             height:100%;
             background-size: 100%;
@@ -787,6 +802,12 @@ body{
                     .animation(flash ease 0.3s both); 
                 }
             }
+            &.end{
+                span{
+                    .moveUp();
+                    .animation(moveUp ease-in 0.2s both); 
+                }
+            }
         }
         .game-rule{
             .rule_ani();
@@ -812,7 +833,7 @@ body{
         left: 50%;
         bottom:1.6rem;
         .wuqi_ani();
-        .animation(wuqi_ani ease-in 0.15s 0s both);
+        .animation(wuqi_ani ease-in 0.2s 0s both);
         &.wuqi1{
             width: 2.19rem;
             height: 1.92rem;

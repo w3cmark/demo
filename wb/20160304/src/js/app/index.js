@@ -4,7 +4,7 @@ var Index = function(){
         _isWx = /micromessenger/i.test(_ua),
         $main = $('#Jmain'),
         _messaudio = $("#Jaudiomess").get(0),
-        $audio = $("#Jaudio"),
+        _video = $('#Jvideo')[0],
         $stages = $main.find('.stage'),
         $slidebtn = $('#Jslidebtn'),
         $messbtn = $('#Jmessbtn'),
@@ -35,10 +35,10 @@ var Index = function(){
         csstrans = {},
         _audioTimeout,
         _shareTxt = [
-            '娱乐花边——林更新微信表白，露骨聊天记录曝光！',
-            '节点——白色情人节，看林更新大胆告白',
-            '好奇心——在爱情的时间里，林更新是受虐狂？',
-            '虚荣心——林更新高调表白，我委婉拒绝！'
+            '林更新微信表白，露骨聊天记录曝光！',
+            '白色情人节，看林更新大胆告白',
+            '在爱情的世界里，林更新是受虐狂？',
+            '林更新高调表白，我委婉拒绝！'
         ],
     init = function(){
         
@@ -111,6 +111,7 @@ var Index = function(){
         clearInterval(_mess_int);
         _messaudio.currentTime = 0;
         _messaudio.pause();
+        _video.load();
         var swiper = new Swiper('#Jmesswin', {
             direction: 'vertical',
             slidesPerView: 'auto',
@@ -193,7 +194,7 @@ var Index = function(){
                     addEvent($gamestage.find('.game-btn a'));
                     // 计时
                     $gamestage.find('.game-time span').addClass('on');
-                    changeTime($gamestage.find('.game-time i'), 20,function(ele){
+                    changeTime($gamestage.find('.game-time i'), 10,function(ele){
                         ele.text('0');
                         $num.css('width','85%');
                         // if(_hitnum >= 20){
@@ -201,7 +202,7 @@ var Index = function(){
                         // }else{
                         //     $num.find('i').text('Game Over!');
                         // }
-                        $gamestage.find('.game-peo').addClass('end');
+                        // $gamestage.find('.game-peo').addClass('end');
                         $gamestage.find('.game-btn').hide();
                         //游戏结束3s后去到落地页
                         setTimeout(function(){
@@ -236,11 +237,19 @@ var Index = function(){
         function addWuqi(){
             var n = randomNumInt(1,5),
                 t = randomNum(0,3),
-                l = randomNum(0,4) - 3.5,
-                html = '<div class="wuqi wuqi'+n+'" style="margin:0 0 '+t+'rem '+l+'rem"></div>';
+                l = -0.6,
+                html = '<div class="wuqi wuqi'+n+'" style="margin:0 0 '+t+'rem '+l+'rem"></div>',
+                text_html = '<div class="game-text game-text'+n+'"></div>';
             // console.log(n-1);
+            var item = $(html),
+                text_item = $(text_html);
             $audiowuqi.eq(n-1)[0].play();
-            $gamestage.append(html);
+            $gamestage.append(item);
+            $gamestage.append(text_item);
+            setTimeout(function() {
+                item.remove();
+                text_item.remove();
+            }, 500);
         }
     },
     changeTime = function(ele, time, endfn){
@@ -290,9 +299,9 @@ var Index = function(){
         $stages.eq(1).hide();
         $stages.eq(2).hide();
         showEle($stages.eq(3));
-        var vid = $('#Jvideo')[0];
-        vid.play();
-        vid.addEventListener("ended",function(evt) {
+        // var vid = $('#Jvideo')[0];
+        _video.play();
+        _video.addEventListener("ended",function(evt) {
             jumpLastStage();
        });
     },
@@ -424,7 +433,7 @@ var Index = function(){
         _info: {
             shareTitle: _shareTxt[randomNumInt(0,3)],
             descContent: $('#share_desc').html(),
-            shareTimeTitle: $('#share_title').html(),
+            shareTimeTitle: '',
             imgUrl: $('#share_pic').attr('src'),
             lineLink: window.location.href
         },
@@ -480,6 +489,7 @@ var Index = function(){
         init: function() {
 
             var that = this;
+            that._info.shareTimeTitle = that._info.shareTitle;
             document.addEventListener('YixinJSBridgeReady', function() {
                 YixinJSBridge.on('menu:share:appmessage', function() {
                     YixinJSBridge.invoke('sendAppMessage', {

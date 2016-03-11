@@ -119,15 +119,15 @@ body{
   background-size: 100%;
   background-image: url(../img/bg00.jpg);
   .tip-logo{
-    width: 3.24rem;
+    width: 3.68rem;
     height: 1.41rem;
     margin: 0 auto;
     background-repeat: no-repeat;
-      background-size: 100%;
-      background-image: url(../img/logo.png);
+    background-size: 100%;
+    background-image: url(../img/logo.png);
   }
   .tip-line{
-    width: 3.24rem;
+    width: 3.68rem;
     background-color: #fff;
     height: 0.03rem;
     margin: 0.3rem auto 0.1rem;
@@ -631,7 +631,7 @@ body{
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
-    .game-time,.game-hit,.game-rule,.game-peo span,.game-play,.game-btn a,.bottom-bg,.wuqi{
+    .game-time,.game-hit,.game-rule,.game-peo span,.game-play,.game-btn a,.bottom-bg,.wuqi,.game-text{
         background-size: 100%;
         background-repeat: no-repeat;
     }
@@ -667,7 +667,7 @@ body{
                 background-size: 2.86rem;
                 background-repeat: no-repeat;
                 background-image: url(../img/game03.png);
-                .transition(width linear 20s);
+                .transition(width linear 10s);
             }
             i{
                 font-size: 0.58rem;
@@ -697,17 +697,26 @@ body{
         }
     }
     .game-rule{
-        width:6.21rem;
-        height: 7.61rem;
+        width:6rem;
+        height: 6.7rem;
+        padding-top: 0.91rem;
+        padding-left: 0.21rem;
         background-image: url(../img/game05.png);
         position:absolute;
         z-index: 3;
         bottom:1rem;
         left:50%;
         margin-left: -6.21/2rem;
+        font-size: 0.38rem;
+        text-align: center;
         // .transform(translateX(-50%));
         .scaleIn();
         .animation(scaleIn ease-in 0.5s 0.8s both);
+        span{
+            font-size: 0.3rem;
+            display: block;
+            padding-top: 0.2rem;
+        }
     }
     .game-peo{
         width:2.88rem;
@@ -831,39 +840,76 @@ body{
         position: absolute;
         z-index: 20;
         left: 50%;
-        bottom:1.6rem;
+        bottom:2rem;
         .wuqi_ani();
-        .animation(wuqi_ani ease-in 0.2s 0s both);
+        .animation(wuqi_ani ease-in 0.3s 0s both);
         &.wuqi1{
-            width: 2.19rem;
-            height: 1.92rem;
+            width: 1.1rem;
+            height: 0.96rem;
             background-image: url(../img/wuqi1.png);
         }
         &.wuqi2{
-            width: 1.75rem;
-            height: 1.98rem;
+            width: 0.9rem;
+            height: 1.02rem;
             bottom:1rem;
             background-image: url(../img/wuqi2.png);
         }
         &.wuqi3{
-            width: 2.09rem;
-            height: 1.52rem;
+            width: 1.05rem;
+            height: 0.76rem;
             background-image: url(../img/wuqi3.png);
         }
         &.wuqi4{
-            width: 1.34rem;
-            height: 1.41rem;
+            width: 0.72rem;
+            height: 0.76rem;
             background-image: url(../img/wuqi4.png);
         }
         &.wuqi5{
-            width: 1.93rem;
-            height: 1.65rem;
+            width: 0.96rem;
+            height: 0.82rem;
             background-image: url(../img/wuqi5.png);
         }
-        // &.show{
-            
-
-        // }
+    }
+    .game-text{
+        position: absolute;
+        z-index: 20;
+        left: 50%;
+        .bounceIn();
+        .animation(bounceIn ease-in 0.3s 0s both);
+        &.game-text1{
+            width: 1.82rem;
+            height: 2.15rem;
+            bottom:8.9rem;
+            margin-left: -2rem;
+            background-image: url(../img/text1.png);
+        }
+        &.game-text2{
+            width: 3.06rem;
+            height: 1.85rem;
+            bottom:8.5rem;
+            background-image: url(../img/text2.png);
+        }
+        &.game-text3{
+            width: 2.2rem;
+            height: 1.64rem;
+            margin-left: -3.5rem;
+            bottom:7.6rem;
+            background-image: url(../img/text3.png);
+        }
+        &.game-text4{
+            width: 2.72rem;
+            height: 1.67rem;
+            margin-left: 0.5rem;
+            bottom:6rem;
+            background-image: url(../img/text4.png);
+        }
+        &.game-text5{
+            width: 2.28rem;
+            height: 1.67rem;
+            margin-left: -3.5rem;
+            bottom:6rem;
+            background-image: url(../img/text5.png);
+        }
     }
     .end-tip{
         position: absolute;

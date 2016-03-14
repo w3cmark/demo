@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>林更新跟你表白了</title>
+<title>林更新</title>
 <meta name="keywords" content="林更新跟你表白了" />
 <meta name="description" content="林更新跟你表白了" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
@@ -17,8 +17,7 @@
 <body>
 <div id="share_content" class="hide">
     <p id="share_title" pub-name="分享标题">林更新微信表白，露骨聊天记录曝光！</p>
-    <p id="share_desc" pub-name="分享正文">来听一听，林更新的内心话吧！</p>
-    <img id="share_pic" pub-name="分享图片" src="http://www.huihaicenter.com/www/test/20160311/img/head.png">
+    <p id="share_desc" pub-name="分享正文"></p>
 </div>
 <div class="viewtips" id="forhorview">
     <i></i>
@@ -36,14 +35,19 @@
 </div>
 
 <div class="main" id="Jmain">
-    
+
     <div class="stage stage1">
         <!-- <a href="javascript:;" class="slide-btn" id="Jslidebtn">
             <em></em>
         </a> -->
         <div class="stage-time">
-            <p>1:03</p>
-            3月14日 星期一
+            <div class="time-num time-num1"></div>
+            <div class="time-num time-num2"></div>
+            <div class="time-dot"></div>
+            <div class="time-num time-num3"></div>
+            <div class="time-num time-num4"></div>
+            <!-- <p>1:03</p> -->
+            <p>3月14日 星期一</p>
         </div>
         <div class="m-mess m-messA">
             <p class="m-mess-name">网易考拉：</p>
@@ -59,7 +63,7 @@
         </div>
         <div class="m-mess m-messC">
             <p class="m-mess-name">粉丝信息：</p>
-            <p>林更新已与你互相关注。</p>
+            <p>林更新关注了你。</p>
             <!-- <p><span>滑动来查看</span></p> -->
             <i class="m-mess-icon"></i>
         </div>
@@ -80,11 +84,11 @@
         </a>
         <div class="iconA"></div>
         <div class="iconB"></div>
-        
+
     </div>
 
 
-    <div class="stage stage2">        
+    <div class="stage stage2">
         <div class="m-messwin swiper-container" id="Jmesswin">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -137,6 +141,10 @@
                         <span class="s-icon"></span>
                         <span class="s-txt s-img"></span>
                     </p>
+                    <p>
+                        <span class="s-icon"></span>
+                        <span class="s-txt">你还不理我</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -166,7 +174,7 @@
         </div>
 
     </div>
-    
+
     <div class="stage stage3" id="Jgamestage">
         <div class="bottom-bg"></div>
         <div class="game-top">
@@ -214,7 +222,12 @@
         </div>
     </div>
 
+    <div class="new-share-pop">
+        <div class="share-pop-content"></div>
+    </div>
+
     <audio id="Jaudiomess" class="media-audio" src="data/mess.mp3" preload="">
+    <audio id="Jaudiounlock" class="media-audio" src="data/unlock.mp3" preload="">
     </audio>
     <audio class="media-audio Jaudiowuqi" src="data/wq1.mp3"></audio>
     <audio class="media-audio Jaudiowuqi" src="data/wq2.mp3"></audio>
@@ -222,18 +235,26 @@
     <audio class="media-audio Jaudiowuqi" src="data/wq2.mp3"></audio>
     <audio class="media-audio Jaudiowuqi" src="data/wq2.mp3"></audio>
 
+    <div class="new-share-pop">
+        <div class="share-pop-content"></div>
+    </div>
 
 </div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>document.write('<script src="http://www.huihaicenter.com/api/wx/jssdk.php?url=' + encodeURIComponent(window.location.href) + '"><\/script>');</script>
+<!--usemin js(pkg/share.js)-->
+<script charset="utf-8" src="js/app/share.js"></script>
+<!--end-->
+
 <!--usemin js(pkg/lib.js)-->
 <script charset="utf-8" src="js/lib/zepto.min.js"></script>
 <script charset="utf-8" src="js/lib/swiper.js"></script>
 <!--end-->
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-  <script>document.write('<script src="http://www.huihaicenter.com/api/wx/jssdk.php?url=' + encodeURIComponent(window.location.href) + '"><\/script>');</script>
 
 <!--usemin js(pkg/index.js)-->
 <script charset="utf-8" src="js/lib/preloadjs.min.js"></script>
 <script charset="utf-8" src="js/app/index.js"></script>
 <!--end-->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257952755'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1257952755' type='text/javascript'%3E%3C/script%3E"));</script>
 </body>
-</html> 
+</html>

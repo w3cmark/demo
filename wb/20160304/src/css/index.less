@@ -70,7 +70,7 @@
         // }
         0% {
             opacity: 0;
-            @{-}transform:scale(0.2) translate(-7rem,10rem);
+            @{-}transform:scale(0.2) translate(-2rem,10rem);
         }
         100% {
             opacity: 1;
@@ -118,13 +118,27 @@ body{
   background-repeat: no-repeat;
   background-size: 100%;
   background-image: url(../img/bg00.jpg);
+
+  @-webkit-keyframes loadingani {
+    to {
+      background-position : 0 -5rem;
+    }
+  }
+
   .tip-logo{
-    width: 3.68rem;
-    height: 1.41rem;
+    // width: 3.68rem;
+    // height: 1.41rem;
+    // margin: 0 auto;
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    // background-image: url(../img/logo.png);
+
+    width: 2.6rem;
+    height: 2.5rem;
     margin: 0 auto;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-image: url(../img/logo.png);
+    background: url(../img/loading.png);
+    background-size : 100% auto;
+    -webkit-animation : loadingani 0.5s steps(2, end) infinite;
   }
   .tip-line{
     width: 3.68rem;
@@ -189,12 +203,76 @@ body{
         margin: 0 auto;
         padding-bottom: 0.3rem;
         width: 90%;
-        p{
-            text-align: center;
-            font-size: 1.6rem;
-            font-family: Arial;
-            font-weight: normal;
+        text-align: center;
+
+        .time-num {
+          display: inline-block;
+          width: 1.1rem;
+          height: 2rem;
+          &.type-0 {
+            background: url(../img/num-0.png);
+            background-size: 100% 100%;
+          }
+          &.type-1 {
+            width: 0.77rem;
+            background: url(../img/num-1.png);
+            background-size: 100% 100%;
+          }
+          &.type-2 {
+            background: url(../img/num-2.png);
+            background-size: 100% 100%;
+          }
+          &.type-3 {
+            background: url(../img/num-3.png);
+            background-size: 100% 100%;
+          }
+          &.type-4 {
+            background: url(../img/num-4.png);
+            background-size: 100% 100%;
+          }
+          &.type-5 {
+            background: url(../img/num-5.png);
+            background-size: 100% 100%;
+          }
+          &.type-6 {
+            background: url(../img/num-6.png);
+            background-size: 100% 100%;
+          }
+          &.type-7 {
+            background: url(../img/num-7.png);
+            background-size: 100% 100%;
+          }
+          &.type-8 {
+            background: url(../img/num-8.png);
+            background-size: 100% 100%;
+          }
+          &.type-9 {
+            background: url(../img/num-9.png);
+            background-size: 100% 100%;
+          }
         }
+
+        .time-dot {
+          display: inline-block;
+          width: 0.125rem;
+          height: 2rem;
+          background: url(../img/num-dot.png);
+          background-size: 100% 100%;
+        }
+
+
+        // p{
+        //     text-align: center;
+        //     font-size: 1.6rem;
+        //     font-family: Arial;
+        //     font-weight: normal;
+        // }
+        p {
+          width: 100%;
+          margin: 0 auto;
+          text-align: center;
+        }
+
     }
     .m-mess{
         width:90%;
@@ -223,7 +301,7 @@ body{
             top:0.24rem;
             background-size:auto 100%;
             background-repeat:no-repeat;
-            
+
         }
         &.m-messA{
             .fadeInUp();
@@ -346,7 +424,7 @@ body{
             height: 0.3rem;
             background-size: 100%;
             background-repeat:no-repeat;
-            background-image: url(../img/icon18.png); 
+            background-image: url(../img/icon18.png);
         }
     }
     p{
@@ -361,7 +439,7 @@ body{
                     background-image: url(../img/pic01.png);
                 }
                 &:after{
-                    background-image: url(../img/icon10.png); 
+                    background-image: url(../img/icon10.png);
                 }
             }
         }
@@ -371,7 +449,7 @@ body{
                     background-image: url(../img/pic02.png);
                 }
                 &:after{
-                    background-image: url(../img/icon11.png); 
+                    background-image: url(../img/icon11.png);
                 }
             }
         }
@@ -381,7 +459,7 @@ body{
                     background-image: url(../img/pic03.png);
                 }
                 &:after{
-                    background-image: url(../img/icon12.png); 
+                    background-image: url(../img/icon12.png);
                 }
             }
         }
@@ -393,7 +471,7 @@ body{
                     background-image: url(../img/pic04.png);
                 }
                 &:after{
-                    background-image: url(../img/icon14.png); 
+                    background-image: url(../img/icon14.png);
                 }
             }
         }
@@ -405,7 +483,7 @@ body{
                     background-image: url(../img/pic05.png);
                 }
                 &:after{
-                    background-image: url(../img/icon15.png); 
+                    background-image: url(../img/icon15.png);
                 }
             }
         }
@@ -417,12 +495,12 @@ body{
                     background-image: url(../img/pic06.png);
                 }
                 &:after{
-                    background-image: url(../img/icon16.png); 
+                    background-image: url(../img/icon16.png);
                 }
             }
         }
         &.show{
-            .animation(fadeInUp ease-out 0.3s 0s both);    
+            .animation(fadeInUp ease-out 0.3s 0s both);
         }
     }
     .swiper-slide{
@@ -491,7 +569,7 @@ body{
         .icon-round{
             display:none;
         }
-        span{            
+        span{
             display:block;
             width: 0.58rem;
             height:0.58rem;
@@ -523,7 +601,7 @@ body{
                 margin-right: 0.2rem;
                 background-image: url(../img/icon07.png);
             }
-        }        
+        }
         &.m-messinput-toolA{
             position: relative;
             span{
@@ -542,8 +620,8 @@ body{
                     display: none;
                 }
             }
-        }      
-    }    
+        }
+    }
 }
 .dead-lock{
     position: absolute;
@@ -616,7 +694,7 @@ body{
             padding:0.2rem 0;
             &:nth-of-type(1){
                 width:48%;
-                border-right: 1px solid #e3e3e3;    
+                border-right: 1px solid #e3e3e3;
             }
         }
     }
@@ -678,7 +756,7 @@ body{
                 font-weight: bold;
                 text-shadow:3px 2px 0.04rem #000;
             }
-            
+
         }
         .game-hit{
             margin-top: 0.2rem;
@@ -753,7 +831,7 @@ body{
         bottom:1rem;
         left:0;
         display: none;
-        a{            
+        a{
             width: 2.1rem;
             height: 2rem;
             margin:0 0.4rem;
@@ -808,13 +886,13 @@ body{
             &.on{
                 span{
                     .flash();
-                    .animation(flash ease 0.3s both); 
+                    .animation(flash ease 0.3s both);
                 }
             }
             &.end{
                 span{
                     .moveUp();
-                    .animation(moveUp ease-in 0.2s both); 
+                    .animation(moveUp ease-in 0.2s both);
                 }
             }
         }
@@ -844,29 +922,29 @@ body{
         .wuqi_ani();
         .animation(wuqi_ani ease-in 0.3s 0s both);
         &.wuqi1{
-            width: 1.1rem;
-            height: 0.96rem;
+            width: 1.6rem;
+            height: 1.3rem;
             background-image: url(../img/wuqi1.png);
         }
         &.wuqi2{
-            width: 0.9rem;
-            height: 1.02rem;
+            width: 1.3rem;
+            height: 1.6rem;
             bottom:1rem;
             background-image: url(../img/wuqi2.png);
         }
         &.wuqi3{
-            width: 1.05rem;
-            height: 0.76rem;
+            width: 1.6rem;
+            height: 1.3rem;
             background-image: url(../img/wuqi3.png);
         }
         &.wuqi4{
-            width: 0.72rem;
-            height: 0.76rem;
+            width: 1rem;
+            height: 1.1rem;
             background-image: url(../img/wuqi4.png);
         }
         &.wuqi5{
-            width: 0.96rem;
-            height: 0.82rem;
+            width: 1.6rem;
+            height: 1.4rem;
             background-image: url(../img/wuqi5.png);
         }
     }
@@ -1006,6 +1084,26 @@ body{
         &.show{
             opacity: 1;
         }
+    }
+}
+
+.new-share-pop {
+    display    : none;
+    position   : fixed;
+    z-index    : 999999;
+    left       : 0;
+    top        : 0;
+    right      : 0;
+    bottom     : 0;
+    background : rgba(0,0,0,.7);
+    .share-pop-content {
+        position   : absolute;
+        width      : 7.5rem;
+        height     : 3rem;
+        left       : 0;
+        top        : 0;
+        background : url(../img/share-tip.png);
+        background-size: 100% 100%;
     }
 }
 

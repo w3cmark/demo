@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title><!--#echo var='Title'--></title>
+        <meta name="keywords" content="<!--#echo var='Keywords'-->" />
+        <meta name="description" content="<!--#echo var='Description'-->" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="format-detection" content="address=no" />
+        <!--for baidu 识别移动端页面并禁止百度转码-->
+        <meta name="applicable-device"content="mobile"> 
+        <meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+        <!--viewport 设置，如果页面实际情况不允许缩放请加上,user-scalable=no-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta charset="gb2312">
+        <link rel="dns-prefetch" href="http://res.nie.netease.com">
+        <style type="text/css">
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        body{
+        	background: #000;
+        }
+        </style>
+        <!--描述：加载设计样式-->
+    </head>
+    <body>
+  <div id="snow-canvasA"></div>
+	<div id="snow-canvasB"></div>
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/jquery(mixNIE).1.11.js"></script>
+<script charset="gb2312" src="http://res.nie.netease.com/comm/js/nie/ref/threecanvas.js"></script>
+<script src="js/snow.js"></script>
+<script type="text/javascript">
+
+ParticleEffect.create({
+  container: 'snow-canvasA', //粒子容器id
+  num: 100, //粒子数量
+  imageSrc: 'img/particle.png', //粒子图片地址（只需要一张，随机缩放）
+  width: $(window).width(), //粒子容器宽
+  height: $(window).height() //粒子容器高
+});
+var _showFps = function(){//显示页面的fps状态
+    var params = function(u, p){//获取url参数
+            var m=new RegExp("(?:&|/?)"+p+"=([^&$]+)").exec(u);
+            return m?m[1]:'';
+        },
+        fps = params(location.search,'fps');
+    if(!fps || fps != 1){return;}
+    var script = document.createElement('script');
+    script.onload = function(){
+        var stats = new Stats();
+        stats.domElement.style.cssText='position:fixed;left:0;top:0;z-index:10000';
+        document.body.appendChild(stats.domElement);
+        requestAnimationFrame(
+            function loop(){
+                stats.update();
+                requestAnimationFrame(loop)
+            });
+    };
+    script.src='http://rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+    document.head.appendChild(script);
+}
+_showFps();
+// ParticleEffect.create({
+//   container: 'snow-canvasB'
+// });
+</script>
+    </body>
+</html>
+	

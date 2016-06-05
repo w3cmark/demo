@@ -1,0 +1,620 @@
+@import "_reset.less";
+
+#share_content,#forhorview{
+    display: none;
+}
+.center{
+    .box-align(center);
+    .box-pack(center);
+}
+.orient_ver{
+     .box-orient(vertical);
+}
+.orient_hoz{
+    .box-orient(horizontal);
+}
+#main{
+    width:100%; 
+    min-height: 100%;
+    position: relative; 
+}
+/*******************首页导航条及内页下载条样式************************/
+.topbar{
+    height: 1rem;
+    .box();
+    .box-orient(horizontal);  
+    .box-align(center);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .logo{
+        width:1.08rem;
+        position: relative;
+        z-index: 1;
+        height:1.08rem;
+        margin-left:0.22rem;
+        margin-top:0.07rem;
+        margin-right: 0.16rem;
+        a{
+            display: block;
+            background: none;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+    .game_name{
+        .box-flex(1);
+        h2{
+            font-size: 0.3rem;
+        }
+    }
+    a{
+        width:1.7rem;
+        height:0.53rem;
+        margin-right:0.34rem;
+        line-height: 0.53rem;
+        font-size: 0.26rem;
+        text-align: center;
+        border-radius: 0.25rem;
+        display: none;
+        background: #8ebc00;
+        color: #fff;
+        .box-orient(horizontal);  
+        .box-align(center);
+        .box-pack(center);
+        &.show{
+             .box();
+        }
+    }
+}
+
+/*******************公用底部样式************************/
+.site_bottom{
+    box-sizing: border-box;
+    padding-left: 0.37rem;
+    .home-btn{        
+        display: block;
+        width: 2.2rem;
+        height:0.59rem;
+        line-height: 0.59rem;
+        color: #e8f894;
+        text-align: center;
+        margin:0.2rem 0 0;
+        font-size: 0.28rem;
+        border:3px solid #c5dc4e;
+    }
+    .site_tel{
+        color: #e8f894;
+        font-size: 0.22rem;
+        padding-top: 0.2rem;
+    }
+    .NIE-copyRight_m{
+        padding-bottom:1rem;
+        color: #e8f894;
+        p{
+            font-size:0.22rem;
+            line-height: 0.4rem;
+            color: #e8f894;
+        }
+    }
+}
+/*******************回到顶部按钮样式************************/
+.btn_toTop{
+    width:0.96rem;
+    height: 0.96rem;
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    right: 0.26rem;
+    margin-left:-0.25rem;
+    .box();
+    .box-pack(center);
+    .box-align(center);
+    overflow: hidden;
+    i{
+        width:0.3rem;
+        height: 0.3rem;
+        border-left:0.08rem solid #100000;
+       border-top:0.08rem solid #100000;
+       border-bottom: 0;
+       border-right:0;
+       .transform(rotate(45deg));
+       display: block;
+       margin-top: 0.2rem;
+       
+    }
+}
+
+.i_icon{
+    width:0.3rem;
+    height:0.3rem;
+    display: block;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+   
+}
+.i_arrow{
+    width:0.8rem;
+    height:0.8rem;
+    display: block;
+    position: relative;
+    .box();
+    .box-align(center);
+    .box-pack(center);
+    i{
+       width:0.3rem;
+       height: 0.3rem;
+       border-right:0.06rem solid #100000;
+       border-top:0.06rem solid #100000;
+       border-bottom: 0;
+       border-left:0;
+       .transform(rotate(45deg));
+       display: block;
+    }
+    &.i_arrow_left{
+        .rotate(-180deg);
+    }
+    &.i_arrow_top{
+        .rotate(-90deg);
+    }
+}
+
+/*******************遮罩层通用样式************************/
+.mask{
+    transition:opacity 0.3s ease-in-out 0s;
+    -moz-transition:opacity 0.3s ease-in-out 0s;
+    -webkit-transition:opacity 0.3s ease-in-out 0s;
+    -o-transition:opacity 0.3s ease-in-out 0s;
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    display: none;
+    opacity: 0.0;
+    z-index: 999;
+    &.show{
+        opacity: 1.0;
+    }
+}
+
+/*******************对话框样式************************/
+.alertbox{
+    z-index:1000;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    background:rgba( 0,0,0,0);
+    .box();
+    .box-align(center);
+    .box-pack(center);
+    .transition( all 300ms ease-in);
+    .alert_text{
+        .transform(translate(0,-30rem));
+        .transition( all 300ms ease-in);
+        position: relative;
+        width:6.6rem;
+        min-height: 2.5rem;
+        box-sizing: border-box;
+        margin:0 auto;
+        padding:0.5rem 0.24rem;
+        h2{
+            font-size:0.4rem;
+            line-height: 0.8rem;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            line-height: 0.6rem;
+        }
+    }
+    &.show{
+        background:rgba( 0,0,0,0.6);
+        .alert_text{
+            .transform(translate(0,0))
+        }
+    }
+    &.remove{
+        background: rgba(0,0,0,0);
+        .alert_text{
+            .transform(translate(0,50rem))
+        }
+    }
+    .btn_close{
+        position: absolute;
+        right:0.1rem;
+        top:0.1rem;
+    }
+}
+.btn_close{
+        width:0.6rem;
+        height:0.6rem;
+        .box(); 
+        .box-align(center);
+        .box-pack(center);
+        em,i{
+            display: block;
+            background:#fff;
+            width:0.6rem;
+            height:0.04rem;
+        }
+        em{
+            .rotate(45deg);
+        }
+        i{
+            .rotate(-45deg);
+            margin-left:-0.6rem;
+        }
+    }
+/*******************横屏提示弹层样式************************/
+#forhorview{
+    position: fixed;
+    z-index: 1000;
+    top:0;
+    bottom:0;
+    left:0; 
+    right:0;
+    width:100%;
+    background: rgba(0,0,0,0.6);
+    
+    display: none;
+    
+
+    .box-align(center);
+    .box-pack(center);
+    p{
+        font-size:0.6rem;
+        color:#ddd;
+    }
+    &.show{
+        .box();
+        
+    }
+}
+/*******************通用抽屉层样式************************/
+.moudle{
+    position: relative;
+    z-index: 99;
+    height:100%;
+     transition:opacity 0.3s ease-in-out 0s;
+    -moz-transition:opacity 0.3s ease-in-out 0s;
+    -webkit-transition:opacity 0.3s ease-in-out 0s;
+    -o-transition:opacity 0.3s ease-in-out 0s;
+    display: none;
+    opacity: 0.0;
+    &.show{
+        opacity: 1.0;
+    }
+}
+/*******************弹窗样式************************/
+.popWin{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom: 0;
+    top: 0;
+    width:100%;
+    display: none;
+    .box-orient(horizontal);
+    .box-align(center);
+    .box-pack(center);
+    section{
+        width:5.8rem;
+        
+        .popWin_header{
+            .box();
+            .box-orient(horizontal);
+            .box-align(center);
+            height:0.8rem;
+            line-height:0.8rem;
+            span{
+                font-size: 0.32rem;
+                text-indent: 0.2rem;
+                display: block;
+                .box-flex(1);
+            }
+            a{
+                margin-right: 0.06rem;
+            }
+            
+        }
+        .popWin_content{
+            box-sizing: border-box;
+            padding: 0.3rem 0.2rem;
+            min-height: 4rem;
+            display: none;
+            
+            h2{
+                font-size:0.36rem;
+                line-height: 0.6rem;
+                margin:0.2rem 0;
+                text-align: center;
+            }
+            h3{
+                font-size: 0.28rem;
+                font-weight: normal;
+                line-height: 0.4rem;
+            }
+            p{
+                 font-size: 0.24rem;
+                line-height: 0.4rem;
+            }
+            &.current{
+                .box();
+            }
+        }
+    }
+    &.popup{
+        .box();
+    }
+}
+/*******************礼包模块样式************************/
+#gain_result{
+    a{
+        margin:0.4rem 0
+    }
+}
+#active{
+    .box-orient(vertical);
+    .form{
+        margin-bottom: 0.3rem;
+    }
+}
+.active_ios{
+    .for_and{
+        display: none;
+    }    
+}
+.active_and{
+    .for_ios{
+        display: none;
+    }
+}
+.for_success{
+    display: none;
+    
+}
+.active_success{
+    .for_ios{
+        display: none;
+        
+    }
+    .for_and{
+        display: none;
+    }  
+    .for_success{
+        display: block;
+    }
+}
+/*******************输入框+按钮表单样式************************/
+.form_bar{
+    .box();
+    .box-orient(horizontal);
+    width:100%;
+    height:0.8rem;
+    span{
+        border:1px solid #ddd;
+        box-sizing:border-box;
+        
+        border-right:0;
+        .box-flex(1);
+        height:0.8rem;
+        line-height: 0.28rem;
+        
+        display: block;
+        input{
+            padding: 0.22rem 0.16rem;
+            
+            box-sizing: border-box;
+            width:100%;
+            height: 100%;
+            border:0
+        }
+    };
+    
+    a{
+        display: block;
+        width:1.88rem;
+        height:0.8rem;
+        line-height: 0.8rem;
+        text-align: center;
+        font-size: 0.3rem;
+    }
+}
+/******************表单样式***********************/
+.form{
+    dl{
+        .box();
+        .box-orient(horizontal);
+        height:0.7rem;
+        border:1px solid #ddd;
+        box-sizing: border-box;
+        width:100%;
+        margin-bottom:0.3rem;
+        dt{
+            width:1.6rem;
+            box-sizing: border-box;
+            border-right:1px solid #ddd;
+            display: block;
+            height: 100%;
+           
+            font-size: 0.24rem;
+            line-height: 0.66rem;
+            text-align: center;
+        }
+        dd{
+            display: block;
+            height: 100%;
+            .box-flex(1);
+            padding:0.2rem;
+            box-sizing: border-box;
+            input{
+                width:100%;
+                border:0;
+               display: block;
+            }
+        }
+    }
+}
+/*******************通用按钮样式************************/
+.btn_common{
+    display: block;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    font-size: 0.3rem;
+    
+}
+/*******************短按钮样式************************/
+.btn_short{
+    width:2.9rem;
+}
+
+//设置配色方案
+.dominantText(){//文字主色调,对话框、弹窗顶条、首页导航、菜单、按钮
+   color:#fff;
+   a{
+       color:#fff;
+   }
+}
+.dominantBg(){//背景主色调,对话框、弹窗顶条、菜单、按钮
+   
+   background-color:#38a3fa;
+}
+//首页顶条
+.topbar{ 
+    background:rgba(255, 255, 255, 0.6);
+    .logo{
+        background: url(../img/logo.png) center center no-repeat;
+        background-size: cover;
+    }
+    .game_name{
+        h2{
+            color: #555;
+        }
+        p{
+            color: #7c7c7a;
+            font-size: 0.22rem;
+        }
+    }
+}
+.i_arrow{//指针图片，默认向右
+    i{ border-color: #b5b5b5;}
+}
+.site_bottom{//通用底部样式
+    p,a,h3{
+        color: #ebeff4;
+    }
+    .button{
+        color: #424a55;
+        background-color: #ffc324;
+         display: none;
+    }
+    
+    ul{
+        li{
+            border-color: #87939c;
+        }
+    }
+}
+
+#NIE-share-m .NIE-mshare-dark {//覆盖分享条默认样式
+    background: transparent;
+}
+#NIE-share-m .NIE-mshare-dark .NIE-share-bar a{
+    .dominantBg();
+    border-width:0;
+}
+
+.refer_insetapp{//微信中分享提示框样式
+     
+     p{
+         color: #fff;
+     }
+   }
+.alert_text{
+    background: #fff;
+     border:0.1rem solid #aaa;
+     color: #007AFF;
+        p{
+            color: #333;
+        }
+   .btn_close{
+       em,i{ background: #007AFF;}
+   }
+}
+.popWin{
+    section{
+        
+        background: #fefefe;
+        .popWin_header{
+             .dominantBg();
+            .dominantText();
+            
+        }
+        .popWin_content{
+            h1{
+                color: #22a0f0;
+            }
+            h2{
+                color: #333;
+            }
+            p{
+                color: #757575;
+            }
+        }
+    }
+    
+}
+.form_bar{
+    input{
+        border-color:#ddd ;
+    }
+    a{
+        .dominantBg();
+        .dominantText();
+    }
+}
+.btn_common{
+    .dominantBg();
+    .dominantText();
+    
+}
+.btn_black{
+        background: #000000;
+        color: #fff;
+    }
+.btn_blue{
+    .dominantBg();
+    .dominantText();
+}
+.form{
+     dl{
+        
+        border-color:#bababa;
+        
+        dt{
+         
+           border-color:#ddd;
+            color:#bababa;
+            
+        }
+    }
+}
+.btn_toTop{
+    background:#8ba803;
+    i{
+        
+        border-color: #9dbc00;
+    }
+}
+
